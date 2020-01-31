@@ -27,3 +27,12 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Noyau"]
 texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 229.0
+margin_top = -242.0
+margin_right = 366.0
+margin_bottom = 267.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

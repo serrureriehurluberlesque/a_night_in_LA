@@ -7,8 +7,8 @@ export var paroi_size = 32
 export var DNApath = 'DNA'
 
 #basal rates and shit
-export var translation_rate = 0
-export var degradation_rate = 1
+export var translation_rate = 1
+export var degradation_rate = 2
 export var wall_repair_rate = 0
 export var DNA_repair_rate = 0
 export var enzymes = 0
@@ -30,18 +30,33 @@ export var virus_level = 0
 
 var hp = 10
 
+onready var text = get_node("RichTextLabel")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var packed_paroi = load("res://Paroi.tscn")
-	var da = 2 * PI / paroi_size
+    var packed_paroi = load("res://Paroi.tscn")
+    var da = 2 * PI / paroi_size
 	
-	for i in range(paroi_size):
-		var paroi = packed_paroi.instance()
-		paroi.set_global_position(get_global_position() + Vector2(0.0, 256.0).rotated(da * i))
-		paroi.set_global_rotation(da * i)
-		add_child(paroi)
-		print("paroi créée")
+    for i in range(paroi_size):
+        var paroi = packed_paroi.instance()
+        paroi.set_global_position(get_global_position() + Vector2(0.0, 256.0).rotated(da * i))
+        paroi.set_global_rotation(da * i)
+        add_child(paroi)
 
+func set_level(a, b, c, d, e):
+    var OH_level = a
+    var fat_level = b
+    var cocaine_level = c
+    var cocaethylene_level = d
+    var virus_level = e
+    
+func set_indice(i):
+    if i == 1:
+        wall_repair_rate = 1
+    if i == 2:
+        DNA_repair_rate = 1
+    if i == 3:
+        translation_rate = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -51,21 +66,26 @@ func _physics_process(delta):
 	#DNA_repair_rate = getNode(DNApath).getPosition() == 'DNA_repair'
 	#translation_rate = getNode(DNApath).getPosition() == 'Enzymes'
 
-	apoptosis = (2*DNA_damage + wall_damage + stress_level) / 300
+    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 300
 
-	wall_damage += stress_level / 100 - wall_repair_rate*20
-	DNA_damage += stress_level / 100 - DNA_repair_rate*10
+    wall_damage += stress_level / 100 - wall_repair_rate*20
+    DNA_damage += stress_level / 100 - DNA_repair_rate*10
 
-	stress_level += fat_level + 2*OH_level + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
+    stress_level += fat_level + 2*OH_level + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
 
 	#simple
-	fat_level -= enzymes / 5
-	OH_level -= enzymes / 10
-	cocaine_level -= enzymes / 2
-	cocaethylene_level -= enzymes / 10
+    fat_level -= enzymes / 5
+    OH_level -= enzymes / 10
+    cocaine_level -= enzymes / 2
+    cocaethylene_level -= enzymes / 10
 
-	enzymes += 2*translation_rate - degradation_rate
+    enzymes += 2*translation_rate - degradation_rate
 
+    text.text = ""
+    var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzymes"]
+    for stat in stats:
+        text.text += stat + ": " + str(get(stat)) + "\n"
+        
 	#later
 	#virus_level -= immune_defense
 	#immune_defense += 

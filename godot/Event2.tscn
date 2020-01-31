@@ -3,5 +3,3 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-graisse_number = 0
-alcohol_number = 10

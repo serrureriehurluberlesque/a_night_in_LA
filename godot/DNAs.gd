@@ -14,5 +14,5 @@ func _ready():
     for i in range(dna_number):
         var dna = packed_dna.instance()
         dna.set_global_position(get_global_position() + Vector2(0.0, 16.0).rotated(da * i))
+        dna.indice = i
         add_child(dna)
-        print("dna créée")
