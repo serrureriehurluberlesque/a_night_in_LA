@@ -1,9 +1,5 @@
 extends StaticBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-export var paroi_size = 32
-
 export var DNApath = 'DNA'
 
 #basal rates and shit
@@ -31,17 +27,6 @@ export var virus_level = 0
 var hp = 10
 
 onready var text = get_node("RichTextLabel")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    var packed_paroi = load("res://Paroi.tscn")
-    var da = 2 * PI / paroi_size
-	
-    for i in range(paroi_size):
-        var paroi = packed_paroi.instance()
-        paroi.set_global_position(get_global_position() + Vector2(0.0, 256.0).rotated(da * i))
-        paroi.set_global_rotation(da * i)
-        add_child(paroi)
 
 func set_level(a, b, c, d, e):
     var OH_level = a

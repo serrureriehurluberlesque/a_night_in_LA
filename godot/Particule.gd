@@ -9,6 +9,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
     if body != self:
-        body.damage(20)
+        body.damage(40)
         if body.is_enzym():
             get_node("..").call_deferred("remove_child", self)
