@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/Paroi.png" type="Texture" id=2]
+[ext_resource path="res://Paroi.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 4 )
 
 [node name="Objet" instance=ExtResource( 1 )]
 collision_mask = 0
+script = ExtResource( 3 )
+hp = 100
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

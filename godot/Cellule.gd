@@ -6,7 +6,8 @@ export var paroi_size = 32
 
 #all the shit in the cell that's bad
 export var stress_level = 0
-export var 
+
+var hp = 10
 
 
 # Called when the node enters the scene tree for the first time.
