@@ -49,22 +49,29 @@ func set_level(a, b, c, d, e):
     var cocaine_level = c
     var cocaethylene_level = d
     var virus_level = e
-    
-func set_indice(i):
-    if i == 1:
-        wall_repair_rate = 1
-    if i == 2:
-        DNA_repair_rate = 1
-    if i == 3:
-        translation_rate = 1
 
+func get_fat():
+    return fat_level
+
+func get_OH():
+    return OH_level
+
+func get_cocaine():
+    return cocaine_level
+
+func get_dna_damage() :
+    return DNA_damage
+
+func get_wall_damage() :
+    return wall_damage
+    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
         #le peouze et tout ce qui va avec
-	#wall_repair_rate = getNode(DNApath).getPosition() == 'Wall_repair'
-	#DNA_repair_rate = getNode(DNApath).getPosition() == 'DNA_repair'
-	#translation_rate = getNode(DNApath).getPosition() == 'Enzymes'
+	#wall_repair_rate = getNode(DNApath).is_activated()
+	#DNA_repair_rate = getNode(DNApath).is_activated()
+	#translation_rate = getNode(DNApath).is_activated()
 
     apoptosis = (2*DNA_damage + wall_damage + stress_level) / 300
 
