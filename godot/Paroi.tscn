@@ -8,9 +8,9 @@
 extents = Vector2( 16, 4 )
 
 [node name="Objet" instance=ExtResource( 1 )]
-collision_mask = 0
+collision_mask = 6
+mode = 2
 script = ExtResource( 3 )
-hp = 100
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 5.84782, 0.307781 )
@@ -22,3 +22,5 @@ shape = SubResource( 1 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." index="2"]
 node_a = NodePath("..")
+bias = 0.2
+softness = 2.0

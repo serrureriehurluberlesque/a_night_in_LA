@@ -2,12 +2,13 @@ extends RigidBody2D
 class_name Objet
 
 
-export var hp = 100
+export var hp = 100.0
 
 func damage(n):
     hp -= n
-    modulate
+    var ratio = hp / 100.0
+    print(hp)
+    set_modulate(Color(1, ratio, ratio, 1)) 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
+func is_enzym():
+    return false

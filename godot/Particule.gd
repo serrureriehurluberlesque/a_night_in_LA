@@ -8,5 +8,7 @@ func _ready():
     pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-    body.damage(20)
-    # get_node("..").call_deferred("remove_child", self)
+    if body != self:
+        body.damage(20)
+        if body.is_enzym():
+            get_node("..").call_deferred("remove_child", self)

@@ -1,6 +1,7 @@
 extends Objet
 
-var activated = 0
+var activated = false
+var indice
 
 func is_activated():
     return activated
@@ -17,7 +18,7 @@ func _on_Objet_input_event(viewport, event, shape_idx):
     
     if event.is_action_pressed("leftmouse"):
         if event.button_index == BUTTON_LEFT and event.pressed:
-            get_node("../../..").set_indice(indice)
+            activated = true
 
 func _physics_process(delta):
 
