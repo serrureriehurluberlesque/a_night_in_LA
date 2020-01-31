@@ -28,6 +28,8 @@ export var cocaine_level = 0
 export var cocaethylene_level = 0
 export var virus_level = 0
 
+var hp = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var packed_paroi = load("res://Paroi.tscn")
