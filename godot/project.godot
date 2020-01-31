@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="a_night_in_LA"
-run/main_scene="res://Cellule.tscn"
+run/main_scene="res://lvl.tscn"
 config/icon="res://icon.png"
+
+[physics]
+
+2d/default_gravity=0
 
 [rendering]
 

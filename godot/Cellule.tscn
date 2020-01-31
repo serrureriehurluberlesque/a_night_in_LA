@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/cellule fond.png" type="Texture" id=1]
 [ext_resource path="res://Cellule.gd" type="Script" id=2]
 [ext_resource path="res://DNAs.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Noyau.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 256.0
@@ -11,6 +12,7 @@ radius = 256.0
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 2 )
+paroi_size = 49
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -22,3 +24,6 @@ shape = SubResource( 1 )
 
 [node name="DNAs" type="Node2D" parent="Noyau"]
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Noyau"]
+texture = ExtResource( 4 )

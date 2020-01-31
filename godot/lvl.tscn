@@ -9,3 +9,4 @@ script = ExtResource( 2 )
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
