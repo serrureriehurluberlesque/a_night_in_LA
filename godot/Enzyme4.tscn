@@ -4,8 +4,7 @@
 
 [node name="Objet" instance=ExtResource( 1 )]
 mass = 0.7
-factor_repair_general = 0.0
-max_speed = 25.0
+enzyme_repair = 1.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.905882, 0.760784, 0.760784, 1 )

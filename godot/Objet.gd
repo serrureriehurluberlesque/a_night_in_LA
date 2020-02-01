@@ -10,6 +10,7 @@ var dead = false
 
 export var factor_repair_paroi = 0.0
 export var factor_repair_general = 1.0
+export var factor_repair_enzyme = 0.0
 
 var delayed_modulate_timing = 0
 

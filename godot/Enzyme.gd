@@ -5,6 +5,7 @@ onready var target = get_global_position()
 export var max_speed = 8.0
 export var paroi_repair = 0.0
 export var general_repair = 0.0
+export var enzyme_repair = 0.0
 
 func _physics_process(delta):
     if (target - get_global_position()).length() < 35.0:
