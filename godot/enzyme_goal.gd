@@ -1,7 +1,7 @@
 extends Sprite
 
 onready var enzymator = get_node("../enzymator")
-var r = 30.0
+var r = 100.0
 var pressing = false
 var pos = Vector2()
 
@@ -21,7 +21,7 @@ func _input(event):
 func _physics_process(delta):
     if pressing:
         r = min(500.0, r + 200 * delta)
-        var f = r / 300.0
+        var f = r / 250.0
         scale = Vector2(f, f)
         var c = get_modulate()
         c.a = 1.0
@@ -30,7 +30,7 @@ func _physics_process(delta):
     if Input.is_action_just_released("click"):
         pressing = false
         enzymator.set_goal(pos, r)
-        r = 30.0
+        r = 100.0
     
     if not pressing:
         var c = get_modulate()
