@@ -45,6 +45,7 @@ func _process(delta):
     
     if time_since_beg > time:
         get_node("..").next_level()
+        time_since_beg = -1000
     
     time_since_beg += delta
     

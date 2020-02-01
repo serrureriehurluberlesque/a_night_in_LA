@@ -11,7 +11,7 @@ func _ready():
     pass # Replace with function body.
 
 func _process(delta):
-    if get_linear_velocity().length() < 100.0 and get_position().length() > get_node("../parois").cell_size:
+    if get_linear_velocity().length() < 10.0 and get_position().length() > get_node("../parois").cell_size:
         degradation_rate = 10.0
     else:
         degradation_rate = 2.0

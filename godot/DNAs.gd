@@ -16,19 +16,21 @@ var value = {}
 
 func _ready():
     for i in range(n_adn):
-        value[i] = 5.0
+        value[i] = 0.0
     
-        var packed_dna = load("res://DNA.tscn")
-        var da = 2 * PI / dna_number
+    value[n_adn - 1] = 5.0 * n_adn
+    
+    var packed_dna = load("res://DNA.tscn")
+    var da = 2 * PI / dna_number
 
-        for i in range(dna_number):
-            var dna = packed_dna.instance()
-            dna.indice = i
-            variate_sprite(dna.get_node("Sprite"), "res://sprites/ADN/ADN_" + str(i%2 + 1) + ".png")
-            variate_sprite(dna.get_node("lettre"), "res://sprites/Good guys/" + str(i) + ".png")
-            add_child(dna)
-            dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
-            dna.pin(get_node("../.."))
+    for i in range(dna_number):
+        var dna = packed_dna.instance()
+        dna.indice = i
+        variate_sprite(dna.get_node("Sprite"), "res://sprites/ADN/ADN_" + str(i%2 + 1) + ".png")
+        variate_sprite(dna.get_node("lettre"), "res://sprites/Good guys/" + str(i) + ".png")
+        add_child(dna)
+        dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
+        dna.pin(get_node("../.."))
     
 func variate_sprite(node, ressource):
     var img = Image.new()
@@ -60,13 +62,13 @@ func increment(i) :
 func set_prod(dict):
     var total = 0
     for i in range(n_adn):
-        total += abs(dict[i])
+        total += max(0, dict[i])
     
     var dict_clean = {}
     for i in range(n_adn):
-        dict_clean[i] = dict[i] / total
+        dict_clean[i] = max(0, dict[i]) / total
     
-    set_continous_repair(dict_clean[0])
+    set_continous_repair(dict_clean[0] * 10.0)
     
     get_node("../..").dna_repair_rate = dict_clean[0]
     get_node("../..").wall_repair_rate = dict_clean[2]
