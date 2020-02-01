@@ -7,14 +7,6 @@ export var paroi_repair = 0.0
 export var general_repair = 0.0
 
 func _physics_process(delta):
-<<<<<<< HEAD
-	if (target - get_global_position()).length() < 35.0:
-		target = (get_global_position() + Vector2(rand_range(0.0, 140.0), 0).rotated(rand_range(-PI, PI))).clamped(200.0)
-	
-	var d = target - get_global_position() 
-	var i = 20 * max_speed / (max_speed + (get_linear_velocity()).length())
-	apply_impulse(Vector2(), d.normalized() * i * delta)
-=======
     if (target - get_global_position()).length() < 35.0:
         target = (get_global_position() + Vector2(rand_range(0.0, 140.0), 0).rotated(rand_range(-PI, PI)))
         target = get_node("..").clamped(target)
@@ -25,7 +17,6 @@ func _physics_process(delta):
     
     for body in get_node("Area2D").get_overlapping_bodies():
         body.repair(general_repair, paroi_repair)
->>>>>>> a375a926d4df7b21c489314cde6e803786fcc9f9
 
 func go_to(global_position):
 	target = global_position
