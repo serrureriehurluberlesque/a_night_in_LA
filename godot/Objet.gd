@@ -4,6 +4,7 @@ class_name Objet
 
 export var hp = 100.0
 export var enzym = false
+export var particule = false
 export var degradation_rate = 0.0
 
 var dead = false
