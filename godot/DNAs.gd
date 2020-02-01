@@ -3,64 +3,79 @@ extends Node2D
 export var dna_number = 4
 var activated_dna = 4
 var stock = 0
+var continuous_repair = 0.0
 
 export var dna_cost = 2
 export var wall_cost = 1
 export var enzymes_cost = 1
 
-export var increment_value = 1
+export var increment_value = 1.0
+
+var n = 3
+var value = {}
 
 func _ready():
-	var packed_dna = load("res://DNA.tscn")
-	var da = 2 * PI / dna_number
+    for i in range(n):
+        value[i] = 0.0
+    
+    var packed_dna = load("res://DNA.tscn")
+    var da = 2 * PI / dna_number
 	
-	for i in range(dna_number):
-		var dna = packed_dna.instance()
-		dna.indice = i
-		add_child(dna)
-		dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
-		dna.pin(get_node("../.."))
+    for i in range(dna_number):
+        var dna = packed_dna.instance()
+        dna.indice = i
+        add_child(dna)
+        dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
+        dna.pin(get_node("../.."))
+    
+    
 
 func activate(n): 	#= increment
 	increment(n)
 	activated_dna = n
 		
 func increment(i) :
+    print("increment", i)
 	
-	var r = increment_value
-	
-	if i == 0: #DNA
-		repair(r * 30 * wall_cost * enzymes_cost)
-		
-		get_node("../../parois").repair(-r * dna_cost * enzymes_cost) #change rate of production of particles
-		get_node("../../enzymator").boost(-r * dna_cost * wall_cost) #change rate of production too
-		
-	elif i == 1: #Wall
-		get_node("../../parois").repair(r * 10 * dna_cost * enzymes_cost)
-		
-		get_node("../../enzymator").boost(-r * dna_cost * wall_cost)
-		repair(-r * 30 * wall_cost * enzymes_cost)
-		
-	elif i == 2: #Enzymes
-		get_node("../../enzymator").boost(r * dna_cost * wall_cost)
-		
-		repair(-r * 30 * wall_cost * enzymes_cost)		
-		get_node("../../parois").repair(-r * dna_cost * enzymes_cost)
-	elif i == 3: #useless so far
-		stock += r
+    var r = increment_value
+    for j in range(n):
+        var d 
+        if i == j:
+            d = r
+        else:
+            d = - r / (n - 1)
+        value[j] += d
 
-func set_prod(a, b, c):
-		set_repair(a * 30 * wall_cost * enzymes_cost)
-		
-		get_node("../../parois").repair(-r * dna_cost * enzymes_cost) #change rate of production of particles
-		get_node("../../enzymator").boost(-r * dna_cost * wall_cost) #change rate of production too
+    set_prod(value[0], value[1], value[2]) 
 
+func set_prod(a, b_brut, c_brut):
+    set_continous_repair(a)
+    
+    var t = 5 + max(0, b_brut) + max(0, c_brut)
+    var b = max(0, b_brut / t)
+    var c = max(0, c_brut / t)
+    
+    var dict = {}
+    dict[0] = 1 - b - c
+    dict[1] = b
+    dict[2] = c
+    dict[3] = 0
+        
+    get_node("../../enzymator").set_prod(dict) #change rate of production too
+
+func set_continous_repair(a):
+    continuous_repair = a
+    
 func repair(f):
 	for child in get_children():
 		child.repair(f)
 		
 func _physics_process(delta):
-	action(delta, activated_dna)
+    if continuous_repair > 0.0:
+        repair(delta * continuous_repair)
+	# action(delta, activated_dna)
+    
+    
 	
 func action(delta, i):
 	stock *= 0.97
