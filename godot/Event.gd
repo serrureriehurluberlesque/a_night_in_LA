@@ -51,7 +51,7 @@ func _process(delta):
 func emit_particule(particular_type, packed_particule):
     var x = rand_range(800, 1500)
     var a = rand_range(-PI, PI)
-    var s = rand_range(200, 600)
+    var s = rand_range(100, 120)
 	
     for child in particules_node_base.get_children():
         if "Cellule" in child.name:

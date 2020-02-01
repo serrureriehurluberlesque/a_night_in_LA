@@ -140,8 +140,8 @@ cell_size = 420.0
 script = ExtResource( 6 )
 
 [node name="enzyme_goal" type="Sprite" parent="."]
-modulate = Color( 0.00784314, 0.886275, 0.392157, 1 )
-scale = Vector2( 0.2, 0.2 )
+modulate = Color( 0.00784314, 0.886275, 0.392157, 0.47451 )
+scale = Vector2( 5, 5 )
 texture = ExtResource( 8 )
 script = ExtResource( 7 )
 
