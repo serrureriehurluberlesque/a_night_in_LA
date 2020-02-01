@@ -49,23 +49,23 @@ func increment(i) :
 
 func set_prod(a, b_brut, c_brut):
 
-    set_continous_repair(a)
-    
-    var t = 5 + max(0, b_brut) + max(0, c_brut)
-    var b = max(0, b_brut / t)
-    var c = max(0, c_brut / t)
-    
-    var dict = {}
-    dict[0] = 1 - b - c  # gros tas
-    dict[1] = b  # soigneur de mur
-    dict[2] = c  # soigneur general
-    dict[3] = 0  # soigneur d'enzyme
-        
-    get_node("../../enzymator").set_prod(dict) #change rate of production too
-    
-    get_node("../..").wall_repair_rate = b_brut
-    get_node("../..").dna_repair_rate = a
-    get_node("../..").enzymes = c_brut
+	set_continous_repair(a)
+	
+	var t = 5 + max(0, b_brut) + max(0, c_brut)
+	var b = max(0, b_brut / t)
+	var c = max(0, c_brut / t)
+	
+	var dict = {}
+	dict[0] = 1 - b - c  # gros tas
+	dict[1] = b  # soigneur de mur
+	dict[2] = c  # soigneur general
+	dict[3] = 0  # soigneur d'enzyme
+		
+	get_node("../../enzymator").set_prod(dict) #change rate of production too
+	
+	get_node("../..").wall_repair_rate = b_brut
+	get_node("../..").dna_repair_rate = a
+	get_node("../..").enzymes = c_brut
 
 func set_continous_repair(a):
 	continuous_repair = a
