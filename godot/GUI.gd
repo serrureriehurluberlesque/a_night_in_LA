@@ -35,10 +35,10 @@ func adjust_sliders() :
 	get_node("Slider_DNA").set_ticks(dna_repair_rate)
 	get_node("Slider_enzymes").set_ticks(enzymes_rate)
 	
-	get_node("Apoptosis_level").set_ticks(apoptosis)
-	get_node("Wall_damage_level").set_ticks(wall_damage_level)	
-	get_node("Stress_level").set_ticks(stress_level)
-	get_node("Apoptosis_level").set_ticks(dna_damage_level)
+	get_node("Apoptosis_level").set_percent_visible(apoptosis)
+	get_node("Wall_damage_level").set_percent_visible(wall_damage_level)	
+	get_node("Stress_level").set_percent_visible(stress_level)
+	get_node("Apoptosis_level").set_percent_visible(dna_damage_level)
 	
 func check_text() :
 	pass

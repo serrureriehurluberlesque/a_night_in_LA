@@ -49,14 +49,14 @@ func _process(delta):
 	time_since_beg += delta
 	
 func emit_particule(particular_type, packed_particule):
-    var x = rand_range(800, 1500)
-    var a = rand_range(-PI, PI)
-    var s = rand_range(100, 120)
+	var x = rand_range(800, 1500)
+	var a = rand_range(-PI, PI)
+	var s = rand_range(100, 120)
 	
-    for child in particules_node_base.get_children():
-        if "Cellule" in child.name:
-            var particule = packed_particule.instance()
-            particule.set_global_position(Vector2(0.0, x).rotated(a))
-            particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(a))
-            particule.set_global_rotation(a)
-            child.add_child(particule)
+	for child in particules_node_base.get_children():
+		if "Cellule" in child.name:
+			var particule = packed_particule.instance()
+			particule.set_global_position(Vector2(0.0, x).rotated(a))
+			particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(a))
+			particule.set_global_rotation(a)
+			child.add_child(particule)

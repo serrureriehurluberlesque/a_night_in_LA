@@ -49,17 +49,17 @@ func get_dna_damage() :
 
 func calculate_dna_damage() :
 	var tot_hp = 0
-	for child in get_node("DNAs").get_children() :
+	for child in get_node("Noyau/DNAs").get_children() :
 		tot_hp += child.hp
 	
 	return tot_hp / 400
 
 func calculate_wall_damage() :
 	var tot_hp = 0
-	for child in get_node("Parois").get_children() :
+	for child in get_node("parois").get_children() :
 		tot_hp += child.hp
 	
-	return tot_hp / (100 * len(get_node("Parois").get_children()))
+	return tot_hp / (100 * len(get_node("parois").get_children()))
 	
 func calculate_fat_level() :
 	var tot_fat = 0
