@@ -21,17 +21,18 @@ font_data = SubResource( 3 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "Scrolling_text"
+length = 100.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:rect_position")
+tracks/0/path = NodePath("RichTextLabel:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 60.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -100 ), Vector2( 0, -100 ) ]
+"values": [ Vector2( 24, 650 ), Vector2( 24, 100 ) ]
 }
 
 [node name="lvl" type="Node2D"]
@@ -39,10 +40,7 @@ position = Vector2( -34, -14 )
 script = ExtResource( 2 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
-position = Vector2( -423.191, 5.41232 )
-
-[node name="Cellule2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 503.261, 30.5876 )
+position = Vector2( 109.951, -41.7503 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 41.0701, -89.254 )
@@ -50,9 +48,9 @@ current = true
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="GUI" type="ReferenceRect" parent="."]
-margin_left = -976.0
+margin_left = -861.067
 margin_top = -703.0
-margin_right = 964.0
+margin_right = 1078.93
 margin_bottom = -382.0
 rect_pivot_offset = Vector2( 1405.43, 63 )
 script = ExtResource( 3 )
@@ -61,9 +59,9 @@ __meta__ = {
 }
 
 [node name="Slider_wall" type="VSlider" parent="GUI"]
-margin_left = 160.0
+margin_left = 241.817
 margin_top = 72.0
-margin_right = 403.0
+margin_right = 484.817
 margin_bottom = 294.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,24 +85,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="GUI/Slider_DNA"]
-position = Vector2( -202.515, -20.9211 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+[node name="Sprite2" type="Sprite" parent="GUI/Slider_DNA"]
+modulate = Color( 0.996078, 1, 0.337255, 1 )
+position = Vector2( 119.013, -10.8138 )
+texture = ExtResource( 6 )
 
 [node name="Slider_enzymes" type="VSlider" parent="GUI"]
-margin_left = 483.489
-margin_top = 70.2419
-margin_right = 726.489
-margin_bottom = 292.242
+margin_left = 518.064
+margin_top = 66.1039
+margin_right = 761.064
+margin_bottom = 288.104
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="GUI/Slider_enzymes"]
-modulate = Color( 0.996078, 1, 0.337255, 1 )
-position = Vector2( 442.501, -7.29761 )
-texture = ExtResource( 6 )
+position = Vector2( 120.973, -17.4048 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 
 [node name="Infos" type="RichTextLabel" parent="GUI"]
 margin_left = 1662.76
@@ -168,11 +166,21 @@ __meta__ = {
 }
 
 [node name="Histoire" type="ReferenceRect" parent="."]
-margin_left = -1030.0
-margin_top = -373.0
-margin_right = -769.0
-margin_bottom = 420.0
+margin_left = -642.0
+margin_top = -399.0
+margin_right = -340.0
+margin_bottom = 271.0
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fond_noir" type="ColorRect" parent="Histoire"]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 305.0
+margin_bottom = 670.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -290,6 +298,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
+autoplay = "Scrolling_text"
 method_call_mode = 1
 anims/Scrolling_text = SubResource( 5 )
 
