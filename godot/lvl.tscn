@@ -86,6 +86,7 @@ tracks/0/keys = {
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
+actual_level = 3
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
 position = Vector2( 92.3283, 18.6705 )
@@ -321,9 +322,9 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
 margin_left = 24.0
-margin_top = -683.849
+margin_top = 650.0
 margin_right = 451.0
-margin_bottom = 13631.2
+margin_bottom = 14965.0
 rect_scale = Vector2( 0.96, 1 )
 custom_fonts/bold_italics_font = SubResource( 10 )
 custom_fonts/italics_font = SubResource( 12 )

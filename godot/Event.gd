@@ -10,6 +10,8 @@ var oh_rate
 var fat_rate
 
 export var time = 60.0
+export var time_chill = 0.0
+export var time_absolu = 60.0
 export var text = "And the next level"
 
 export var particules_path = ".."
