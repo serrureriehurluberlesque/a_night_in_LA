@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://sprites/text/wall.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Good guys/0.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Good guys/2.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Background.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -87,6 +88,12 @@ tracks/0/keys = {
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
 actual_level = 3
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 44.8042, -74.0246 )
+scale = Vector2( 1.48, 1.28 )
+z_index = -10
+texture = ExtResource( 15 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
 position = Vector2( 92.3283, 18.6705 )
@@ -321,6 +328,7 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
+visible = false
 margin_left = 24.0
 margin_top = 650.0
 margin_right = 451.0
@@ -493,6 +501,7 @@ __meta__ = {
 }
 
 [node name="cache_texte2" type="ColorRect" parent="Histoire"]
+visible = false
 margin_left = 4.0
 margin_top = -1346.0
 margin_right = 455.0
@@ -513,6 +522,7 @@ __meta__ = {
 }
 
 [node name="bord beige" type="ColorRect" parent="Histoire"]
+visible = false
 margin_left = 23.0
 margin_top = 655.0
 margin_right = 440.0
@@ -534,6 +544,7 @@ __meta__ = {
 }
 
 [node name="bord beige2" type="ColorRect" parent="Histoire"]
+visible = false
 margin_left = 444.0
 margin_top = 47.0
 margin_right = 868.0
