@@ -61,7 +61,7 @@ size = 18
 font_data = SubResource( 15 )
 
 [sub_resource type="Animation" id=17]
-length = 50.0
+length = 50000.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("RichTextLabel:rect_position")
@@ -70,10 +70,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 31.1 ),
+"times": PoolRealArray( 0, 352 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 24, 650 ), Vector2( 24, 100 ) ]
+"values": [ Vector2( 24, 650 ), Vector2( 24, -5000 ) ]
 }
 
 [node name="lvl" type="Node2D"]
@@ -280,9 +280,9 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
 margin_left = 24.0
-margin_top = 650.0
+margin_top = -683.849
 margin_right = 451.0
-margin_bottom = 14965.0
+margin_bottom = 13631.2
 rect_scale = Vector2( 0.96, 1 )
 custom_fonts/bold_italics_font = SubResource( 10 )
 custom_fonts/italics_font = SubResource( 12 )
@@ -303,7 +303,6 @@ And he would live a lot longer, if only he continued on that track...
 
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
-
 
 
 
@@ -366,7 +365,6 @@ And he would live a lot longer, if only he continued on that track...
 
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
-
 
 
 
