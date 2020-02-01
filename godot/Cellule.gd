@@ -62,8 +62,10 @@ func calculate_wall_damage() :
 	return tot_hp / (100 * len(get_node("parois").get_children()))
 	
 func calculate_fat_level() :
-	var tot_fat = 0
-	pass
+	return get_node("particulator").get_part_number(1)
+	
+func calculate_OH_level() :
+	return get_node("particulator").get_part_number(2)
 		
 func get_wall_damage() :
 	return wall_damage
@@ -81,15 +83,14 @@ func _physics_process(delta):
 	wall_damage = calculate_wall_damage()
 	
 	DNA_damage = calculate_dna_damage()
-
-	stress_level += fat_level + 2*OH_level + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
-
+	
 	#simple
-	fat_level -= enzymes / 5
-	OH_level -= enzymes / 10
-	cocaine_level -= enzymes / 2
-	cocaethylene_level -= enzymes / 10
+	fat_level = calculate_fat_level()
+	OH_level = calculate_OH_level()
 
+	stress_level = fat_level + 2*OH_level # + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
+
+	
 	enzymes += 2*translation_rate - degradation_rate
 
 	text.text = ""

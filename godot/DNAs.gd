@@ -50,7 +50,8 @@ func increment(i) :
 		stock += r
 
 func set_prod(a, b, c):
-		set_repair(a * 30 * wall_cost * enzymes_cost)
+		var r = 1
+		repair(a * 30 * wall_cost * enzymes_cost)
 		
 		get_node("../../parois").repair(-r * dna_cost * enzymes_cost) #change rate of production of particles
 		get_node("../../enzymator").boost(-r * dna_cost * wall_cost) #change rate of production too
