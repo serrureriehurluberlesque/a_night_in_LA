@@ -15,20 +15,20 @@ var n = 3
 var value = {}
 
 func _ready():
-    for i in range(n):
-        value[i] = 0.0
-    
-    var packed_dna = load("res://DNA.tscn")
-    var da = 2 * PI / dna_number
+	for i in range(n):
+		value[i] = 0.0
 	
-    for i in range(dna_number):
-        var dna = packed_dna.instance()
-        dna.indice = i
-        add_child(dna)
-        dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
-        dna.pin(get_node("../.."))
-    
-    
+	var packed_dna = load("res://DNA.tscn")
+	var da = 2 * PI / dna_number
+	
+	for i in range(dna_number):
+		var dna = packed_dna.instance()
+		dna.indice = i
+		add_child(dna)
+		dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
+		dna.pin(get_node("../.."))
+	
+	
 
 func activate(n): 	#= increment
 	increment(n)
@@ -36,18 +36,19 @@ func activate(n): 	#= increment
 		
 func increment(i) :
 	
-    var r = increment_value
-    for j in range(n):
-        var d 
-        if i == j:
-            d = r
-        else:
-            d = - r / (n - 1)
-        value[j] += d
+	var r = increment_value
+	for j in range(n):
+		var d 
+		if i == j:
+			d = r
+		else:
+			d = - r / (n - 1)
+		value[j] += d
 
-    set_prod(value[0], value[1], value[2]) 
+	set_prod(value[0], value[1], value[2]) 
 
 func set_prod(a, b_brut, c_brut):
+
     set_continous_repair(a)
     
     var t = 5 + max(0, b_brut) + max(0, c_brut)
@@ -67,18 +68,18 @@ func set_prod(a, b_brut, c_brut):
     get_node("../..").enzymes = c_brut
 
 func set_continous_repair(a):
-    continuous_repair = a
-    
+	continuous_repair = a
+	
 func repair(f):
 	for child in get_children():
 		child.repair(f)
 		
 func _physics_process(delta):
-    if continuous_repair > 0.0:
-        repair(delta * continuous_repair)
+	if continuous_repair > 0.0:
+		repair(delta * continuous_repair)
 	# action(delta, activated_dna)
-    
-    
+	
+	
 	
 func action(delta, i):
 	stock *= 0.97

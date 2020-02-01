@@ -56,7 +56,7 @@ func calculate_dna_damage() :
 		max_hp += child.max_hp
 	
 	return 100*(1 - (tot_hp / max_hp))
-
+	
 func calculate_wall_damage() :
 	var tot_hp = 0
 	var max_hp = 0
