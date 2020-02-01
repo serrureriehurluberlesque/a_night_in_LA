@@ -34,5 +34,5 @@ func _physics_process(delta):
     
     if not pressing:
         var c = get_modulate()
-        c.a = max(0.0, c.a - delta / 5.0)
+        c.a = max(0.0, c.a - delta / 2.0)
         set_modulate(c)
