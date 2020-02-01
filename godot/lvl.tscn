@@ -17,18 +17,19 @@ font_path = "res://Gecko Lunch.ttf"
 size = 33
 font_data = SubResource( 5 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "scrolling text"
-tracks/0/type = "method"
-tracks/0/path = NodePath("RichTextLabel")
+[sub_resource type="Animation" id=6]
+resource_name = "Scrolling_text"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -100 ), Vector2( 0, -100 ) ]
 }
 
 [node name="lvl" type="Node2D"]
@@ -178,15 +179,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
-autoplay = "scrolling text"
 method_call_mode = 1
-"anims/scrolling text" = SubResource( 3 )
+anims/Scrolling_text = SubResource( 6 )
 
 [node name="Label" type="Label" parent="Histoire"]
 visible = false
-margin_top = -0.698334
+margin_top = -100.0
 margin_right = 246.0
-margin_bottom = 308.302
+margin_bottom = 209.0
 custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
