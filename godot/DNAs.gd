@@ -18,17 +18,17 @@ func _ready():
 	for i in range(n_adn):
 		value[i] = 5.0
 	
-	var packed_dna = load("res://DNA.tscn")
-	var da = 2 * PI / dna_number
+    var packed_dna = load("res://DNA.tscn")
+    var da = 2 * PI / dna_number
 	
-	for i in range(dna_number):
-		var dna = packed_dna.instance()
-		dna.indice = i
-		variate_sprite(dna.get_node("Sprite"), "res://sprites/ADN/ADN_" + str(i%2 + 1) + ".png")
-		variate_sprite(dna.get_node("lettre"), "res://sprites/Good guys/" + str(i) + ".png")
-		add_child(dna)
-		dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
-		dna.pin(get_node("../.."))
+    for i in range(dna_number):
+        var dna = packed_dna.instance()
+        dna.indice = i
+        variate_sprite(dna.get_node("Sprite"), "res://sprites/ADN/ADN_" + str(i%2 + 1) + ".png")
+        variate_sprite(dna.get_node("lettre"), "res://sprites/Good guys/" + str(i) + ".png")
+        add_child(dna)
+        dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
+        dna.pin(get_node("../.."))
 	
 func variate_sprite(node, ressource):
 	var img = Image.new()
@@ -42,34 +42,37 @@ func activate(n): 	#= increment
 	activated_dna = n
 		
 func increment(i) :
-	
-	var r = increment_value
-	for j in range(n_adn):
-		var d 
-		if i == j:
-			d = r
-		else:
-			d = - r / (n_adn - 1)
-		value[j] += d
+    var at = 0
+    for j in range(n_adn):
+        at += abs(value[j])
+    
+    var r = at / 20.0 + 0.5
+    for j in range(n_adn):
+        var d
+        if i == j:
+            d = r
+        else:
+            d = - r / (n_adn - 1)
+        value[j] += d
 
-	set_prod(value) 
+    set_prod(value) 
 
 func set_prod(dict):
-	var total = 0
-	for i in range(n_adn):
-		total += dict[i]
-	
-	var dict_clean = {}
-	for i in range(n_adn):
-		dict_clean[i] = dict[i] / total
-	
-	set_continous_repair(dict_clean[0])
-	
-	get_node("../..").dna_repair_rate = dict_clean[0]
-	get_node("../..").wall_repair_rate = dict_clean[2]
-	get_node("../..").enzymes = dict_clean[1]
-	
-	get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2]})
+    var total = 0
+    for i in range(n_adn):
+        total += abs(dict[i])
+    
+    var dict_clean = {}
+    for i in range(n_adn):
+        dict_clean[i] = dict[i] / total
+    
+    set_continous_repair(dict_clean[0])
+    
+    get_node("../..").dna_repair_rate = dict_clean[0]
+    get_node("../..").wall_repair_rate = dict_clean[2]
+    get_node("../..").enzymes = dict_clean[1]
+    
+    get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2]})
 
 func set_continous_repair(a):
 	continuous_repair = a
@@ -82,7 +85,6 @@ func _physics_process(delta):
 	if continuous_repair > 0.0:
 		repair(delta * continuous_repair)
 	# action(delta, activated_dna)
-	
 	
 	
 func action(delta, i):

@@ -17,13 +17,22 @@ func _input(event):
                 set_global_position(g_pos)
                 pressing = true
                 pos = g_pos
-    elif pressing:
-        pressing = false
-        enzymator.set_goal(pos, r)
-        r = 30.0
 
 func _physics_process(delta):
     if pressing:
-        r += 100 * delta
+        r = min(500.0, r + 200 * delta)
         var f = r / 300.0
         scale = Vector2(f, f)
+        var c = get_modulate()
+        c.a = 1.0
+        set_modulate(c)
+        
+    if Input.is_action_just_released("click"):
+        pressing = false
+        enzymator.set_goal(pos, r)
+        r = 30.0
+    
+    if not pressing:
+        var c = get_modulate()
+        c.a = max(0.0, c.a - delta / 5.0)
+        set_modulate(c)
