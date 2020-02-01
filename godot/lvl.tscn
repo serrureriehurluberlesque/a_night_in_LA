@@ -1,49 +1,66 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
 [ext_resource path="res://GUI.gd" type="Script" id=3]
 [ext_resource path="res://sprites/Paroi.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://sprites/Lysosome.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Text_box.png" type="Texture" id=7]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
+[ext_resource path="res://sprites/Jauges/Jauges_box_H1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Jauges/Jauges_box_H2.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.894118, 0.67451, 0.92549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.453125, 0.935913, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.847059, 0.694118, 0.192157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.819608, 0.835294, 0.356863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.984314, 0.905882, 0.482353, 1 )
+
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://teen/teen bd it.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=10]
 size = 18
-font_data = SubResource( 4 )
+font_data = SubResource( 9 )
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=11]
 font_path = "res://teen/teen it.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=12]
 size = 18
-font_data = SubResource( 6 )
+font_data = SubResource( 11 )
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=13]
 font_path = "res://teen/teen bd.ttf"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=14]
 size = 18
-font_data = SubResource( 8 )
+font_data = SubResource( 13 )
 
-[sub_resource type="DynamicFontData" id=10]
+[sub_resource type="DynamicFontData" id=15]
 font_path = "res://teen/teen.ttf"
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=16]
 size = 18
-font_data = SubResource( 10 )
+font_data = SubResource( 15 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=17]
 length = 50.0
 loop = true
 tracks/0/type = "value"
@@ -71,113 +88,169 @@ position = Vector2( 41.0701, -89.254 )
 current = true
 
 [node name="GUI" type="ReferenceRect" parent="."]
-margin_left = -861.067
-margin_top = -703.0
-margin_right = 1078.93
-margin_bottom = -382.0
+margin_left = -882.012
+margin_top = -680.21
+margin_right = 1057.98
+margin_bottom = -359.21
 rect_pivot_offset = Vector2( 1405.43, 63 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Slider_wall" type="VSlider" parent="GUI"]
-margin_left = 241.817
-margin_top = 72.0
-margin_right = 484.817
-margin_bottom = 294.0
+[node name="Slider_wall" type="ProgressBar" parent="GUI"]
+margin_left = 750.739
+margin_top = 293.493
+margin_right = 937.739
+margin_bottom = 321.493
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bord" type="Sprite" parent="GUI/Slider_wall"]
+position = Vector2( 92.4473, 12.3711 )
+scale = Vector2( 0.624779, 0.875229 )
+texture = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="GUI/Slider_wall"]
-position = Vector2( 109.798, -15.3057 )
-texture = ExtResource( 4 )
-
-[node name="Sprite2" type="Sprite" parent="GUI/Slider_wall"]
-modulate = Color( 0.109804, 0.858824, 0.0823529, 1 )
-position = Vector2( 139.843, -13.3483 )
-texture = ExtResource( 6 )
-
-[node name="Slider_DNA" type="VSlider" parent="GUI"]
-margin_left = 806.977
-margin_top = 73.7581
-margin_right = 1049.98
-margin_bottom = 295.758
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite2" type="Sprite" parent="GUI/Slider_DNA"]
-modulate = Color( 0.996078, 1, 0.337255, 1 )
-position = Vector2( 119.013, -10.8138 )
-texture = ExtResource( 6 )
-
-[node name="Slider_enzymes" type="VSlider" parent="GUI"]
-margin_left = 518.064
-margin_top = 66.1039
-margin_right = 761.064
-margin_bottom = 288.104
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="GUI/Slider_enzymes"]
-position = Vector2( 120.973, -17.4048 )
+position = Vector2( 211.32, 12.5745 )
+rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
-[node name="Stress_level" type="ProgressBar" parent="GUI"]
-margin_left = 1111.51
-margin_top = 189.833
-margin_right = 1533.51
-margin_bottom = 222.833
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+[node name="Slider_DNA" type="ProgressBar" parent="GUI"]
+margin_left = 628.113
+margin_top = 296.082
+margin_right = 815.113
+margin_bottom = 325.082
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bord" type="Sprite" parent="GUI/Slider_DNA"]
+position = Vector2( 92.4473, 12.3711 )
+scale = Vector2( 0.624779, 0.875229 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="GUI/Slider_DNA"]
+position = Vector2( 214.837, 16.0906 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Slider_enzymes" type="ProgressBar" parent="GUI"]
+margin_left = 874.086
+margin_top = 292.066
+margin_right = 1061.09
+margin_bottom = 320.066
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord" type="Sprite" parent="GUI/Slider_enzymes"]
+position = Vector2( 92.4473, 12.3711 )
+scale = Vector2( 0.624779, 0.875229 )
+texture = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="GUI/Slider_enzymes"]
+position = Vector2( 213.079, 12.5743 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 
 [node name="DNA_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 1111.51
-margin_top = 80.63
-margin_right = 1533.51
-margin_bottom = 113.63
+margin_left = 1165.0
+margin_top = 108.0
+margin_right = 1459.0
+margin_bottom = 141.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord2" type="Sprite" parent="GUI/DNA_damage_level"]
+position = Vector2( 145.746, 15.854 )
+scale = Vector2( 0.993196, 1.05719 )
+texture = ExtResource( 8 )
+
+[node name="Stress_level" type="ProgressBar" parent="GUI"]
+margin_left = 1165.0
+margin_top = 207.0
+margin_right = 1460.0
+margin_bottom = 245.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bord" type="Sprite" parent="GUI/Stress_level"]
+position = Vector2( 147.4, 17.3568 )
+scale = Vector2( 0.993196, 1.05719 )
+texture = ExtResource( 8 )
 
 [node name="Wall_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 1116.02
-margin_top = 130.268
-margin_right = 1538.02
-margin_bottom = 163.268
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+margin_left = 1164.0
+margin_top = 158.415
+margin_right = 1460.0
+margin_bottom = 194.415
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bord3" type="Sprite" parent="GUI/Wall_damage_level"]
+position = Vector2( 147.702, 15.2833 )
+scale = Vector2( 0.993196, 1.05719 )
+texture = ExtResource( 8 )
+
 [node name="Apoptosis_level" type="ProgressBar" parent="GUI"]
-margin_left = 1072.0
-margin_top = 246.0
-margin_right = 1583.0
-margin_bottom = 302.0
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 3 )
+margin_left = 1060.85
+margin_top = 270.141
+margin_right = 1561.85
+margin_bottom = 307.141
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bord" type="Sprite" parent="GUI/Apoptosis_level"]
+position = Vector2( 248.854, 15.7442 )
+scale = Vector2( 1.29918, 0.962449 )
+texture = ExtResource( 10 )
 
 [node name="Histoire" type="ReferenceRect" parent="."]
 margin_left = -906.52
@@ -211,10 +284,10 @@ margin_top = 650.0
 margin_right = 451.0
 margin_bottom = 14965.0
 rect_scale = Vector2( 0.96, 1 )
-custom_fonts/bold_italics_font = SubResource( 5 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 9 )
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/bold_italics_font = SubResource( 10 )
+custom_fonts/italics_font = SubResource( 12 )
+custom_fonts/bold_font = SubResource( 14 )
+custom_fonts/normal_font = SubResource( 16 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[b]
@@ -352,7 +425,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
 autoplay = "Scrolling_text"
 method_call_mode = 1
-anims/Scrolling_text = SubResource( 12 )
+anims/Scrolling_text = SubResource( 17 )
 
 [node name="cache_texte" type="ColorRect" parent="Histoire"]
 visible = false

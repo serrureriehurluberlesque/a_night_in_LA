@@ -15,8 +15,8 @@ var n_adn = 4
 var value = {}
 
 func _ready():
-    for i in range(n_adn):
-        value[i] = 5.0
+	for i in range(n_adn):
+		value[i] = 5.0
 	
 	var packed_dna = load("res://DNA.tscn")
 	var da = 2 * PI / dna_number
@@ -55,21 +55,21 @@ func increment(i) :
 	set_prod(value) 
 
 func set_prod(dict):
-    var total = 0
-    for i in range(n_adn):
-        total += dict[i]
-    
-    var dict_clean = {}
-    for i in range(n_adn):
-        dict_clean[i] = dict[i] / total
-    
-    set_continous_repair(dict_clean[0])
-    
-    get_node("../..").dna_repair_rate = dict_clean[0]
-    get_node("../..").wall_repair_rate = dict_clean[2]
-    get_node("../..").enzymes = dict_clean[1]
-    
-    get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2]})
+	var total = 0
+	for i in range(n_adn):
+		total += dict[i]
+	
+	var dict_clean = {}
+	for i in range(n_adn):
+		dict_clean[i] = dict[i] / total
+	
+	set_continous_repair(dict_clean[0])
+	
+	get_node("../..").dna_repair_rate = dict_clean[0]
+	get_node("../..").wall_repair_rate = dict_clean[2]
+	get_node("../..").enzymes = dict_clean[1]
+	
+	get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2]})
 
 func set_continous_repair(a):
 	continuous_repair = a
