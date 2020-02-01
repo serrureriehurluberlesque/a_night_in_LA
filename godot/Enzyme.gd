@@ -18,11 +18,11 @@ func _physics_process(delta):
         reset_target()
         target = get_target()
         target = get_node("..").clamped(target)
-	
+    
     var d = target - get_global_position()
     var i = 20 * max_speed / (max_speed + (get_linear_velocity()).length())
     apply_impulse(Vector2(), d.normalized() * i * delta)
-	
+    
     
     for body in get_node("Area2D").get_overlapping_bodies():
         if (body.get_global_position() - get_global_position()).length() < repair_range:

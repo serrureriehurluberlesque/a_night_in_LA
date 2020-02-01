@@ -1,13 +1,19 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
 [ext_resource path="res://GUI.gd" type="Script" id=3]
 [ext_resource path="res://sprites/Paroi.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Good guys/1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/text/apoptosis.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Text_box.png" type="Texture" id=7]
 [ext_resource path="res://sprites/Jauges/Jauges_box_H1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/text/stress.png" type="Texture" id=9]
 [ext_resource path="res://sprites/Jauges/Jauges_box_H2.png" type="Texture" id=10]
+[ext_resource path="res://sprites/text/damage.png" type="Texture" id=11]
+[ext_resource path="res://sprites/text/wall.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Good guys/0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Good guys/2.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -28,6 +34,7 @@ bg_color = Color( 0.847059, 0.694118, 0.192157, 1 )
 bg_color = Color( 0.819608, 0.835294, 0.356863, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.913725, 0.0666667, 0.0666667, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.984314, 0.905882, 0.482353, 1 )
@@ -99,10 +106,10 @@ __meta__ = {
 }
 
 [node name="Slider_wall" type="ProgressBar" parent="GUI"]
-margin_left = 750.739
-margin_top = 293.493
-margin_right = 937.739
-margin_bottom = 321.493
+margin_left = 1621.65
+margin_top = 1073.82
+margin_right = 1808.65
+margin_bottom = 1101.82
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
@@ -119,16 +126,17 @@ scale = Vector2( 0.624779, 0.875229 )
 texture = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="GUI/Slider_wall"]
-position = Vector2( 211.32, 12.5745 )
+modulate = Color( 0.368627, 0.996078, 0.894118, 1 )
+position = Vector2( 223.32, 14.5744 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 14 )
 
 [node name="Slider_DNA" type="ProgressBar" parent="GUI"]
-margin_left = 628.113
-margin_top = 296.082
-margin_right = 815.113
-margin_bottom = 325.082
+margin_left = 1508.22
+margin_top = 1072.05
+margin_right = 1695.22
+margin_bottom = 1101.05
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
@@ -145,16 +153,17 @@ scale = Vector2( 0.624779, 0.875229 )
 texture = ExtResource( 8 )
 
 [node name="Sprite2" type="Sprite" parent="GUI/Slider_DNA"]
-position = Vector2( 214.837, 16.0906 )
+modulate = Color( 0.341176, 1, 0.968627, 1 )
+position = Vector2( 227.896, 13.8645 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 13 )
 
 [node name="Slider_enzymes" type="ProgressBar" parent="GUI"]
-margin_left = 874.086
-margin_top = 292.066
-margin_right = 1061.09
-margin_bottom = 320.066
+margin_left = 1730.22
+margin_top = 1074.84
+margin_right = 1917.22
+margin_bottom = 1102.84
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
@@ -171,16 +180,17 @@ scale = Vector2( 0.624779, 0.875229 )
 texture = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="GUI/Slider_enzymes"]
-position = Vector2( 213.079, 12.5743 )
+modulate = Color( 0.34902, 1, 0.878431, 1 )
+position = Vector2( 228.079, 16.5743 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="DNA_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 1165.0
-margin_top = 108.0
-margin_right = 1459.0
-margin_bottom = 141.0
+margin_left = 503.0
+margin_top = 254.0
+margin_right = 797.0
+margin_bottom = 291.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -191,15 +201,20 @@ __meta__ = {
 }
 
 [node name="bord2" type="Sprite" parent="GUI/DNA_damage_level"]
-position = Vector2( 145.746, 15.854 )
+position = Vector2( 145.847, 15.8618 )
 scale = Vector2( 0.993196, 1.05719 )
 texture = ExtResource( 8 )
 
+[node name="text3" type="Sprite" parent="GUI/DNA_damage_level"]
+position = Vector2( 149.247, -29.5219 )
+scale = Vector2( 0.32551, 0.309822 )
+texture = ExtResource( 11 )
+
 [node name="Stress_level" type="ProgressBar" parent="GUI"]
-margin_left = 1165.0
-margin_top = 207.0
-margin_right = 1460.0
-margin_bottom = 245.0
+margin_left = 894.075
+margin_top = 253.293
+margin_right = 1189.07
+margin_bottom = 291.293
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -214,11 +229,16 @@ position = Vector2( 147.4, 17.3568 )
 scale = Vector2( 0.993196, 1.05719 )
 texture = ExtResource( 8 )
 
+[node name="text2" type="Sprite" parent="GUI/Stress_level"]
+position = Vector2( 144.435, -25.7338 )
+scale = Vector2( 0.32551, 0.309822 )
+texture = ExtResource( 9 )
+
 [node name="Wall_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 1164.0
-margin_top = 158.415
-margin_right = 1460.0
-margin_bottom = 194.415
+margin_left = 1285.58
+margin_top = 256.311
+margin_right = 1581.58
+margin_bottom = 292.311
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -233,16 +253,37 @@ position = Vector2( 147.702, 15.2833 )
 scale = Vector2( 0.993196, 1.05719 )
 texture = ExtResource( 8 )
 
+[node name="text4" type="Sprite" parent="GUI/Wall_damage_level"]
+position = Vector2( 159.04, -26.3916 )
+scale = Vector2( 0.32551, 0.309822 )
+texture = ExtResource( 12 )
+
+[node name="apoptosis" type="Sprite" parent="GUI"]
+position = Vector2( 1043.02, 119.035 )
+scale = Vector2( 0.466464, 0.49496 )
+texture = ExtResource( 6 )
+
 [node name="Apoptosis_level" type="ProgressBar" parent="GUI"]
-margin_left = 1060.85
-margin_top = 270.141
-margin_right = 1561.85
-margin_bottom = 307.141
+margin_left = 790.382
+margin_top = 155.081
+margin_right = 1291.38
+margin_bottom = 192.081
 custom_styles/fg = SubResource( 7 )
 custom_styles/bg = SubResource( 8 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fond_noir2" type="ColorRect" parent="GUI/Apoptosis_level"]
+visible = false
+margin_left = 374.0
+margin_top = -1.0
+margin_right = 381.0
+margin_bottom = 36.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -312,22 +353,22 @@ I heard J*** just broke up with his longterm girlfriend, so he might be struggli
 It seems like J*** just got off the plane and is heading for the bar. He orders a bloody mary. That's Lucy's first job ! 
 Try to help her as best as you can !
 
+You can [i][color=red] right-click to influence the enzymes' path [/color][/i] and hopefully bring em closer to their metabolites.
+
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
 
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
-[i]< Type A to produce more metabolic enzymes >[/i]
-
-Oh, by the way you can left-click to influence the enzymes' path and hopefully bring em closer to their metabolites.
+[i][color=red]< Type A to produce more metabolic enzymes >[/color][/i]
 
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
 
 Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
-
-< Type S to produce more healing enzymes >
-< Type D to regenerate damaged DNA >
-
+[color=red][i]
+< Type W to produce more healing enzymes >
+< Type S to regenerate damaged DNA >
+[/i][/color]
 As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
 
 Talking about energy, it seems like J*** isn't heading for the hotel right now, he stopped at a Burger King, oh wow...
@@ -338,13 +379,20 @@ You should know that triglycerides conglomerate in lipid droplets that also take
 
 Thankfully, lipoproteins do not easily cross the cellular membrane. However, they will eventually and you have to be ready to get rid of them !
 
-That's a lot of fat, come on J***. You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
+That's a lot of fat, come on J***.
+You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
 There's only so much we can take !
-Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
-J*** ? Where are you... oh, the bar... okay, having a bit of trouble digesting eh ?
-A double gin and tonic alright, here it comes... and a whiskey ? and another one ? Oh jeez...
 
-Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis - which is cell death.
+
+Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
+J*** ?
+Where are you... oh, the bar...
+okay, having a bit of trouble digesting eh ?
+A double gin and tonic alright, here it comes...
+and a whiskey ?
+tequila ? Oh jeez...
+
+Maybe I should warn you, Lucy cannot take damage forever. [i][color=red]Passed a certain threshold, she will go into apoptosis [/color][/i] - which is cell death.
 You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
 
 >next>>>
@@ -374,21 +422,21 @@ I heard J*** just broke up with his longterm girlfriend, so he might be struggli
 It seems like J*** just got off the plane and is heading for the bar. He orders a bloody mary. That's Lucy's first job ! 
 Try to help her as best as you can !
 
+You can  right-click to influence the enzymes' path  and hopefully bring em closer to their metabolites.
+
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
 
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
 < Type A to produce more metabolic enzymes >
 
-Oh, by the way you can left-click to influence the enzymes' path and hopefully bring em closer to their metabolites.
-
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
 
 Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
 
-< Type S to produce more healing enzymes >
-< Type D to regenerate damaged DNA >
+< Type W to produce more healing enzymes >
+< Type S to regenerate damaged DNA >
 
 As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
 
@@ -400,13 +448,20 @@ You should know that triglycerides conglomerate in lipid droplets that also take
 
 Thankfully, lipoproteins do not easily cross the cellular membrane. However, they will eventually and you have to be ready to get rid of them !
 
-That's a lot of fat, come on J***. You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
+That's a lot of fat, come on J***.
+You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
 There's only so much we can take !
-Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
-J*** ? Where are you... oh, the bar... okay, having a bit of trouble digesting eh ?
-A double gin and tonic alright, here it comes... and a whiskey ? and another one ? Oh jeez...
 
-Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis - which is cell death.
+
+Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
+J*** ?
+Where are you... oh, the bar...
+okay, having a bit of trouble digesting eh ?
+A double gin and tonic alright, here it comes...
+and a whiskey ?
+tequila ? Oh jeez...
+
+Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis  - which is cell death.
 You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
 
 >next>>>
@@ -436,6 +491,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="cache_texte2" type="ColorRect" parent="Histoire"]
+margin_left = 4.0
+margin_top = -1346.0
+margin_right = 455.0
+margin_bottom = 26.0
+color = Color( 0.988235, 0.980392, 0.980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="bord brun" type="ColorRect" parent="Histoire"]
 margin_left = 11.0
 margin_top = 660.0
@@ -451,6 +516,28 @@ margin_left = 23.0
 margin_top = 655.0
 margin_right = 440.0
 margin_bottom = 660.0
+color = Color( 0.937255, 0.85098, 0.72549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord brun2" type="ColorRect" parent="Histoire"]
+margin_left = 446.0
+margin_top = 42.0
+margin_right = 886.0
+margin_bottom = 57.0
+rect_rotation = 180.0
+color = Color( 0.482353, 0.329412, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord beige2" type="ColorRect" parent="Histoire"]
+margin_left = 444.0
+margin_top = 47.0
+margin_right = 868.0
+margin_bottom = 52.0
+rect_rotation = 180.0
 color = Color( 0.937255, 0.85098, 0.72549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
