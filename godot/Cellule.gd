@@ -49,17 +49,23 @@ func get_dna_damage() :
 
 func calculate_dna_damage() :
 	var tot_hp = 0
+	var max_hp = 0
+	
 	for child in get_node("Noyau/DNAs").get_children() :
 		tot_hp += child.hp
+		max_hp += child.max_hp
 	
-	return tot_hp / 400
+	return 100*(1 - (tot_hp / max_hp))
 
 func calculate_wall_damage() :
 	var tot_hp = 0
+	var max_hp = 0
+	
 	for child in get_node("parois").get_children() :
 		tot_hp += child.hp
+		max_hp += child.max_hp
 	
-	return tot_hp / (100 * len(get_node("parois").get_children()))
+	return 100*(1 - (tot_hp / max_hp))
 	
 func calculate_fat_level() :
 	return get_node("particulator").get_part_number(1)
@@ -78,7 +84,7 @@ func _physics_process(delta):
 	#DNA_repair_rate = getNode(DNApath).is_activated()
 	#translation_rate = getNode(DNApath).is_activated()
 
-	apoptosis = (2*DNA_damage + wall_damage + stress_level) / 300
+	apoptosis = (2*DNA_damage + wall_damage + stress_level)
 
 	wall_damage = calculate_wall_damage()
 	
@@ -89,10 +95,7 @@ func _physics_process(delta):
 	OH_level = calculate_OH_level()
 
 	stress_level = fat_level + 2*OH_level # + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
-
 	
-	enzymes += 2*translation_rate - degradation_rate
-
 	text.text = ""
 	var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzymes"]
 	for stat in stats:
