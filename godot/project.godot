@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Objet",
 "language": "GDScript",
 "path": "res://Objet.gd"
+}, {
+"base": "Objet",
+"class": "Particule",
+"language": "GDScript",
+"path": "res://Particule.gd"
 } ]
 _global_script_class_icons={
-"Objet": ""
+"Objet": "",
+"Particule": ""
 }
 
 [application]

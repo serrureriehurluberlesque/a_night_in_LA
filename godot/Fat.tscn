@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Particule.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fat.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 17.0
+
+[node name="Objet" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+visible = false

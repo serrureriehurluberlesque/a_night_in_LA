@@ -4,9 +4,12 @@
 [ext_resource path="res://lvl.gd" type="Script" id=2]
 
 [node name="lvl" type="Node2D"]
+position = Vector2( -34, -14 )
 script = ExtResource( 2 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
+position = Vector2( 35, 18 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 31, 19 )
 current = true
