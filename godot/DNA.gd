@@ -5,6 +5,8 @@ var indice
 
 onready var dnas = get_node("..")
 
+var mapping = {0: "touchebas", 1: "touchegauche", 2: "touchehaut", 3: "touchedroite"}
+
 func is_activated():
 	return activated
 
@@ -13,11 +15,17 @@ func _ready():
 	pass
 
 func _on_Objet_input_event(_viewport, event, _shape_idx):
-	if event.is_action_pressed("leftmouse"):
-		if event.button_index == BUTTON_LEFT and event.pressed and not dead:
-			dnas.activate(indice)
-			activated = true
+    if event.is_pressed() and not dead:
+        if event.is_action_pressed("leftmouse") and event.button_index == BUTTON_LEFT:
+            dnas.activate(indice)
+            activated = true
 
+func _input(event):
+    if event.is_pressed() and event.is_action(mapping[indice]):
+        dnas.activate(indice)
+        activated = true
+        
+    
 func deactivate():
 	if not dead:
 		activated = false
@@ -50,7 +58,7 @@ func die():
 
 func repair_animate(emit, t):
 	var particle = get_node("Particles2D")
-	var a = floor(t * 100)
+	var a = max(1, floor(t * 100))
 	if particle.amount != a:
 		particle.amount = a
 	

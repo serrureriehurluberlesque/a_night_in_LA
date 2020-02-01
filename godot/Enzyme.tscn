@@ -14,7 +14,7 @@ radius = 25.0
 [node name="Objet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 enzym = true
-degradation_rate = 1.0
+degradation_rate = 0.5
 factor_repair_general = 0.0
 factor_repair_enzyme = 1.0
 max_speed = 25.0
