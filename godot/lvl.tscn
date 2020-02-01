@@ -1,13 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
 [ext_resource path="res://GUI.gd" type="Script" id=3]
+[ext_resource path="res://Histoire.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Gecko Lunch.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 33
+font_data = SubResource( 5 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "scrolling text"
+tracks/0/type = "method"
+tracks/0/path = NodePath("RichTextLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
 
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
@@ -58,15 +80,6 @@ margin_left = 483.489
 margin_top = 70.2419
 margin_right = 726.489
 margin_bottom = 292.242
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Infos" type="RichTextLabel" parent="GUI"]
-margin_left = 1662.76
-margin_top = 3.48383
-margin_right = 1920.76
-margin_bottom = 310.484
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,10 +137,57 @@ __meta__ = {
 }
 
 [node name="Histoire" type="ReferenceRect" parent="."]
-margin_left = -1138.0
+margin_left = -1030.0
 margin_top = -373.0
 margin_right = -769.0
 margin_bottom = 420.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
+margin_left = 21.0
+margin_top = 24.0
+margin_right = 233.0
+margin_bottom = 729.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "This is Lucy.
+Lucy is a human cell, inhabiting J***'s liver.
+She could have led a long and happy life.
+But J*** is going to Las Vegas.
+
+Try to help her as best as you can.
+Lucy's fate will be akin to every cell's in J***'s body. 
+But for now... 
+...we only care about her. "
+text = "This is Lucy.
+Lucy is a human cell, inhabiting J***'s liver.
+She could have led a long and happy life.
+But J*** is going to Las Vegas.
+
+Try to help her as best as you can.
+Lucy's fate will be akin to every cell's in J***'s body. 
+But for now... 
+...we only care about her. "
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
+autoplay = "scrolling text"
+method_call_mode = 1
+"anims/scrolling text" = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Histoire"]
+visible = false
+margin_top = -0.698334
+margin_right = 246.0
+margin_bottom = 308.302
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

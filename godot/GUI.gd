@@ -30,8 +30,6 @@ func adjust_sliders() :
 	var dna_damage_level = get_node("../Cellule").DNA_damage
 	var stress_level = get_node("../Cellule").stress_level
 	
-	print(wall_damage_level)
-	
 	#no idea if this works
 	get_node("Slider_wall").set_ticks(wall_repair_rate)
 	get_node("Slider_DNA").set_ticks(dna_repair_rate)
