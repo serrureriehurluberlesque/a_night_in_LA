@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://sprites/cellule fond.png" type="Texture" id=1]
 [ext_resource path="res://Cellule.gd" type="Script" id=2]
@@ -17,12 +17,17 @@
 [ext_resource path="res://sprites/Peroxysome.png" type="Texture" id=15]
 [ext_resource path="res://sprites/Filament_1.png" type="Texture" id=16]
 [ext_resource path="res://sprites/Microtubule_3.png" type="Texture" id=17]
+[ext_resource path="res://copy_shape.gd" type="Script" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 256.0
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 255.0
+
 [node name="Cellule" type="StaticBody2D"]
 z_index = -1
+input_pickable = true
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 2 )
@@ -62,10 +67,10 @@ script = ExtResource( 6 )
 
 [node name="enzyme_goal" type="Sprite" parent="."]
 modulate = Color( 0.00784314, 0.886275, 0.392157, 1 )
-scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 8 )
 script = ExtResource( 7 )
 
+<<<<<<< HEAD
 [node name="Organelles" type="Node2D" parent="."]
 
 [node name="Microtubules" type="Sprite" parent="Organelles"]
@@ -138,3 +143,13 @@ position = Vector2( -123.248, 172.089 )
 rotation = 0.762709
 scale = Vector2( 1.60859, 1.60859 )
 texture = ExtResource( 15 )
+
+[node name="Area2D" type="Area2D" parent="enzyme_goal"]
+z_index = 5
+gravity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enzyme_goal/Area2D"]
+z_index = 5
+shape = SubResource( 2 )
+script = ExtResource( 18 )
+[connection signal="input_event" from="enzyme_goal/Area2D" to="enzyme_goal" method="_on_Area2D_input_event"]

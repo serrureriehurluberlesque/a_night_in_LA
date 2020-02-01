@@ -5,7 +5,9 @@
 [ext_resource path="res://sprites/Ribosome.png" type="Texture" id=3]
 
 [node name="Objet" instance=ExtResource( 1 )]
+collision_mask = 6
 script = ExtResource( 2 )
+damages = 15
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.388235, 0.905882, 0.945098, 1 )

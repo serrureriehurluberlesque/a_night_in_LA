@@ -22,7 +22,7 @@ func _ready():
 
 
 func _on_Objet_input_event(viewport, event, shape_idx):
-	
+	print("jeu")
 	if event.is_action_pressed("leftmouse"):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			dnas.activate(indice)

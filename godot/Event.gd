@@ -32,8 +32,8 @@ func _ready():
 	
 	#var da = 2 * PI / Fat_level
 	
-	OH_level += randi() % 20
-	Fat_level += randi() % 20
+	OH_level *= rand_range(0.8, 1.2)
+	Fat_level *= rand_range(0.8, 1.2)
 	
 	print("new event, state is ", get_node("..").current_state)
 
