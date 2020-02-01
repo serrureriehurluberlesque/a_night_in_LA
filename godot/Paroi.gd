@@ -31,7 +31,7 @@ func die():
 func repair_animate(emit, t):
     var particle = get_node("Particles2D")
     if emit and not particle.is_emitting():
-        particle.amount = t
+        particle.amount = t * 2
         particle.set_emitting(true)
     elif not emit and particle.is_emitting():
         particle.set_emitting(false)

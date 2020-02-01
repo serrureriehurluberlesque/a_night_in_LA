@@ -11,6 +11,3 @@ modulate = Color( 0.305882, 0.282353, 0.956863, 1 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 visible = false
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-visible = false
