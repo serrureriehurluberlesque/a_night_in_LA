@@ -27,3 +27,12 @@ func die():
 	set_collision_layer_bit(1, false)
 	set_modulate(Color(0.5,0.0,0.0,0.4))
 	dead = true
+
+func repair_animate(emit, t):
+    var particle = get_node("Particles2D")
+    if emit and not particle.is_emitting():
+        particle.amount = t
+        particle.set_emitting(true)
+    elif not emit and particle.is_emitting():
+        particle.set_emitting(false)
+    

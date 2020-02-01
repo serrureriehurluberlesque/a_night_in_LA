@@ -15,6 +15,8 @@ export var factor_repair_enzyme = 0.0
 
 var delayed_modulate_timing = 0
 
+export var repair_c = Color(0.1, 1, 0.5, 1)
+
 onready var max_hp = hp
 
 func damage(n):
@@ -41,24 +43,25 @@ func _physics_process(delta):
 		delayed_modulate_timing -= 1
 		if delayed_modulate_timing <= 0:
 			update_modulate()
+			repair_animate(false, 0.0)
 
 func die():
 	get_node("..").call_deferred("remove_child", self)
 
 func repair(f, g=0.0):
-	var t = f * factor_repair_general + g * factor_repair_paroi
-	hp += t
-	hp *= 0.99
-	hp += min(max_hp, hp) / 100.0
+    var t = f * factor_repair_general + g * factor_repair_paroi
+    hp += t
+    hp *= 0.99
+    hp += min(max_hp, hp) / 100.0
 	
-	if not dead and t > 0.000001:
-		update_modulate(true)
-		delay_modulate()
+    if not dead and t > 0.000001:
+        update_modulate(true)
+        delay_modulate()
+        repair_animate(true, t)
 
 func update_modulate(repairing=false):
 	if repairing:
-		var c = Color(0.1, 1, 0.5, 1)
-		set_modulate(c)
+		set_modulate(repair_c)
 	else:
 		var ratio = hp / max_hp
 		var c = Color(1, ratio, ratio, 1)
@@ -66,3 +69,6 @@ func update_modulate(repairing=false):
 
 func delay_modulate():
 	delayed_modulate_timing = 2
+
+func repair_animate(B, f):
+    pass

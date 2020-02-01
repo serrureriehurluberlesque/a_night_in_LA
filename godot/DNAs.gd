@@ -15,20 +15,27 @@ var n = 3
 var value = {}
 
 func _ready():
-	for i in range(n):
-		value[i] = 0.0
+    for i in range(n):
+        value[i] = 0.0
 	
-	var packed_dna = load("res://DNA.tscn")
-	var da = 2 * PI / dna_number
+    var packed_dna = load("res://DNA.tscn")
+    var da = 2 * PI / dna_number
 	
-	for i in range(dna_number):
-		var dna = packed_dna.instance()
-		dna.indice = i
-		add_child(dna)
-		dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
-		dna.pin(get_node("../.."))
+    for i in range(dna_number):
+        var dna = packed_dna.instance()
+        dna.indice = i
+        variate_sprite(dna.get_node("Sprite"), "res://sprites/ADN/ADN_" + str(i%2 + 1) + ".png")
+        variate_sprite(dna.get_node("lettre"), "res://sprites/Good guys/" + str(i) + ".png")
+        add_child(dna)
+        dna.set_global_position(get_global_position() + Vector2(0.0, 46.0).rotated(da * i))
+        dna.pin(get_node("../.."))
 	
-	
+func variate_sprite(node, ressource):
+    var img = Image.new()
+    var itex = ImageTexture.new()
+    img.load(ressource)
+    itex.create_from_image(img)
+    node.texture = itex
 
 func activate(n): 	#= increment
 	increment(n)

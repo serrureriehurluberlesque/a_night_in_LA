@@ -16,7 +16,7 @@ bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
 font_path = "res://Gecko Lunch.ttf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 14
+size = 33
 font_data = SubResource( 3 )
 
 [sub_resource type="Animation" id=5]
@@ -241,11 +241,12 @@ autoplay = "Scrolling_text"
 method_call_mode = 1
 anims/Scrolling_text = SubResource( 5 )
 
-[node name="cache_texte" type="ColorRect" parent="Histoire"]
-margin_left = -1.0
-margin_top = 670.101
-margin_right = 303.0
-margin_bottom = 1635.1
+[node name="Label" type="Label" parent="Histoire"]
+visible = false
+margin_top = -100.0
+margin_right = 246.0
+margin_bottom = 209.0
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
