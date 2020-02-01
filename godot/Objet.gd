@@ -25,7 +25,10 @@ func _physics_process(delta):
     if degradation_rate > 0:
         hp -= max(0.0, delta * degradation_rate)
         
-        update_modulate()  # gourmand?
+        if hp <= 0.1 and not dead:
+            die()
+        else:
+            update_modulate()  # gourmand?
 
 func die():
     get_node("..").call_deferred("remove_child", self)

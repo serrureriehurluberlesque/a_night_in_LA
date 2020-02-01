@@ -10,24 +10,29 @@ func is_activated():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    set_modulate(Color(0.3,0.3,0.3,1))
+    pass
 
 func _on_Objet_input_event(_viewport, event, _shape_idx):
     if event.is_action_pressed("leftmouse"):
         if event.button_index == BUTTON_LEFT and event.pressed and not dead:
             dnas.activate(indice)
             activated = true
-            set_modulate(Color(1,1,1,1))
 
 func deactivate():
     if not dead:
         activated = false
-        set_modulate(Color(0.3,0.3,0.3,1))
 	
 func _physics_process(_delta):
     if dead and hp >= max_hp * 0.3:
         # get_node("..").repaired(indice)
         dead = false
+    
+    var c = get_modulate()
+    if activated:
+        c.r = 1.0
+    else:
+        c.r = 0.3
+    set_modulate(c)
 
 func pin(node):
     pass

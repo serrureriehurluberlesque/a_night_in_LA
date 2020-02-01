@@ -8,24 +8,11 @@ position = Vector2( -34, -14 )
 script = ExtResource( 2 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
-position = Vector2( -893.969, -420.051 )
+position = Vector2( -423.191, 5.41232 )
 
 [node name="Cellule2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 19.8949, 430.875 )
-
-[node name="Cellule6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 916.136, 453.533 )
-
-[node name="Cellule3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -906.557, 453.533 )
-
-[node name="Cellule4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 35, -404.945 )
-
-[node name="Cellule5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 931.242, -382.288 )
+position = Vector2( 503.261, 30.5876 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 31, 19 )
 current = true
-zoom = Vector2( 2, 2 )
