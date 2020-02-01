@@ -18,9 +18,12 @@ func _physics_process(delta) :
         set_collision_layer_bit(bit_paroi, false)
     else:
         set_collision_layer_bit(bit_paroi, default_collision_mask)
+    
+    if dead and hp >= max_hp * 0.3:
+        set_collision_layer_bit(1, default_collision_mask)
+        dead = false
 
 func die():
     set_collision_layer_bit(1, false)
-
-func repair():
-    set_collision_layer_bit(1, default_collision_mask)
+    set_modulate(Color(0.5,0.0,0.0,0.4))
+    dead = true

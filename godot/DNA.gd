@@ -3,45 +3,46 @@ extends Objet
 var activated = false
 var indice
 
-export var path_ref = "../../.."
-
-onready var ref = get_node(path_ref)
-
 onready var dnas = get_node("..")
 
 func is_activated():
     return activated
 
-var dna_health = 100 #btwn 0-100
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    get_node("PinJoint2D").set_node_b(ref.get_path())
     set_modulate(Color(0.3,0.3,0.3,1))
-    print("check dna")
-    print(input_pickable)
-    print(get_collision_mask())
-    print(get_collision_layer())
-
 
 func _on_Objet_input_event(viewport, event, shape_idx):
-    print("jeu")
     if event.is_action_pressed("leftmouse"):
-        if event.button_index == BUTTON_LEFT and event.pressed:
+        if event.button_index == BUTTON_LEFT and event.pressed and not dead:
             dnas.activate(indice)
             activated = true
             set_modulate(Color(1,1,1,1))
 
 func deactivate():
-    activated = false
-    set_modulate(Color(0.3,0.3,0.3,1))
+    if not dead:
+        activated = false
+        set_modulate(Color(0.3,0.3,0.3,1))
 	
 func _physics_process(delta):
-
+    if dead and hp >= max_hp * 0.3:
+        get_node("..").repaired(indice)
+        dead = false
+        
 	#dna_health -= getNode(Cell).get_dna_damage()
 	#dna_health = min(max(dna_health, 0), 100)
 
     pass
 
+func pin(node):
+    pass
+    
+#    var pin = PinJoint2D.new()
+#    pin.set_node_b(self.get_path())
+#    pin.set_node_a(node.get_path())
+#    add_child(pin)
 
+func die():
+    get_node("..").dna_die(indice)
+    dead = true
+    set_modulate(Color(0.5,0.0,0.0,0.4))

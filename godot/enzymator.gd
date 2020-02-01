@@ -3,7 +3,7 @@ extends Node2D
 var cell_size = 200.0
 var noyau_size = 50.0
 
-var enzimation = 0.4
+var enzimation = 0.2
 
 onready var packed_particule = load("res://Enzyme.tscn")
 var chance_to_particule = 0.0
@@ -30,3 +30,6 @@ func get_number_enzyme():
 func set_goal(global_position):
 	for child in get_children():
 		child.go_to(global_position)
+
+func boost(f):
+    chance_to_particule += f

@@ -6,7 +6,6 @@ func _ready():
     hide()
 
 func _input(event):
-    print("jeu enzyme")
     if event.is_action_pressed("rightmouse"):
         if event.button_index == BUTTON_RIGHT and event.pressed:
             show()

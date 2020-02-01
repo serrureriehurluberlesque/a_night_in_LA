@@ -5,17 +5,17 @@
 [ext_resource path="res://Enzyme.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.0
+radius = 15.0
 
 [node name="Objet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 enzym = true
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 0, 0.5 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -0.583977, -0.291988 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
