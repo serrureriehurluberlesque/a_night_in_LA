@@ -48,4 +48,4 @@ func reset_target():
     nearest_target = null
 
 func go_to(global_position):
-	target = global_position
+    target = global_position

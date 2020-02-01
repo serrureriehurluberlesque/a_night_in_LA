@@ -16,24 +16,24 @@ func set_prod(dict):
     for i in range (prod_n):
         prod_coef[i] = dict[i]
         t += dict[i]
-	
+    
 func _ready():
-	for i in range (prod_n):
-		packed_particule[i] = load("res://Enzyme" + str(i+1) + ".tscn")
-		prod_coef[i] = 1.0 / prod_n
+    for i in range (prod_n):
+        packed_particule[i] = load("res://Enzyme" + str(i+1) + ".tscn")
+        prod_coef[i] = 1.0 / prod_n
 
 func _process(delta):
-	chance_to_particule += delta * enzimation
-	if chance_to_particule > 1:
-		emit_particule()
-		chance_to_particule -= 1
+    chance_to_particule += delta * enzimation
+    if chance_to_particule > 1:
+        emit_particule()
+        chance_to_particule -= 1
 
 func emit_particule():
     var x = rand_range(noyau_size, cell_size)
     var s = rand_range(10, 50)
 
     var f = randf()
-	
+    
     var i = 0
     var t = 0
     for j in range(prod_n):
@@ -42,7 +42,7 @@ func emit_particule():
             break
         else:
             i += 1
-			
+            
     if i < prod_n:
         var particule = packed_particule[i].instance()
         if i == 0:
@@ -52,24 +52,24 @@ func emit_particule():
         particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(rand_range(-PI, PI)))
         particule.set_global_rotation(rand_range(-PI, PI))
         add_child(particule)
-	
+    
 func variate_sprite(node, ressource):
-	var img = Image.new()
-	var itex = ImageTexture.new()
-	img.load(ressource)
-	itex.create_from_image(img)
-	node.texture = itex
-	
+    var img = Image.new()
+    var itex = ImageTexture.new()
+    img.load(ressource)
+    itex.create_from_image(img)
+    node.texture = itex
+    
 func get_number_enzyme():
-	return get_child_count()
+    return get_child_count()
 
 func set_goal(global_position, r):
-	for child in get_children():
-		if (child.get_global_position() - global_position).length() < r:
-			child.go_to(global_position)
+    for child in get_children():
+        if (child.get_global_position() - global_position).length() < r:
+            child.go_to(global_position)
 
 func boost(f):
-	chance_to_particule += f
+    chance_to_particule += f
 
 func clamped(vector):
-	return (vector - get_global_position()).clamped(get_node("../parois").cell_size) + get_global_position()
+    return (vector - get_global_position()).clamped(get_node("../parois").cell_size) + get_global_position()
