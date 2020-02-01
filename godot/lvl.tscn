@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://sprites/Good guys/0.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Good guys/2.png" type="Texture" id=14]
 [ext_resource path="res://sprites/Background.png" type="Texture" id=15]
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -328,11 +329,30 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
+margin_left = 25.0
+margin_top = 48.0
+margin_right = 452.0
+margin_bottom = 651.0
+rect_scale = Vector2( 0.96, 1 )
+custom_fonts/bold_italics_font = SubResource( 10 )
+custom_fonts/italics_font = SubResource( 12 )
+custom_fonts/bold_font = SubResource( 14 )
+custom_fonts/normal_font = SubResource( 16 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+scroll_following = true
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="Histoire"]
 visible = false
-margin_left = 24.0
-margin_top = 650.0
-margin_right = 451.0
-margin_bottom = 14965.0
+margin_left = 24.6037
+margin_top = 48.0135
+margin_right = 451.604
+margin_bottom = 692.013
 rect_scale = Vector2( 0.96, 1 )
 custom_fonts/bold_italics_font = SubResource( 10 )
 custom_fonts/italics_font = SubResource( 12 )
@@ -342,7 +362,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[b]
 This is Lucy.
-
+#
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
 
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
@@ -350,7 +370,7 @@ Her job is to clean up J***'s blood and make sure nothing bad stays in it for to
 And she's very good at it, J***'s reached his 20th birthday in the best shape, thanks to her !
 
 And he would live a lot longer, if only he continued on that track...
-
+#
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
 
@@ -411,7 +431,7 @@ Here comes the big C. This is gonna be tricky. Where is the nearest casino you a
 [/b]"
 text = "
 This is Lucy.
-
+#
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
 
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
@@ -419,7 +439,7 @@ Her job is to clean up J***'s blood and make sure nothing bad stays in it for to
 And she's very good at it, J***'s reached his 20th birthday in the best shape, thanks to her !
 
 And he would live a lot longer, if only he continued on that track...
-
+#
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
 
@@ -485,7 +505,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
-autoplay = "Scrolling_text"
 method_call_mode = 1
 anims/Scrolling_text = SubResource( 17 )
 
