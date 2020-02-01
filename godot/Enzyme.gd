@@ -9,12 +9,14 @@ export var enzyme_repair = 0.0
 export var repair_range = 35.0
 var nearest_target
 var d_nearest
+var mardise
 
 func _ready():
     reset_target()
     
 func _physics_process(delta):
-    if (target - get_global_position()).length() < 25.0:
+    mardise += delta
+    if (target - get_global_position()).length() < mardise:
         reset_target()
         target = get_target()
         target = get_node("..").clamped(target)
@@ -39,6 +41,7 @@ func get_target():
     var best_target
     if nearest_target:
         best_target = nearest_target.get_global_position()
+        print(nearest_target.name)
     else:
         best_target = (get_global_position() + Vector2(rand_range(0.0, 140.0), 0).rotated(rand_range(-PI, PI)))
     return best_target
@@ -46,6 +49,7 @@ func get_target():
 func reset_target():
     d_nearest = 1000.0
     nearest_target = null
+    mardise = 15.0
 
 func go_to(global_position):
     target = global_position

@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objet.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Moins.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.274074, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 45.0
+flag_disable_z = true
+direction = Vector3( 25, 25, 0 )
+spread = 0.0
+gravity = Vector3( 0, 4, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 0.2
+color_ramp = SubResource( 2 )
 
 [node name="Objet" type="RigidBody2D"]
 collision_layer = 4
@@ -10,3 +32,16 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Particles2D_moins" type="Particles2D" parent="Node"]
+scale = Vector2( 0.35, 0.35 )
+emitting = false
+amount = 5
+one_shot = true
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}

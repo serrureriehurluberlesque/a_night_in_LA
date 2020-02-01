@@ -26,6 +26,7 @@ func damage(n):
     var ratio = hp / max_hp
     set_modulate(Color(1, ratio, ratio, 1))
     update_modulate()
+    damage_animate(true, n)
 
 func is_enzyme():
     return enzym
@@ -72,3 +73,12 @@ func delay_modulate():
 
 func repair_animate(B, f):
     pass
+
+func damage_animate(emit, t):
+    var particle = get_node("Node/Particles2D_moins")
+    if emit and not particle.is_emitting():
+        particle.amount = t / 2
+        particle.set_emitting(true)
+        particle.set_global_position(get_global_position())
+    elif not emit and particle.is_emitting():
+        particle.set_emitting(false)
