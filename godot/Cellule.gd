@@ -46,6 +46,9 @@ func get_cocaine():
 
 func get_dna_damage() :
     return DNA_damage
+    
+func get_stress_level() :
+    return stress_level
 
 func calculate_dna_damage() :
     var tot_hp = 0

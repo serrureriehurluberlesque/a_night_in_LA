@@ -22,6 +22,12 @@ func _physics_process(_delta) :
     if dead and hp >= max_hp * 0.3:
         set_collision_layer_bit(1, default_collision_mask)
         dead = false
+    
+    var stress_level = get_node("../..").get_stress_level()
+    var stress_amplificator = get_node("..").stress_amplificator
+    
+    if stress_level > 0 :
+        degradation_rate = base_degradation_rate * stress_amplificator
 
 func die():
     set_collision_layer_bit(1, false)
