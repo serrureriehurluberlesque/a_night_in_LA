@@ -9,8 +9,8 @@ func _ready():
     hide()
 
 func _input(event):
-    if event.is_action_pressed("rightmouse"):
-        if event.button_index == BUTTON_RIGHT and event.pressed:
+    if event.is_action_pressed("rightmouse") or event.is_action_pressed("leftmouse"):
+        if (event.button_index == BUTTON_RIGHT or event.button_index == BUTTON_LEFT)and event.pressed:
             var g_pos = get_viewport_transform().inverse() * event.position * get_node("/root/lvl/Camera2D").zoom.x * get_node("/root/lvl/Camera2D").zoom.x
             if (get_node("..").get_global_position() - g_pos).length() < get_node("../parois").cell_size:
                 show()
