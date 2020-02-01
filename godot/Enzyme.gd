@@ -11,6 +11,8 @@ var nearest_target
 var d_nearest
 var mardise
 
+export var stress_amplificator = 1.2
+
 func _ready():
     reset_target()
     
@@ -29,6 +31,13 @@ func _physics_process(delta):
     for body in get_node("Area2D").get_overlapping_bodies():
         if (body.get_global_position() - get_global_position()).length() < repair_range:
             body.repair(general_repair, paroi_repair)
+            
+        
+    var stress_level = get_node("../../../Cellule").get_stress_level()
+
+    if stress_level > 0 :
+        degradation_rate = base_degradation_rate * stress_amplificator
+        
             
 func get_target():
     var d_nearest = 1000.0

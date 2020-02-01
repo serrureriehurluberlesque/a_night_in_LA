@@ -1,10 +1,11 @@
 extends Node2D
 
-
 export var paroi_size = 61
 
 export var cell_size = 356.0
 var variation = 60.0
+
+export var stress_amplificator = 1.05
 
 func _ready():
     var packed_paroi = load("res://Paroi.tscn")

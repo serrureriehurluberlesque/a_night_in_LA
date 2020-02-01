@@ -7,6 +7,8 @@ export var enzym = false
 export var particule = false
 export var degradation_rate = 0.0
 
+onready var base_degradation_rate = degradation_rate
+
 var dead = false
 
 export var factor_repair_paroi = 0.0
