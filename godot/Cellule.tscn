@@ -108,6 +108,7 @@ scale = Vector2( 1.60859, 1.60859 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Noyau" type="Node2D" parent="."]
@@ -143,3 +144,9 @@ modulate = Color( 0.00784314, 0.886275, 0.392157, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 8 )
 script = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.486275, 0.862745, 0.517647, 0.254902 )
+position = Vector2( 33.4617, -6.00714 )
+scale = Vector2( 3.8, 3.475 )
+texture = ExtResource( 4 )
