@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://sprites/Good guys/0.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Good guys/2.png" type="Texture" id=14]
 [ext_resource path="res://sprites/Background.png" type="Texture" id=15]
+[ext_resource path="res://sprites/decors/Cogs.png" type="Texture" id=16]
+[ext_resource path="res://sprites/decors/Jauges_remplissage_H2_new2.0.png" type="Texture" id=17]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -34,11 +36,12 @@ bg_color = Color( 0.847059, 0.694118, 0.192157, 1 )
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.819608, 0.835294, 0.356863, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.913725, 0.0666667, 0.0666667, 1 )
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.509804, 0.0509804, 0.0509804, 0.6 )
 
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.984314, 0.905882, 0.482353, 1 )
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 302, 46 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://teen/teen bd it.ttf"
@@ -96,7 +99,7 @@ z_index = -10
 texture = ExtResource( 15 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
-position = Vector2( 92.3283, 18.6705 )
+position = Vector2( 113.913, 59.6812 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 41.0701, -89.254 )
@@ -272,12 +275,12 @@ scale = Vector2( 0.466464, 0.49496 )
 texture = ExtResource( 6 )
 
 [node name="Apoptosis_level" type="ProgressBar" parent="GUI"]
-margin_left = 790.382
-margin_top = 155.081
-margin_right = 1291.38
-margin_bottom = 192.081
-custom_styles/fg = SubResource( 7 )
-custom_styles/bg = SubResource( 8 )
+margin_left = 790.0
+margin_top = 155.0
+margin_right = 1290.0
+margin_bottom = 192.0
+custom_styles/fg = SubResource( 20 )
+custom_styles/bg = SubResource( 19 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 percent_visible = false
@@ -301,6 +304,17 @@ position = Vector2( 248.854, 15.7442 )
 scale = Vector2( 1.29918, 0.962449 )
 texture = ExtResource( 10 )
 
+[node name="cogs" type="Sprite" parent="GUI"]
+position = Vector2( 1110, 290.026 )
+scale = Vector2( 1.04058, 1.11147 )
+texture = ExtResource( 16 )
+
+[node name="cogs2" type="Sprite" parent="GUI"]
+position = Vector2( 1520.94, 1471.94 )
+rotation = 1.5708
+scale = Vector2( 1.04058, 1.43294 )
+texture = ExtResource( 16 )
+
 [node name="Histoire" type="ReferenceRect" parent="."]
 margin_left = -906.52
 margin_top = -618.408
@@ -315,17 +329,6 @@ __meta__ = {
 position = Vector2( 233.968, 339.365 )
 scale = Vector2( 1.46664, 1.61089 )
 texture = ExtResource( 7 )
-
-[node name="fond_noir" type="ColorRect" parent="Histoire"]
-visible = false
-margin_left = 1.0
-margin_top = 4.0
-margin_right = 305.0
-margin_bottom = 670.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
 visible = false
