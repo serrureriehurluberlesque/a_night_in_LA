@@ -12,10 +12,8 @@ var prod_n = 4
 var prod_coef = {}
 
 func set_prod(dict):
-	print("set_prod")
 	for i in range (prod_n):
 		prod_coef[i] = dict[i]
-		print(dict[i])
 		
 func _ready():
 	for i in range (prod_n):
