@@ -21,5 +21,5 @@ func _ready():
 		add_child(paroi)
 
 func repair(f):
-    for child in get_children():
-        child.repair(f)
+	for child in get_children():
+		child.repair(f)

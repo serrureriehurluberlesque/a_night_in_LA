@@ -47,6 +47,24 @@ func get_cocaine():
 func get_dna_damage() :
 	return DNA_damage
 
+func calculate_dna_damage() :
+	var tot_hp = 0
+	for child in get_node("DNAs").get_children() :
+		tot_hp += child.hp
+	
+	return tot_hp / 400
+
+func calculate_wall_damage() :
+	var tot_hp = 0
+	for child in get_node("Parois").get_children() :
+		tot_hp += child.hp
+	
+	return tot_hp / (100 * len(get_node("Parois").get_children()))
+	
+func calculate_fat_level() :
+	var tot_fat = 0
+	pass
+		
 func get_wall_damage() :
 	return wall_damage
 	
@@ -60,8 +78,9 @@ func _physics_process(delta):
 
 	apoptosis = (2*DNA_damage + wall_damage + stress_level) / 300
 
-	wall_damage += stress_level / 100 - wall_repair_rate*20
-	DNA_damage += stress_level / 100 - DNA_repair_rate*10
+	wall_damage = calculate_wall_damage()
+	
+	DNA_damage = calculate_dna_damage()
 
 	stress_level += fat_level + 2*OH_level + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
 

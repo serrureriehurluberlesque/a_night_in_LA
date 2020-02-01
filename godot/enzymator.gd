@@ -32,4 +32,4 @@ func set_goal(global_position):
 		child.go_to(global_position)
 
 func boost(f):
-    chance_to_particule += f
+	chance_to_particule += f
