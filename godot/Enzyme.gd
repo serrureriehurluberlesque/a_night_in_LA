@@ -8,7 +8,7 @@ export var general_repair = 0.0
 export var enzyme_repair = 0.0
 
 func _physics_process(delta):
-	if (target - get_global_position()).length() < 35.0:
+	if (target - get_global_position()).length() < 65.0:
 		target = (get_global_position() + Vector2(rand_range(0.0, 140.0), 0).rotated(rand_range(-PI, PI)))
 		target = get_node("..").clamped(target)
 	

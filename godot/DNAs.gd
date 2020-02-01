@@ -49,6 +49,12 @@ func increment(i) :
 	elif i == 3: #useless so far
 		stock += r
 
+func set_prod(a, b, c):
+		set_repair(a * 30 * wall_cost * enzymes_cost)
+		
+		get_node("../../parois").repair(-r * dna_cost * enzymes_cost) #change rate of production of particles
+		get_node("../../enzymator").boost(-r * dna_cost * wall_cost) #change rate of production too
+
 func repair(f):
 	for child in get_children():
 		child.repair(f)

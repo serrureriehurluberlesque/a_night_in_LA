@@ -15,7 +15,7 @@ position = Vector2( -423.191, 5.41232 )
 position = Vector2( 503.261, 30.5876 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 31, 19 )
+position = Vector2( 41.0701, -89.254 )
 current = true
 
 [node name="GUI" type="ReferenceRect" parent="."]
@@ -99,6 +99,15 @@ margin_left = 1073.0
 margin_top = 247.0
 margin_right = 1581.0
 margin_bottom = 303.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Histoire" type="ReferenceRect" parent="."]
+margin_left = -1138.0
+margin_top = -373.0
+margin_right = -769.0
+margin_bottom = 420.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

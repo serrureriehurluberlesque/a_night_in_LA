@@ -1,6 +1,6 @@
 extends Node2D
 
-var cell_size = 50.0
+var cell_size = 5.0
 var noyau_size = 1.0
 
 var enzimation = 0.2
@@ -22,7 +22,7 @@ func emit_particule():
 	var x = rand_range(noyau_size, cell_size)
 	var s = rand_range(10, 50)
 
-	var i = randi() % 3
+	var i = randi() % 4
 	var particule = packed_particule[i].instance()
 
 	particule.set_global_position(Vector2(0.0, x).rotated(rand_range(-PI, PI)))
