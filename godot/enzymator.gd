@@ -46,19 +46,19 @@ func emit_particule():
 	var particule = packed_particule[i].instance()
 	if i == 0:
 		variate_sprite(particule.get_node("Sprite"), "res://sprites/Enzyme_" + str(randi() % 2 + 1) + ".png")
-        
+		
 	particule.set_global_position(Vector2(0.0, x).rotated(rand_range(-PI, PI)))
 	particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(rand_range(-PI, PI)))
 	particule.set_global_rotation(rand_range(-PI, PI))
 	add_child(particule)
-    
+	
 func variate_sprite(node, ressource):
-    var img = Image.new()
-    var itex = ImageTexture.new()
-    img.load(ressource)
-    itex.create_from_image(img)
-    node.texture = itex
-    
+	var img = Image.new()
+	var itex = ImageTexture.new()
+	img.load(ressource)
+	itex.create_from_image(img)
+	node.texture = itex
+	
 func get_number_enzyme():
 	return get_child_count()
 

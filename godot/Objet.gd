@@ -49,15 +49,15 @@ func die():
 	get_node("..").call_deferred("remove_child", self)
 
 func repair(f, g=0.0):
-    var t = f * factor_repair_general + g * factor_repair_paroi
-    hp += t
-    hp *= 0.99
-    hp += min(max_hp, hp) / 100.0
+	var t = f * factor_repair_general + g * factor_repair_paroi
+	hp += t
+	hp *= 0.99
+	hp += min(max_hp, hp) / 100.0
 	
-    if not dead and t > 0.000001:
-        update_modulate(true)
-        delay_modulate()
-        repair_animate(true, t)
+	if not dead and t > 0.000001:
+		update_modulate(true)
+		delay_modulate()
+		repair_animate(true, t)
 
 func update_modulate(repairing=false):
 	if repairing:
@@ -71,4 +71,4 @@ func delay_modulate():
 	delayed_modulate_timing = 2
 
 func repair_animate(B, f):
-    pass
+	pass

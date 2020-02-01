@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -6,22 +6,46 @@
 [ext_resource path="res://sprites/Paroi.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://sprites/Lysosome.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Text_box.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://Gecko Lunch.ttf"
+[sub_resource type="StyleBoxFlat" id=3]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://teen/teen bd it.ttf"
+
+[sub_resource type="DynamicFont" id=5]
 size = 18
-font_data = SubResource( 3 )
+font_data = SubResource( 4 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Scrolling_text"
-length = 100.0
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://teen/teen it.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 18
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://teen/teen bd.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 18
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://teen/teen.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 18
+font_data = SubResource( 10 )
+
+[sub_resource type="Animation" id=12]
+length = 50.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("RichTextLabel:rect_position")
 tracks/0/interp = 1
@@ -29,7 +53,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 60.2 ),
+"times": PoolRealArray( 0, 31.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 24, 650 ), Vector2( 24, 100 ) ]
@@ -40,12 +64,11 @@ position = Vector2( -34, -14 )
 script = ExtResource( 2 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
-position = Vector2( 109.951, -41.7503 )
+position = Vector2( 92.3283, 18.6705 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 41.0701, -89.254 )
 current = true
-zoom = Vector2( 1.2, 1.2 )
 
 [node name="GUI" type="ReferenceRect" parent="."]
 margin_left = -861.067
@@ -104,15 +127,6 @@ position = Vector2( 120.973, -17.4048 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
-[node name="Infos" type="RichTextLabel" parent="GUI"]
-margin_left = 1662.76
-margin_top = 3.48383
-margin_right = 1920.76
-margin_bottom = 310.484
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Stress_level" type="ProgressBar" parent="GUI"]
 margin_left = 1111.51
 margin_top = 189.833
@@ -158,7 +172,7 @@ margin_top = 246.0
 margin_right = 1583.0
 margin_bottom = 302.0
 custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 __meta__ = {
@@ -166,16 +180,22 @@ __meta__ = {
 }
 
 [node name="Histoire" type="ReferenceRect" parent="."]
-margin_left = -642.0
-margin_top = -399.0
-margin_right = -340.0
-margin_bottom = 271.0
+margin_left = -906.52
+margin_top = -618.408
+margin_right = -604.52
+margin_bottom = 51.5916
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Histoire"]
+position = Vector2( 233.968, 339.365 )
+scale = Vector2( 1.46664, 1.61089 )
+texture = ExtResource( 7 )
+
 [node name="fond_noir" type="ColorRect" parent="Histoire"]
+visible = false
 margin_left = 1.0
 margin_top = 4.0
 margin_right = 305.0
@@ -187,34 +207,50 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
 margin_left = 24.0
-margin_top = 503.942
-margin_right = 307.0
-margin_bottom = 14817.9
+margin_top = 650.0
+margin_right = 451.0
+margin_bottom = 14965.0
 rect_scale = Vector2( 0.96, 1 )
-custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0.92549, 0.952941, 0.952941, 1 )
-bbcode_text = "This is Lucy.
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[b]
+This is Lucy.
+
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
+
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
+
 And she's very good at it, J***'s reached his 20th birthday in the best shape, thanks to her !
+
 And he would live a lot longer, if only he continued on that track...
+
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
+
+
+
 
 Could you help Lucy do her job ? It looks like she's about to have quite a lot of work in the next few hours...
 I heard J*** just broke up with his longterm girlfriend, so he might be struggling a bit...
 
 It seems like J*** just got off the plane and is heading for the bar. He orders a bloody mary. That's Lucy's first job ! 
 Try to help her as best as you can !
+
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
+
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
-< Type A to produce more metabolic enzymes >
+[i]< Type A to produce more metabolic enzymes >[/i]
 
 Oh, by the way you can left-click to influence the enzymes' path and hopefully bring em closer to their metabolites.
 
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
+
 Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
 
 < Type S to produce more healing enzymes >
@@ -241,21 +277,34 @@ You cannot let her reach that point ! Come on, let's get rid of all that alcohol
 
 >next>>>
 
-Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
-text = "This is Lucy.
+Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days.
+
+[/b]"
+text = "
+This is Lucy.
+
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
+
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
+
 And she's very good at it, J***'s reached his 20th birthday in the best shape, thanks to her !
+
 And he would live a lot longer, if only he continued on that track...
+
 But last night, J*** broke up with his girlfriend.
 And now he's on his way to Las Vegas.
+
+
+
 
 Could you help Lucy do her job ? It looks like she's about to have quite a lot of work in the next few hours...
 I heard J*** just broke up with his longterm girlfriend, so he might be struggling a bit...
 
 It seems like J*** just got off the plane and is heading for the bar. He orders a bloody mary. That's Lucy's first job ! 
 Try to help her as best as you can !
+
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
+
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
 < Type A to produce more metabolic enzymes >
@@ -264,6 +313,7 @@ Oh, by the way you can left-click to influence the enzymes' path and hopefully b
 
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
+
 Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
 
 < Type S to produce more healing enzymes >
@@ -290,7 +340,9 @@ You cannot let her reach that point ! Come on, let's get rid of all that alcohol
 
 >next>>>
 
-Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
+Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days.
+
+"
 scroll_active = false
 scroll_following = true
 __meta__ = {
@@ -300,14 +352,35 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Histoire"]
 autoplay = "Scrolling_text"
 method_call_mode = 1
-anims/Scrolling_text = SubResource( 5 )
+anims/Scrolling_text = SubResource( 12 )
 
 [node name="cache_texte" type="ColorRect" parent="Histoire"]
+visible = false
 margin_left = -1.0
-margin_top = 673.0
+margin_top = 676.0
 margin_right = 303.0
-margin_bottom = 2015.0
+margin_bottom = 2018.0
 color = Color( 0.988235, 0.980392, 0.980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord brun" type="ColorRect" parent="Histoire"]
+margin_left = 11.0
+margin_top = 660.0
+margin_right = 450.0
+margin_bottom = 676.0
+color = Color( 0.482353, 0.329412, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord beige" type="ColorRect" parent="Histoire"]
+margin_left = 23.0
+margin_top = 655.0
+margin_right = 440.0
+margin_bottom = 660.0
+color = Color( 0.937255, 0.85098, 0.72549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

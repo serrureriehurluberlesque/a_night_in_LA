@@ -49,12 +49,12 @@ func die():
 
 
 func repair_animate(emit, t):
-    var particle = get_node("Particles2D")
-    var a = floor(t * 100)
-    if particle.amount != a:
-        particle.amount = a
-    
-    if emit and not particle.is_emitting():
-        particle.set_emitting(true)
-    elif not emit and particle.is_emitting():
-        particle.set_emitting(false)
+	var particle = get_node("Particles2D")
+	var a = floor(t * 100)
+	if particle.amount != a:
+		particle.amount = a
+	
+	if emit and not particle.is_emitting():
+		particle.set_emitting(true)
+	elif not emit and particle.is_emitting():
+		particle.set_emitting(false)
