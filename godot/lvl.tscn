@@ -9,7 +9,6 @@ script = ExtResource( 2 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
 position = Vector2( 35, 18 )
-input_pickable = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 31, 19 )
