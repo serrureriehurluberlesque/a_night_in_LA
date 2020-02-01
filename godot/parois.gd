@@ -3,7 +3,7 @@ extends Node2D
 
 export var paroi_size = 61
 
-var cell_size = 256.0
+export var cell_size = 256.0
 var variation = 10.0
 
 func _ready():
