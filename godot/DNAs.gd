@@ -44,7 +44,7 @@ func action(delta, i):
         stock += value
 
 func dna_die(i):
-    print("death")
-    print(i)
+#    print("death")
+#    print(i)
     if i == 1:
         pass
