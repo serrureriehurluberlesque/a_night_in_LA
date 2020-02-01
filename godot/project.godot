@@ -30,6 +30,12 @@ config/name="a_night_in_LA"
 run/main_scene="res://lvl.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+
 [input]
 
 leftmouse={
