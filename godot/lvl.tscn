@@ -16,7 +16,7 @@ bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
 font_path = "res://Gecko Lunch.ttf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 33
+size = 18
 font_data = SubResource( 3 )
 
 [sub_resource type="Animation" id=5]
@@ -187,13 +187,12 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
 margin_left = 24.0
-margin_top = 650.0
-margin_right = 287.0
-margin_bottom = 1868.0
+margin_top = 503.942
+margin_right = 307.0
+margin_bottom = 14817.9
 rect_scale = Vector2( 0.96, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0.92549, 0.952941, 0.952941, 1 )
-bbcode_enabled = true
 bbcode_text = "This is Lucy.
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
@@ -209,9 +208,40 @@ It seems like J*** just got off the plane and is heading for the bar. He orders 
 Try to help her as best as you can !
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
-\\< Type A to produce more enzymes \\>
 
-Once in Vegas' airport, J*** heads for the bar and orders two gin tonics. You haven't seen nothing yet. By the way, ethanol will <> unless you <>. J*** is hungry. A famous fast food chain owns the establishment next door. Oh well. I should probably tell you about cholesterol right about now. The thing is, you see, <>. J*** gets in a taxi and reaches his hotel. Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
+< Type A to produce more metabolic enzymes >
+
+Oh, by the way you can left-click to influence the enzymes' path and hopefully bring em closer to their metabolites.
+
+Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
+Okay, let's use this opportunity to recover a bit from alcohol's damage.
+Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
+
+< Type S to produce more healing enzymes >
+< Type D to regenerate damaged DNA >
+
+As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
+
+Talking about energy, it seems like J*** isn't heading for the hotel right now, he stopped at a Burger King, oh wow...
+He just ordered a triple whooper and double portion of fries ! And a banana milkshake on tope of it ?! Are you sure J*** ?
+Oh well... 
+
+You should know that triglycerides conglomerate in lipid droplets that also take up cholesterol... and accumulation of cholesterol is harmful to .... oh be careful, here it comes !  Are you ready ? Produce more metabolic enzymes !
+
+Thankfully, lipoproteins do not easily cross the cellular membrane. However, they will eventually and you have to be ready to get rid of them !
+
+That's a lot of fat, come on J***. You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
+There's only so much we can take !
+Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
+J*** ? Where are you... oh, the bar... okay, having a bit of trouble digesting eh ?
+A double gin and tonic alright, here it comes... and a whiskey ? and another one ? Oh jeez...
+
+Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis - which is cell death.
+You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
+
+>next>>>
+
+Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
 text = "This is Lucy.
 Lucy is a hepatic, human cell - that is, she's inhabiting J***'s liver.
 Her job is to clean up J***'s blood and make sure nothing bad stays in it for too long.
@@ -227,9 +257,40 @@ It seems like J*** just got off the plane and is heading for the bar. He orders 
 Try to help her as best as you can !
 Alcohol is a very small hydrophilic molecule that can pass through the cell's lipid bilayer. It's metabolites are highly reactive molecules that can damage proteins, lipids and even DNA !
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
-\\< Type A to produce more enzymes \\>
 
-Once in Vegas' airport, J*** heads for the bar and orders two gin tonics. You haven't seen nothing yet. By the way, ethanol will <> unless you <>. J*** is hungry. A famous fast food chain owns the establishment next door. Oh well. I should probably tell you about cholesterol right about now. The thing is, you see, <>. J*** gets in a taxi and reaches his hotel. Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
+< Type A to produce more metabolic enzymes >
+
+Oh, by the way you can left-click to influence the enzymes' path and hopefully bring em closer to their metabolites.
+
+Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
+Okay, let's use this opportunity to recover a bit from alcohol's damage.
+Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
+
+< Type S to produce more healing enzymes >
+< Type D to regenerate damaged DNA >
+
+As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
+
+Talking about energy, it seems like J*** isn't heading for the hotel right now, he stopped at a Burger King, oh wow...
+He just ordered a triple whooper and double portion of fries ! And a banana milkshake on tope of it ?! Are you sure J*** ?
+Oh well... 
+
+You should know that triglycerides conglomerate in lipid droplets that also take up cholesterol... and accumulation of cholesterol is harmful to .... oh be careful, here it comes !  Are you ready ? Produce more metabolic enzymes !
+
+Thankfully, lipoproteins do not easily cross the cellular membrane. However, they will eventually and you have to be ready to get rid of them !
+
+That's a lot of fat, come on J***. You're young indeed and do lots of sports, but that's no reason to go on binge like this one !
+There's only so much we can take !
+Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
+J*** ? Where are you... oh, the bar... okay, having a bit of trouble digesting eh ?
+A double gin and tonic alright, here it comes... and a whiskey ? and another one ? Oh jeez...
+
+Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis - which is cell death.
+You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
+
+>next>>>
+
+Here comes the big C. This is gonna be tricky. Where is the nearest casino you ask? J*** doesn't seem to care. He picks up the phone. When J*** was twelve, <>. But this is irrelevant to the present situation. The doorbell rings. Sex work is a perfectly respectable profession. That said, you probably will want to wear a condom - just to, you know, be on the safe side. J*** doesn't. He is in no state to care. Don't do this at home kids. Well, if you're a kid you shouldn't have sex in the first place I guess. But hey, I'm not your mum. Did I tell you about HIV? What about it you ask? Didn't you go to high school? They don't teach you anything anymore these days."
 scroll_active = false
 scroll_following = true
 __meta__ = {
@@ -241,12 +302,12 @@ autoplay = "Scrolling_text"
 method_call_mode = 1
 anims/Scrolling_text = SubResource( 5 )
 
-[node name="Label" type="Label" parent="Histoire"]
-visible = false
-margin_top = -100.0
-margin_right = 246.0
-margin_bottom = 209.0
-custom_fonts/font = SubResource( 4 )
+[node name="cache_texte" type="ColorRect" parent="Histoire"]
+margin_left = -1.0
+margin_top = 673.0
+margin_right = 303.0
+margin_bottom = 2015.0
+color = Color( 0.988235, 0.980392, 0.980392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
