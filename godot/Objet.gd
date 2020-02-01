@@ -12,7 +12,7 @@ func damage(n):
 	set_modulate(Color(1, ratio, ratio, 1)) 
 
 func is_enzyme():
-    return enzym
+	return enzym
 
 func _physics_process(delta):
-    hp -= max(0.0, delta * degradation_rate)
+	hp -= max(0.0, delta * degradation_rate)

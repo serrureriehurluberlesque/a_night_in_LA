@@ -5,11 +5,16 @@ var actual_level_node
 var perdu = false
 var loading = false
 var packed_scene 
+
+export var current_state = 'just_arrived'
 	
 func _ready():
 	packed_scene = load("res://Event" + str(actual_level) + ".tscn")
 	next_level()
 
+func getState() :
+	return current_state
+	
 func next_level():
 	if not loading:
 		loading = true
