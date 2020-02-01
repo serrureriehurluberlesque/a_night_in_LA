@@ -18,6 +18,3 @@ func _physics_process(delta) :
         set_collision_layer(0)
     else:
         default_collision_mask
-
-
-

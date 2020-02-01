@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/cellule fond.png" type="Texture" id=1]
 [ext_resource path="res://Cellule.gd" type="Script" id=2]
 [ext_resource path="res://DNAs.gd" type="Script" id=3]
 [ext_resource path="res://sprites/Noyau.png" type="Texture" id=4]
 [ext_resource path="res://parois.gd" type="Script" id=5]
+[ext_resource path="res://enzymator.gd" type="Script" id=6]
+[ext_resource path="res://enzyme_goal.gd" type="Script" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 256.0
@@ -41,3 +44,12 @@ __meta__ = {
 
 [node name="parois" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="enzymator" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="enzyme_goal" type="Sprite" parent="."]
+modulate = Color( 0.00784314, 0.886275, 0.392157, 1 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+script = ExtResource( 7 )
