@@ -1,6 +1,9 @@
 extends Sprite
 
 onready var enzymator = get_node("../enzymator")
+var r = 30.0
+var pressing = false
+var pos = Vector2()
 
 func _ready():
     hide()
@@ -12,9 +15,15 @@ func _input(event):
             if (get_node("..").get_global_position() - g_pos).length() < get_node("../parois").cell_size:
                 show()
                 set_global_position(g_pos)
-                enzymator.set_goal(g_pos)
-#
-#func _process(delta):
-#    var c = get_modulate()
-#    c.a = max(c.a - delta / 20.0, 0)
-#    set_modulate(c)
+                pressing = true
+                pos = g_pos
+    elif pressing:
+        pressing = false
+        enzymator.set_goal(pos, r)
+        r = 30.0
+
+func _physics_process(delta):
+    if pressing:
+        r += 100 * delta
+        var f = r / 300.0
+        scale = Vector2(f, f)

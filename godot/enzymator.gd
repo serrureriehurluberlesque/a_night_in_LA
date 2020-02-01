@@ -8,7 +8,7 @@ var enzimation = 0.2
 onready var packed_particule = {}
 var chance_to_particule = 0.0
 
-var prod_n = 3
+var prod_n = 2
 var prod_coef = {}
 
 func set_prod(dict):
@@ -62,9 +62,9 @@ func variate_sprite(node, ressource):
 func get_number_enzyme():
 	return get_child_count()
 
-func set_goal(global_position):
+func set_goal(global_position, r):
 	for child in get_children():
-		if (child.get_global_position() - global_position).length() < 150.0:
+		if (child.get_global_position() - global_position).length() < r:
 			child.go_to(global_position)
 
 func boost(f):
