@@ -16,12 +16,16 @@ func damage(n):
         die()
     var ratio = hp / max_hp
     set_modulate(Color(1, ratio, ratio, 1))
+    update_modulate()
 
 func is_enzyme():
     return enzym
 
 func _physics_process(delta):
-    hp -= max(0.0, delta * degradation_rate)
+    if degradation_rate > 0:
+        hp -= max(0.0, delta * degradation_rate)
+        
+        update_modulate()  # gourmand?
 
 func die():
     get_node("..").call_deferred("remove_child", self)
@@ -32,5 +36,8 @@ func repair(f):
     hp += min(max_hp, hp) / 100.0
     
     if not dead:
-        var ratio = hp / max_hp
-        set_modulate(Color(1, ratio, ratio, 1))
+        update_modulate()
+
+func update_modulate():
+    var ratio = hp / max_hp
+    set_modulate(Color(1, ratio, ratio, 1))

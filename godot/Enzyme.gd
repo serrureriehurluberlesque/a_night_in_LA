@@ -2,7 +2,7 @@ extends Objet
 
 onready var target = get_global_position()
 
-var max_speed = 2.0
+var max_speed = 8.0
 
 func _physics_process(delta):
     if (target - get_global_position()).length() < 35.0:

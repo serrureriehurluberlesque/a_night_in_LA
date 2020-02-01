@@ -19,7 +19,7 @@ func emit_particule():
 	var s = rand_range(10, 50)
 	
 	var particule = packed_particule.instance()
-	particule.set_global_position(get_global_position() + Vector2(0.0, x).rotated(rand_range(-PI, PI)))
+	particule.set_global_position(Vector2(0.0, x).rotated(rand_range(-PI, PI)))
 	particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(rand_range(-PI, PI)))
 	particule.set_global_rotation(rand_range(-PI, PI))
 	add_child(particule)
