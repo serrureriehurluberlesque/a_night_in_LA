@@ -49,4 +49,5 @@ rightmouse={
 
 [rendering]
 
+environment/default_clear_color=Color( 1, 0.984314, 0.984314, 1 )
 environment/default_environment="res://default_env.tres"

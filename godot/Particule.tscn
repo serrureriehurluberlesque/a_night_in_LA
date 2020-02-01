@@ -2,10 +2,7 @@
 
 [ext_resource path="res://Objet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Particule.gd" type="Script" id=2]
-
-[sub_resource type="StreamTexture" id=3]
-flags = 4
-load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
@@ -21,9 +18,11 @@ script = ExtResource( 2 )
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.364706, 0.356863, 0.321569, 1 )
 scale = Vector2( 0.5, 0.5 )
-texture = SubResource( 3 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -0.288249, -0.104817 )
+scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
@@ -32,5 +31,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( -0.393069, -0.131022 )
+scale = Vector2( 0.07, 0.07 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
