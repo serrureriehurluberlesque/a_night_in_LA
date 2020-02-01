@@ -31,9 +31,9 @@ func adjust_sliders() :
 	var stress_level = get_node("../Cellule").stress_level
 	
 	#no idea if this works
-	get_node("Slider_wall").set_value((wall_repair_rate + 5) * 10)
-	get_node("Slider_DNA").set_value((dna_repair_rate + 5) * 10)
-	get_node("Slider_enzymes").set_value((enzymes_rate + 5) * 10)
+	get_node("Slider_wall").set_value((wall_repair_rate + 0.5) * 80)
+	get_node("Slider_DNA").set_value((dna_repair_rate + 0.5) * 80)
+	get_node("Slider_enzymes").set_value((enzymes_rate + 0.5) * 80)
 	
 	get_node("Apoptosis_level").set_value(apoptosis)
 	get_node("Wall_damage_level").set_value(wall_damage_level)	
