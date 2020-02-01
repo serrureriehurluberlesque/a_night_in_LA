@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
 [ext_resource path="res://GUI.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Paroi.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Lysosome.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.984314, 0.0313726, 0.0313726, 1 )
@@ -44,6 +47,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="GUI/Slider_wall"]
+position = Vector2( 109.798, -15.3057 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="GUI/Slider_wall"]
+modulate = Color( 0.109804, 0.858824, 0.0823529, 1 )
+position = Vector2( 139.843, -13.3483 )
+texture = ExtResource( 6 )
+
 [node name="Slider_DNA" type="VSlider" parent="GUI"]
 margin_left = 806.977
 margin_top = 73.7581
@@ -53,6 +65,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="GUI/Slider_DNA"]
+position = Vector2( -202.515, -20.9211 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
 [node name="Slider_enzymes" type="VSlider" parent="GUI"]
 margin_left = 483.489
 margin_top = 70.2419
@@ -61,6 +78,11 @@ margin_bottom = 292.242
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="GUI/Slider_enzymes"]
+modulate = Color( 0.996078, 1, 0.337255, 1 )
+position = Vector2( 442.501, -7.29761 )
+texture = ExtResource( 6 )
 
 [node name="Infos" type="RichTextLabel" parent="GUI"]
 margin_left = 1662.76

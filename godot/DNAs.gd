@@ -35,7 +35,6 @@ func activate(n): 	#= increment
 	activated_dna = n
 		
 func increment(i) :
-    print("increment", i)
 	
     var r = increment_value
     for j in range(n):
@@ -56,12 +55,16 @@ func set_prod(a, b_brut, c_brut):
     var c = max(0, c_brut / t)
     
     var dict = {}
-    dict[0] = 1 - b - c
-    dict[1] = b
-    dict[2] = c
-    dict[3] = 0
+    dict[0] = 1 - b - c  # gros tas
+    dict[1] = b  # soigneur de mur
+    dict[2] = c  # soigneur general
+    dict[3] = 0  # soigneur d'enzyme
         
     get_node("../../enzymator").set_prod(dict) #change rate of production too
+    
+    get_node("../..").wall_repair_rate = b_brut
+    get_node("../..").dna_repair_rate = a
+    get_node("../..").enzymes = c_brut
 
 func set_continous_repair(a):
     continuous_repair = a

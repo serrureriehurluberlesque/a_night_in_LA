@@ -5,9 +5,9 @@ export var DNApath = 'DNA'
 #basal rates and shit
 export var translation_rate = 1
 export var degradation_rate = 2
-export var wall_repair_rate = 0
-export var DNA_repair_rate = 0
-export var enzymes = 0
+var wall_repair_rate = 0
+var dna_repair_rate = 0
+var enzymes = 0
 
 #apoptosis 
 export var apoptosis = 0
