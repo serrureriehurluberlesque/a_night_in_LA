@@ -9,7 +9,7 @@
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 25.0
+radius = 50.0
 
 [node name="Objet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
