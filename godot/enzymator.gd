@@ -1,7 +1,7 @@
 extends Node2D
 
-var cell_size = 200.0
-var noyau_size = 50.0
+var cell_size = 50.0
+var noyau_size = 1.0
 
 var enzimation = 0.2
 

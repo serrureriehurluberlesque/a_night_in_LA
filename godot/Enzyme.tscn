@@ -1,20 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/Lysosome.png" type="Texture" id=2]
 [ext_resource path="res://Enzyme.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Noyau.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 20.0
+radius = 25.0
 
 [node name="Objet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 enzym = true
 degradation_rate = 1.0
 factor_repair_general = 0.0
+factor_repair_enzyme = 1.0
 max_speed = 25.0
 
 [node name="Sprite" parent="." index="0"]
@@ -32,4 +34,11 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+visible = false
 shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Area2D" index="1"]
+modulate = Color( 0.282353, 0.917647, 0, 0.388235 )
+position = Vector2( 1.9888, 0.198881 )
+scale = Vector2( 0.219999, 0.24 )
+texture = ExtResource( 4 )
