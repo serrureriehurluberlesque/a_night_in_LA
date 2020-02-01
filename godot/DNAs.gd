@@ -33,11 +33,11 @@ func _ready():
         dna.pin(get_node("../.."))
     
 func variate_sprite(node, ressource):
-    var img = Image.new()
-    var itex = ImageTexture.new()
-    img.load(ressource)
-    itex.create_from_image(img)
-    node.texture = itex
+#    var img = ImageRessource.new()
+#    var itex = ImageTexture.new()
+#    img.
+#    itex.create_from_image(img)
+    node.texture = load(ressource)
 
 func activate(n): 	#= increment
     increment(n)
@@ -88,19 +88,19 @@ func _physics_process(delta):
         repair(delta * continuous_repair)
     # action(delta, activated_dna)
     
-    
-func action(delta, i):
-    stock *= 0.97
-    var value = delta + 0.02 * stock
-    
-    if i == 0:
-        repair(value * 30)
-    elif i == 1:
-        get_node("../../parois").repair(value * 10)
-    elif i == 2:
-        get_node("../../enzymator").boost(value)
-    elif i == 3:
-        stock += value
+#
+#func action(delta, i):
+#    stock *= 0.97
+#    var value = delta + 0.02 * stock
+#
+#    if i == 0:
+#        repair(value * 30)
+#    elif i == 1:
+#        get_node("../../parois").repair(value * 10)
+#    elif i == 2:
+#        get_node("../../enzymator").boost(value)
+#    elif i == 3:
+#        stock += value
 
 func dna_die(i):
 #    print("death")

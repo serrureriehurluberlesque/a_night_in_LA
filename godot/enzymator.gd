@@ -12,10 +12,8 @@ var prod_n = 2
 var prod_coef = {}
 
 func set_prod(dict):
-    var t = 0.0
     for i in range (prod_n):
         prod_coef[i] = dict[i]
-        t += dict[i]
     
 func _ready():
     for i in range (prod_n):
@@ -54,11 +52,11 @@ func emit_particule():
         add_child(particule)
     
 func variate_sprite(node, ressource):
-    var img = Image.new()
-    var itex = ImageTexture.new()
-    img.load(ressource)
-    itex.create_from_image(img)
-    node.texture = itex
+#    var img = Image.new()
+#    var itex = ImageTexture.new()
+#    img.
+#    itex.create_from_image(img)
+    node.texture = load(ressource)
     
 func get_number_enzyme():
     return get_child_count()

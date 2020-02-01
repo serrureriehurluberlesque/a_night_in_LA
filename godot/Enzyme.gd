@@ -40,7 +40,7 @@ func _physics_process(delta):
         
             
 func get_target():
-    var d_nearest = 1000.0
+    d_nearest = 1000.0
     for body in get_node("Area2D").get_overlapping_bodies():
         var d = (body.get_global_position() - get_global_position()).length()
         if d < d_nearest and d > repair_range:

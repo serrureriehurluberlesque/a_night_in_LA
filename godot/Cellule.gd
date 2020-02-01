@@ -28,13 +28,6 @@ var hp = 10
 
 onready var text = get_node("RichTextLabel")
 
-func set_level(a, b, c, d, e):
-    var OH_level = a
-    var fat_level = b
-    var cocaine_level = c
-    var cocaethylene_level = d
-    var virus_level = e
-
 func get_fat():
     return fat_level
 
@@ -80,7 +73,7 @@ func get_wall_damage() :
     return wall_damage
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 
         #le peouze et tout ce qui va avec
     #wall_repair_rate = getNode(DNApath).is_activated()

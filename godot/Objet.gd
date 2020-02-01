@@ -73,7 +73,7 @@ func update_modulate(repairing=false):
 func delay_modulate():
     delayed_modulate_timing = 2
 
-func repair_animate(B, f):
+func repair_animate(_B, _f):
     pass
 
 func damage_animate(emit, t):

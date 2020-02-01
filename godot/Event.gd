@@ -24,8 +24,6 @@ var time_since_beg = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    get_node("../Cellule").set_level(OH_level, Fat_level, cocaine_level, cocaethylene_level, virus_level)
-    
     OH_level *= rand_range(0.8, 1.2)
     Fat_level *= rand_range(0.8, 1.2)
     
@@ -51,7 +49,7 @@ func _process(delta):
     
     time_since_beg += delta
     
-func emit_particule(particular_type, packed_particule):
+func emit_particule(_particular_type, packed_particule):
     var x = rand_range(800, 1500)
     var a = rand_range(-PI, PI)
     var s = rand_range(100, 120)

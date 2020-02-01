@@ -42,7 +42,7 @@ func _physics_process(_delta):
         c.r = 0.3
     set_modulate(c)
 
-func pin(node):
+func pin(_node):
     pass
     
 #    var pin = PinJoint2D.new()

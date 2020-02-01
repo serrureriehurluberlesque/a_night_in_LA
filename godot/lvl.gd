@@ -26,9 +26,9 @@ func load_scene():
         return
     else:
         actual_level_node = packed_scene.instance()
-        if init:
-            init = false
-            get_node("Histoire/AnimationPlayer").seek(actual_level_node.time_absolu)
+#        if init:
+#            init = false
+#            get_node("Histoire/AnimationPlayer").seek(actual_level_node.time_absolu)
     add_child(actual_level_node)
 
     actual_level = actual_level + 1
