@@ -11,7 +11,6 @@ radius = 28.0
 [node name="Objet" instance=ExtResource( 1 )]
 mass = 2.0
 hp = 250.0
-factor_repair_general = 0.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.905882, 0.780392, 0.411765, 1 )
@@ -24,3 +23,6 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource( 2 )
+
+[node name="Sprite" parent="Area2D" index="1"]
+visible = false
