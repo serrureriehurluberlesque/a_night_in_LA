@@ -12,7 +12,7 @@ func is_activated():
 func _ready():
     set_modulate(Color(0.3,0.3,0.3,1))
 
-func _on_Objet_input_event(viewport, event, shape_idx):
+func _on_Objet_input_event(_viewport, event, _shape_idx):
     if event.is_action_pressed("leftmouse"):
         if event.button_index == BUTTON_LEFT and event.pressed and not dead:
             dnas.activate(indice)
@@ -24,15 +24,10 @@ func deactivate():
         activated = false
         set_modulate(Color(0.3,0.3,0.3,1))
 	
-func _physics_process(delta):
+func _physics_process(_delta):
     if dead and hp >= max_hp * 0.3:
-        get_node("..").repaired(indice)
+        # get_node("..").repaired(indice)
         dead = false
-        
-	#dna_health -= getNode(Cell).get_dna_damage()
-	#dna_health = min(max(dna_health, 0), 100)
-
-    pass
 
 func pin(node):
     pass

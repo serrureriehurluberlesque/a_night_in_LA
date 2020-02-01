@@ -11,9 +11,6 @@ export var current_state = 'just_arrived'
 func _ready():
 	packed_scene = load("res://Event" + str(actual_level) + ".tscn")
 	next_level()
-
-func getState() :
-	return current_state
 	
 func next_level():
 	if not loading:
@@ -39,7 +36,7 @@ func load_scene():
 func preload_scene():
 	packed_scene = load("res://Event" + str(actual_level) + ".tscn")
 
-func _process(delta):
+func _process(_delta):
 	if not perdu and get_node("Cellule").hp <= 0:
 		get_node("joueur").die()
 		loose()

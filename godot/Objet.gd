@@ -12,7 +12,7 @@ onready var max_hp = hp
 
 func damage(n):
     hp -= n
-    if hp <= 0.1:
+    if hp <= 0.1 and not dead:
         die()
     var ratio = hp / max_hp
     set_modulate(Color(1, ratio, ratio, 1))

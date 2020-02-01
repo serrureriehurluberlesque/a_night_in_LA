@@ -13,7 +13,7 @@ func _ready():
     get_node("PinJoint2D").set_node_b(ref.get_path())
 
 
-func _physics_process(delta) :
+func _physics_process(_delta) :
     if hp < 0.0:
         set_collision_layer_bit(bit_paroi, false)
     else:

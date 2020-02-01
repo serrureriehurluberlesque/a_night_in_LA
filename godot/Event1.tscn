@@ -3,4 +3,5 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-OH_level = 10
+OH_level = 50
+time = 15.0

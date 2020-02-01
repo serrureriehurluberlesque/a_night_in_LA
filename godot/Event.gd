@@ -1,28 +1,22 @@
 extends Node2D
 
-#this will be different
 export var Fat_level = 0
 export var OH_level = 0
 export var cocaine_level = 0
 export var cocaethylene_level = 0
 export var virus_level = 0
-#------
 
-#this should always be the same
-export var time_1 = 2
-export var time_2 = 10
-export var time_3 = 120
-#------
+var oh_rate
+var fat_rate
 
 export var time = 60.0
+export var text = "And the next level"
 
 export var particules_path = "../Cellule"
 onready var particules_node = get_node(particules_path)
-onready var packed_particule = {'OH' : load("res://OH.tscn"),
+onready var packed_particules = {'OH' : load("res://OH.tscn"),
 								'Particule' : load("res://Particule.tscn"),
 								'Fat' : load("res://Fat.tscn")}
-
-								
 
 var time_since_beg = 0
 
@@ -30,54 +24,27 @@ var time_since_beg = 0
 func _ready():
 	get_node("../Cellule").set_level(OH_level, Fat_level, cocaine_level, cocaethylene_level, virus_level)
 	
-	#var da = 2 * PI / Fat_level
-	
 	OH_level *= rand_range(0.8, 1.2)
 	Fat_level *= rand_range(0.8, 1.2)
 	
+	oh_rate = OH_level / time #per sec
+	fat_rate = Fat_level / time
+    
 	print("new event, state is ", get_node("..").current_state)
+	print(text)
 
 func _process(delta):
 	
-	var oh_rate = 60.0*delta #per sec
-	var fat_rate = 10.0*delta
-	
-	var current_state = get_node("..").getState()
-	
-	#state after state
-	if current_state == 'just_arrived' :
-		#emit shit
-		if OH_level > 0 and randf() < oh_rate :
-			emit_particule('OH', packed_particule['OH'])
-			OH_level -= 1
-		
-		#next level if it's about time
-		if time_since_beg > time_1 :
-			get_node("..").next_level()
-			get_node("..").current_state = 'binge_eating_1'
-			print("then a freakin burger")
-			
-		#state after state
-	elif current_state == 'binge_eating_1' :
-		#emit shit
-		if Fat_level > 0 and randf() < fat_rate :
-			emit_particule('Fat', packed_particule['Fat'])
-			Fat_level -= 1
-		
-		#next level if it's about time
-		if time_since_beg > time_2 :
-			get_node("..").next_level()
-			get_node("..").current_state = 'binge_drinking_1'
-			print("glouglouglou")
-
-	elif current_state == 'binge_drinking_1' :
-		if OH_level > 0 and randf() < oh_rate :
-			emit_particule('OH', packed_particule['OH'])
-			OH_level -= 1
-		
-		if time_since_beg > time_3 :
-			get_node("..").next_level()
-			get_node("..").current_state = 'binge_cocaining'
+	if OH_level > 0 and randf() < oh_rate * delta :
+		emit_particule('OH', packed_particules['OH'])
+		OH_level -= 1
+        
+	if Fat_level > 0 and randf() < fat_rate * delta :
+		emit_particule('Fat', packed_particules['Fat'])
+		Fat_level -= 1
+    
+	if time_since_beg > time:
+		get_node("..").next_level()
 	
 	time_since_beg += delta
 	

@@ -1,7 +1,7 @@
 extends Node2D
 
 export var dna_number = 4
-var activated_dna = 1
+var activated_dna = 4
 var stock = 0
 
 func _ready():
@@ -35,11 +35,11 @@ func action(delta, i):
     var value = delta + 0.02 * stock
     
     if i == 0:
-        repair(value * 100)
+        repair(value * 30)
     elif i == 1:
-        get_node("../../parois").repair(value * 100)
+        get_node("../../parois").repair(value * 10)
     elif i == 2:
-        get_node("../../enzymator").boost(value * 100)
+        get_node("../../enzymator").boost(value)
     elif i == 3:
         stock += value
 
@@ -48,4 +48,3 @@ func dna_die(i):
     print(i)
     if i == 1:
         pass
-    

@@ -10,6 +10,7 @@ radius = 15.0
 [node name="Objet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 enzym = true
+degradation_rate = 1.0
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 0.5 )
