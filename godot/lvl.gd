@@ -5,6 +5,7 @@ var actual_level_node
 var perdu = false
 var loading = false
 var packed_scene 
+var init = true
 
 export var current_state = 'just_arrived'
     
@@ -25,6 +26,9 @@ func load_scene():
         return
     else:
         actual_level_node = packed_scene.instance()
+        if init:
+            init = false
+            get_node("Histoire/AnimationPlayer").seek(actual_level_node.time_absolu)
     add_child(actual_level_node)
 
     actual_level = actual_level + 1

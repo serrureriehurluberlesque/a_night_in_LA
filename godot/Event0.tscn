@@ -4,3 +4,4 @@
 
 [node name="Event" instance=ExtResource( 1 )]
 time = 43.0
+time_absolu = 0.0

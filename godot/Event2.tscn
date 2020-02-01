@@ -4,5 +4,7 @@
 
 [node name="Event" instance=ExtResource( 1 )]
 Fat_level = 100
-time = 20.0
+time = 25.0
+time_chill = 5.0
+time_absolu = 103.0
 text = "then a freakin burger"
