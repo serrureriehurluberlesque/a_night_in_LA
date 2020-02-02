@@ -5,6 +5,7 @@
 
 [node name="Event" instance=ExtResource( 1 )]
 time = 10.0
+time_chill = 10.0
 time_absolu = 90.0
 text = "then a freakin burger"
 

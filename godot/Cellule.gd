@@ -104,7 +104,7 @@ func get_wall_damage() :
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 
-    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.2
+    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2
 
     wall_damage = calculate_wall_damage()
     
