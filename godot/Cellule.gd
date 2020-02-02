@@ -27,6 +27,7 @@ var HIV_level = 0
 var paracetamol_level = 0
 var CE_level = 0
 var dechet_level = 0
+var enzyme_level = 0
 
 var hp = 10
 
@@ -93,6 +94,9 @@ func calculate_paracetamol_level() :
     
 func calculate_CE_level() :
     return get_node("particulator").get_part_number(7)
+
+func calcuate_enzyme_level():
+    return get_node("enzymator").get_number_enzyme()
         
 func get_wall_damage() :
     return wall_damage
@@ -100,7 +104,7 @@ func get_wall_damage() :
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 
-    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.5
+    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.2
 
     wall_damage = calculate_wall_damage()
     
@@ -113,8 +117,9 @@ func _physics_process(_delta):
     HIV_level = calculate_HIV_level()
     dechet_level = calculate_dechet_level()
     paracetamol_level = calculate_paracetamol_level()
+    enzyme_level = calcuate_enzyme_level()
 
-    stress_level = fat_level + 2*OH_level + 2*cocaine_level + 5*HIV_level + dechet_level  # + 4*cocaethylene_level 
+    stress_level = fat_level + 2*OH_level + 2*cocaine_level + 3*HIV_level + dechet_level + enzyme_level / 2  # + 4*cocaethylene_level 
     
     text.text = ""
     var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzymes"]

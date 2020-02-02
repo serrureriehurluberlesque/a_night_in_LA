@@ -34,6 +34,12 @@ config/icon="res://icon.png"
 
 config="*res://config.gd"
 
+[display]
+
+window/size/resizable=false
+window/size/fullscreen=true
+window/dpi/allow_hidpi=true
+
 [input]
 
 leftmouse={
