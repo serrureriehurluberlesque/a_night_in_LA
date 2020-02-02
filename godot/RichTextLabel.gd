@@ -20,9 +20,8 @@ func _physics_process(delta):
     t += delta
     if t > 1 / cps:
         t -= 1 / cps
-        if c <= base_text.length():
+        if c <= len(base_text) - 1:
             if base_text[c] == "#":
-                print(tt)
                 c += 1
             else:
                 bbcode_text += base_text[c]

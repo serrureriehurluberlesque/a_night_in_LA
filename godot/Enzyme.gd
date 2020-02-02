@@ -50,7 +50,6 @@ func get_target():
     var best_target
     if nearest_target:
         best_target = nearest_target.get_global_position()
-        print(nearest_target.name)
     else:
         best_target = (get_global_position() + Vector2(rand_range(0.0, 140.0), 0).rotated(rand_range(-PI, PI)))
     return best_target

@@ -80,7 +80,7 @@ func _physics_process(_delta):
     #DNA_repair_rate = getNode(DNApath).is_activated()
     #translation_rate = getNode(DNApath).is_activated()
 
-    apoptosis = (2*DNA_damage + wall_damage + stress_level)
+    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.0
 
     wall_damage = calculate_wall_damage()
     

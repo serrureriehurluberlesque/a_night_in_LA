@@ -12,5 +12,4 @@ func _ready():
 
 func _input(event):
     if event.is_pressed():
-        print("jeu")
         get_tree().change_scene("res://lvl.tscn")
