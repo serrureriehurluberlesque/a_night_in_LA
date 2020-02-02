@@ -8,10 +8,23 @@ var packed_scene
 var init = true
 
 export var current_state = 'just_arrived'
-    
+
+onready var j_sprites = {}
+
+var loose_image = {}
+
+var loose_i = 0
+
 func _ready():
+    for i in range(4):
+        j_sprites[i] = load("res://sprites/Story/Story_" + str(i+1) + ".png")
+        
+    for i in range(13):
+        loose_image[i] = load("res://sprites/Animations/Apostasie/0" + str((i+1)/10) + str((i+1)%10) + ".png")
+    loose_image[13] = load("res://sprites/Game_over.png")
     packed_scene = load("res://Event" + str(actual_level) + ".tscn")
     next_level()
+    loose()
     
 func next_level():
     if not loading:
@@ -42,14 +55,22 @@ func preload_scene():
 
 func _process(_delta):
     if not perdu and get_node("Cellule").hp <= 0:
-        get_node("joueur").die()
         loose()
+    if get_node("Cellule").apoptosis >= 100:
+        get_node("Cellule").hp -= 1
 
+func j_sprite(i):
+    get_node("j").texture = j_sprites[i]
+    
 func win():
-    pass
-#    get_node("joueur/Camera2D/Win").show()
+    get_node("Win").show()
 
 func loose():
-#    get_node("joueur/Camera2D/Win").hide()
-#    get_node("joueur/Camera2D/Loose").show()
+    get_node("Loose").show()
+    get_node("Cellule").hide()
+    get_node("Loose/Anim").play("Loose")
     perdu = true
+
+func set_loose():
+    get_node("Loose").texture = loose_image[loose_i]
+    loose_i += 1

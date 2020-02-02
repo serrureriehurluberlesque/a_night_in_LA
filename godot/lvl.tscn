@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://sprites/decors/Jauges_remplissage_H2_new2.0.png" type="Texture" id=17]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=18]
 [ext_resource path="res://sprites/decors/Jauges_remplissage_H2_new3.0.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Story/Story_1.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Title.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Game_over.png" type="Texture" id=22]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -92,10 +95,66 @@ tracks/0/keys = {
 "values": [ Vector2( 24, 650 ), Vector2( 24, -5000 ) ]
 }
 
+[sub_resource type="Animation" id=19]
+resource_name = "Loose"
+length = 1.3
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+}, {
+"args": [  ],
+"method": "set_loose"
+} ]
+}
+
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
-actual_level = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 44.8042, -74.0246 )
@@ -111,9 +170,9 @@ position = Vector2( 41.0701, -89.254 )
 current = true
 
 [node name="GUI" type="ReferenceRect" parent="."]
-margin_left = -882.012
+margin_left = -779.769
 margin_top = -680.21
-margin_right = 1057.98
+margin_right = 1160.22
 margin_bottom = -359.21
 rect_pivot_offset = Vector2( 1405.43, 63 )
 script = ExtResource( 3 )
@@ -203,10 +262,10 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="DNA_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 503.0
-margin_top = 254.0
-margin_right = 797.0
-margin_bottom = 291.0
+margin_left = 470.442
+margin_top = 257.499
+margin_right = 764.442
+margin_bottom = 294.499
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -227,10 +286,10 @@ scale = Vector2( 0.32551, 0.309822 )
 texture = ExtResource( 11 )
 
 [node name="Stress_level" type="ProgressBar" parent="GUI"]
-margin_left = 894.075
-margin_top = 253.293
-margin_right = 1189.07
-margin_bottom = 291.293
+margin_left = 861.517
+margin_top = 256.792
+margin_right = 1156.51
+margin_bottom = 294.792
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -251,10 +310,10 @@ scale = Vector2( 0.32551, 0.309822 )
 texture = ExtResource( 9 )
 
 [node name="Wall_damage_level" type="ProgressBar" parent="GUI"]
-margin_left = 1285.58
-margin_top = 256.311
-margin_right = 1581.58
-margin_bottom = 292.311
+margin_left = 1253.02
+margin_top = 259.81
+margin_right = 1549.02
+margin_bottom = 295.81
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
 custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
@@ -275,15 +334,15 @@ scale = Vector2( 0.32551, 0.309822 )
 texture = ExtResource( 12 )
 
 [node name="apoptosis" type="Sprite" parent="GUI"]
-position = Vector2( 1043.02, 119.035 )
+position = Vector2( 1010.46, 122.534 )
 scale = Vector2( 0.466464, 0.49496 )
 texture = ExtResource( 6 )
 
 [node name="Apoptosis_level" type="ProgressBar" parent="GUI"]
-margin_left = 791.0
-margin_top = 155.0
-margin_right = 1288.0
-margin_bottom = 192.0
+margin_left = 758.442
+margin_top = 158.499
+margin_right = 1255.44
+margin_bottom = 195.499
 size_flags_horizontal = 9
 custom_styles/fg = SubResource( 18 )
 custom_styles/bg = SubResource( 8 )
@@ -311,8 +370,7 @@ scale = Vector2( 1.29918, 0.962449 )
 texture = ExtResource( 10 )
 
 [node name="cogs" type="Sprite" parent="GUI"]
-position = Vector2( 1110, 290.026 )
-scale = Vector2( 1.04058, 1.11147 )
+position = Vector2( 1072.92, 279.959 )
 texture = ExtResource( 16 )
 
 [node name="cogs2" type="Sprite" parent="GUI"]
@@ -323,9 +381,9 @@ texture = ExtResource( 16 )
 
 [node name="Histoire" type="ReferenceRect" parent="."]
 margin_left = -906.52
-margin_top = -618.408
+margin_top = -160.588
 margin_right = -604.52
-margin_bottom = 51.5916
+margin_bottom = 509.411
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -581,3 +639,24 @@ color = Color( 0.937255, 0.85098, 0.72549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Win" type="Sprite" parent="."]
+visible = false
+position = Vector2( 41.07, -89.254 )
+scale = Vector2( 1.011, 1 )
+z_index = 15
+texture = ExtResource( 21 )
+
+[node name="Loose" type="Sprite" parent="."]
+visible = false
+position = Vector2( 41.07, -89.254 )
+scale = Vector2( 1.011, 1 )
+z_index = 15
+texture = ExtResource( 22 )
+
+[node name="Anim" type="AnimationPlayer" parent="Loose"]
+anims/Loose = SubResource( 19 )
+
+[node name="j" type="Sprite" parent="."]
+position = Vector2( -597.559, -370.571 )
+texture = ExtResource( 20 )

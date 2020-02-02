@@ -21,6 +21,7 @@ onready var packed_particules = {'OH' : load("res://OH.tscn"),
     'Fat' : load("res://Fat.tscn")}
 
 var time_since_beg = 0
+var actual_sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +30,9 @@ func _ready():
     
     oh_rate = OH_level / time #per sec
     fat_rate = Fat_level / time
+    
+    set_sprite(choose_sprite())
+    
     
     print("new event, state is ", get_node("..").current_state)
     print(text)
@@ -43,11 +47,16 @@ func _process(delta):
         emit_particule('Fat', packed_particules['Fat'])
         Fat_level -= 1
     
-    if time_since_beg > time:
+    if time_since_beg > time + time_chill:
         get_node("..").next_level()
         time_since_beg = -1000
     
     time_since_beg += delta
+    
+    var new_sprite = choose_sprite()
+    if actual_sprite != new_sprite:
+        set_sprite(new_sprite)
+        actual_sprite = new_sprite
     
 func emit_particule(_particular_type, packed_particule):
     var x = rand_range(800, 1500)
@@ -61,3 +70,16 @@ func emit_particule(_particular_type, packed_particule):
             particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(a))
             particule.set_global_rotation(a)
             child.add_child(particule)
+
+func choose_sprite():
+    var i
+    if time_since_beg > time:
+        i = 0
+    elif OH_level > Fat_level:
+        i = 1
+    else:
+        i = 2
+    return i
+    
+func set_sprite(i):
+    get_node("..").j_sprite(i)
