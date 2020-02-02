@@ -3,8 +3,8 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-Fat_level = 100
+Fat_level = 75
 time = 25.0
-time_chill = 5.0
-time_absolu = 103.0
+time_chill = 15.0
+time_absolu = 110.0
 text = "then a freakin burger"

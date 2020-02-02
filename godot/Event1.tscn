@@ -4,6 +4,6 @@
 
 [node name="Event" instance=ExtResource( 1 )]
 OH_level = 25
-time = 20.0
-time_chill = 40.0
-time_absolu = 43.0
+time = 25.0
+time_chill = 45.0
+time_absolu = 40.0

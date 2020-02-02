@@ -6,7 +6,7 @@ extends RichTextLabel
 # var b = "text"
 var tt = 0.0
 var t = 0.0
-var cps = 115.0
+var cps = 35.0
 var c = 0
 onready var base_text = get_node("../text").bbcode_text
 
@@ -28,5 +28,7 @@ func _physics_process(delta):
                 bbcode_text += base_text[c]
                 if base_text[c] == "\n":
                     t -= 1.0
+                elif base_text[c] == "~":
+                    t -= 5.0
                 c += 1
         
