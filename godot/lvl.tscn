@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://sprites/Victory_1.png" type="Texture" id=21]
 [ext_resource path="res://sprites/Game_over.png" type="Texture" id=22]
 [ext_resource path="res://sprites/Background_new.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Good guys/Enzyme_4.png" type="Texture" id=24]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -203,6 +204,7 @@ tracks/2/keys = {
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
+actual_level = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
@@ -218,7 +220,7 @@ z_index = -10
 texture = ExtResource( 23 )
 
 [node name="Cellule" parent="." instance=ExtResource( 1 )]
-position = Vector2( 113.913, 59.6812 )
+position = Vector2( 108.069, 42.1492 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 41.0701, -89.254 )
@@ -236,9 +238,9 @@ __meta__ = {
 }
 
 [node name="Slider_wall" type="ProgressBar" parent="GUI"]
-margin_left = 1621.65
+margin_left = 1471.65
 margin_top = 1073.82
-margin_right = 1808.65
+margin_right = 1658.65
 margin_bottom = 1101.82
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
@@ -263,9 +265,9 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 14 )
 
 [node name="Slider_DNA" type="ProgressBar" parent="GUI"]
-margin_left = 1508.22
+margin_left = 1358.22
 margin_top = 1072.05
-margin_right = 1695.22
+margin_right = 1545.22
 margin_bottom = 1101.05
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
@@ -289,10 +291,37 @@ rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
 
+[node name="Slider_recycler" type="ProgressBar" parent="GUI"]
+margin_left = 1696.97
+margin_top = 1075.12
+margin_right = 1883.97
+margin_bottom = 1104.12
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+custom_colors/font_color = Color( 0.882353, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bord" type="Sprite" parent="GUI/Slider_recycler"]
+position = Vector2( 92.4473, 12.3711 )
+scale = Vector2( 0.624779, 0.875229 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="GUI/Slider_recycler"]
+modulate = Color( 0.341176, 1, 0.968627, 1 )
+position = Vector2( 227.896, 12.8645 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 24 )
+
 [node name="Slider_enzymes" type="ProgressBar" parent="GUI"]
-margin_left = 1730.22
+margin_left = 1580.22
 margin_top = 1074.84
-margin_right = 1917.22
+margin_right = 1767.22
 margin_bottom = 1102.84
 rect_rotation = -90.0
 custom_styles/fg = SubResource( 1 )
@@ -429,9 +458,9 @@ position = Vector2( 1072.92, 279.959 )
 texture = ExtResource( 16 )
 
 [node name="cogs2" type="Sprite" parent="GUI"]
-position = Vector2( 1520.94, 1471.94 )
+position = Vector2( 1409.74, 1471.94 )
 rotation = 1.5708
-scale = Vector2( 1.04058, 1.43294 )
+scale = Vector2( 1.04058, 1.74657 )
 texture = ExtResource( 16 )
 
 [node name="Histoire" type="ReferenceRect" parent="."]
@@ -589,7 +618,13 @@ here comes HIV.
 #
 Be very careful, viruses are experts at disguising themselves and passing through all lipid bilayers.
 Also, they usually try to inject themselves into the nucleus so you should probably - 
-oh whatever... I'm done, take care of Lucy for me.
+oh whatever... just try to keep Lucy alive.
+~~~
+Good job ! I believe we're good for today unless J*** tries anything stupid again.
+#
+And here he goes again, I guess he has a headache so he took some painkillers before going to sleep.
+If only he knew that this is all job for Lucy again...
+Come on, you can do it !
 ~~~
 #
 [/b]"
@@ -701,7 +736,13 @@ here comes HIV.
 #
 Be very careful, viruses are experts at disguising themselves and passing through all lipid bilayers.
 Also, they usually try to inject themselves into the nucleus so you should probably - 
-oh whatever... I'm done, take care of Lucy for me.
+oh whatever... just try to keep Lucy alive.
+~~~
+Good job ! I believe we're good for today unless J*** tries anything stupid again.
+#
+And here he goes again, I guess he has a headache so he took some painkillers before going to sleep.
+If only he knew that this is all job for Lucy again...
+Come on, you can do it !
 ~~~
 #
 "

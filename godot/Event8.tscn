@@ -3,7 +3,8 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-time = 5.0
-time_chill = 25.0
+Paracetamol_level = 25
+time = 10.0
+time_chill = 15.0
 time_absolu = 335.0
 text = "glouglouglou"

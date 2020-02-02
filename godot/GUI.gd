@@ -24,6 +24,7 @@ func adjust_sliders() :
     var wall_repair_rate = get_node("../Cellule").wall_repair_rate
     var dna_repair_rate = get_node("../Cellule").dna_repair_rate
     var enzymes_rate = get_node("../Cellule").enzymes	
+    var recycler_rate = get_node("../Cellule").recycler_rate
     
     var apoptosis = get_node("../Cellule").apoptosis
     var wall_damage_level = get_node("../Cellule").wall_damage
@@ -34,6 +35,7 @@ func adjust_sliders() :
     get_node("Slider_wall").set_value((wall_repair_rate) * 100)
     get_node("Slider_DNA").set_value((dna_repair_rate) * 100)
     get_node("Slider_enzymes").set_value((enzymes_rate) * 100)
+    get_node("Slider_recycler").set_value((recycler_rate) * 100)
     
     get_node("Apoptosis_level").set_value(apoptosis)
     get_node("Wall_damage_level").set_value(wall_damage_level)	

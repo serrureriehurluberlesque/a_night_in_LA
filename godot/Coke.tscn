@@ -9,4 +9,5 @@ damages = 60
 type = 3
 
 [node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 1, 0.992157, 1 )
 texture = ExtResource( 2 )

@@ -5,11 +5,15 @@ export var OH_level = 0
 export var Coke_level = 0
 export var cocaethylene_level = 0
 export var HIV_level = 0
+export var Paracetamol_level = 0
+export var CE_level = 0
 
 var oh_rate
 var fat_rate
 var Coke_rate
 var HIV_rate
+var Paracetamol_rate
+var CE_rate
 
 export var time = 60.0
 export var time_chill = 0.0
@@ -22,7 +26,9 @@ onready var packed_particules = {'OH' : load("res://OH.tscn"),
     'Particule' : load("res://Particule.tscn"),
     'Coke' : load("res://Coke.tscn"),
     'HIV' : load("res://HIV.tscn"),
-    'Fat' : load("res://Fat.tscn")}
+    'Fat' : load("res://Fat.tscn"),
+    'Paracetamol' : load("res://aspirine.tscn"),
+    'CE' : load("res://CE.tscn")}
 
 var time_since_beg = 0
 var actual_sprite
@@ -35,17 +41,22 @@ func _ready():
     Fat_level *= rand_range(0.8, 1.2)
     Coke_level *= rand_range(0.8, 1.2)
     HIV_level *= rand_range(0.8, 1.2)
+    Paracetamol_level *= rand_range(0.8, 1.2)
+    CE_level *= rand_range(0.8, 1.2)
     
     oh_rate = OH_level / time #per sec
     fat_rate = Fat_level / time
     Coke_rate = Coke_level / time #per sec
     HIV_rate = HIV_level / time
+    Paracetamol_rate = Paracetamol_level / time
+    CE_rate = CE_level / time
     
     set_sprite(choose_sprite())
     
-    
     print("new event, state is ", get_node("..").current_state)
     print(text)
+    
+    get_node("AudioStreamPlayer").play()
 
 func _process(delta):
     
@@ -64,6 +75,12 @@ func _process(delta):
     if HIV_level > 0 and randf() < HIV_rate * delta :
         emit_particule('HIV', packed_particules['HIV'])
         HIV_level -= 1
+        
+    if Paracetamol_level > 0 and randf() < Paracetamol_rate * delta :
+        emit_particule('Paracetamol', packed_particules['Paracetamol'])
+        
+    if CE_level > 0 and randf() < CE_rate * delta :
+        emit_particule('Paracetamol', packed_particules['CE'])
     
     if time_since_beg > time + time_chill:
         get_node("..").next_level()
