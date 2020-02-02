@@ -144,7 +144,6 @@ texture = ExtResource( 13 )
 [node name="organelle6" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -230.492, -425.661 )
 rotation = 0.762709
-scale = Vector2( 1, 1 )
 hp = 500.0
 
 [node name="mitochondrie_4" type="Sprite" parent="Organelles/organelle6"]
@@ -184,6 +183,7 @@ texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Noyau"]
 stream = ExtResource( 22 )
+volume_db = -2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false

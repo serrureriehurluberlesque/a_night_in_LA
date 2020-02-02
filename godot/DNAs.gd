@@ -40,7 +40,8 @@ func variate_sprite(node, ressource):
     node.texture = load(ressource)
 
 func activate(n): 	#= increment
-    get_node("../AudioStreamPlayer").play()
+    if not get_node("../AudioStreamPlayer").is_playing():
+        get_node("../AudioStreamPlayer").play()
     increment(n)
     activated_dna = n
         
