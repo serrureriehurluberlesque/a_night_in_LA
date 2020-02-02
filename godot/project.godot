@@ -30,6 +30,10 @@ config/name="a_night_in_LA"
 run/main_scene="res://Start.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+config="*res://config.gd"
+
 [input]
 
 leftmouse={
