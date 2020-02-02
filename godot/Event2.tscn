@@ -4,10 +4,8 @@
 [ext_resource path="res://sounds/eat.wav" type="AudioStream" id=2]
 
 [node name="Event" instance=ExtResource( 1 )]
-Fat_level = 75
-time = 25.0
-time_chill = 15.0
-time_absolu = 110.0
+time = 10.0
+time_absolu = 90.0
 text = "then a freakin burger"
 
 [node name="AudioStreamPlayer" parent="." index="1"]
