@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/400374__sabbyt2__gulp.wav-d41b7c0c8d338cf9e6057edfd0270759.sample"
+
+[deps]
+
+source_file="res://sounds/400374__sabbyt2__gulp.wav"
+dest_files=[ "res://.import/400374__sabbyt2__gulp.wav-d41b7c0c8d338cf9e6057edfd0270759.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

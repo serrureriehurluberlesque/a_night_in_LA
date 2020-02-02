@@ -4,6 +4,5 @@
 
 [node name="Event" instance=ExtResource( 1 )]
 time = 5.0
-time_chill = 25.0
 time_absolu = 360.0
 text = "glouglouglou"
