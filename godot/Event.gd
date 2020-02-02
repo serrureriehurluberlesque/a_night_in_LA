@@ -27,6 +27,8 @@ onready var packed_particules = {'OH' : load("res://OH.tscn"),
 var time_since_beg = 0
 var actual_sprite
 
+var string_to_sprite = {'drink1':1, 'eat':2, 'drink2':3, 'nap':4, 'coke':5, 'pill':6, 'sex':7}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     OH_level *= rand_range(0.8, 1.2)
@@ -88,13 +90,26 @@ func emit_particule(_particular_type, packed_particule):
             child.add_child(particule)
 
 func choose_sprite():
-    var i
-    if time_since_beg > time:
-        i = 0
-    elif OH_level > Fat_level:
-        i = 1
-    else:
-        i = 2
+    var i = 0
+    var current_state = get_node("..").actual_level
+    
+    if current_state == 2 :
+        i = string_to_sprite['drink1']
+    elif current_state == 3 :
+        i = string_to_sprite['eat']
+    elif current_state == 4 :
+        i = string_to_sprite['drink2']
+    elif current_state == 5 :
+        i = string_to_sprite['nap']
+    elif current_state == 6 :
+        i = string_to_sprite['drink2']
+    elif current_state == 7 :
+        i = string_to_sprite['coke']
+    elif current_state == 8 :
+        i = string_to_sprite['sex']
+    elif current_state == 9 :
+        i = string_to_sprite['pill']
+    
     return i
     
 func set_sprite(i):
