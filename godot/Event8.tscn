@@ -3,8 +3,7 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-HIV_level = 30
-time = 15.0
-time_chill = 20.0
-time_absolu = 300.0
+time = 5.0
+time_chill = 25.0
+time_absolu = 335.0
 text = "glouglouglou"

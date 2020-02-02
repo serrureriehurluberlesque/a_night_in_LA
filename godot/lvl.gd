@@ -16,8 +16,8 @@ var loose_image = {}
 var loose_i = 0
 
 func _ready():
-    for i in range(4):
-        j_sprites[i] = load("res://sprites/Story/Story_" + str(i+1) + ".png")
+    for i in range(8):
+        j_sprites[i] = load("res://sprites/Story/Story_" + str(i) + ".png")
         
     for i in range(13):
         loose_image[i] = load("res://sprites/Animations/Apostasie/0" + str((i+1)/10) + str((i+1)%10) + ".png")
