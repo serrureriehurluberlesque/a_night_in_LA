@@ -69,15 +69,18 @@ func set_prod(dict):
     
     var dict_clean = {}
     for i in range(n_adn):
-        dict_clean[i] = max(0, dict[i]) / total
+        dict_clean[i] = ((1 + effiacity)/2) * max(0, dict[i]) / total
     
-    set_continous_repair(dict_clean[0] * 10.0 * effiacity)
+    set_continous_repair(dict_clean[0] * 10.0)
     
-    get_node("../..").dna_repair_rate = dict_clean[0] * effiacity
-    get_node("../..").wall_repair_rate = dict_clean[2] * effiacity
-    get_node("../..").enzymes = dict_clean[1] * effiacity
+    get_node("../..").dna_repair_rate = dict_clean[0]
+    get_node("../..").wall_repair_rate = dict_clean[2] 
+    get_node("../..").enzymes = dict_clean[1]
+    get_node("../..").recycler_rate = dict_clean[3]
     
-    get_node("../../enzymator").set_prod({0: dict_clean[1] * effiacity, 1: dict_clean[2] * effiacity, 2: dict_clean[3] * effiacity})
+    get_node("../../enzymator").set_prod({0: dict_clean[1],
+                                          1: dict_clean[2],
+                                          2: dict_clean[3]})
 
 func set_continous_repair(a):
     continuous_repair = a
