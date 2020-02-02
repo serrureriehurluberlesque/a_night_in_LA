@@ -18,11 +18,12 @@ export var DNA_damage = 0
 export var wall_damage = 0
 
 #external factors
-export var OH_level = 0
-export var fat_level = 0
-export var cocaine_level = 0
-export var cocaethylene_level = 0
-export var virus_level = 0
+var OH_level = 0
+var fat_level = 0
+var cocaine_level = 0
+var cocaethylene_level = 0
+var HIV_level = 0
+var dechet_level = 0
 
 var hp = 10
 
@@ -68,6 +69,15 @@ func calculate_fat_level() :
     
 func calculate_OH_level() :
     return get_node("particulator").get_part_number(2)
+    
+func calculate_Coke_level() :
+    return get_node("particulator").get_part_number(3)
+    
+func calculate_HIV_level() :
+    return get_node("particulator").get_part_number(4)
+    
+func calculate_dechet_level() :
+    return get_node("particulator").get_part_number(5)
         
 func get_wall_damage() :
     return wall_damage
@@ -80,7 +90,7 @@ func _physics_process(_delta):
     #DNA_repair_rate = getNode(DNApath).is_activated()
     #translation_rate = getNode(DNApath).is_activated()
 
-    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.0
+    apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.5
 
     wall_damage = calculate_wall_damage()
     
@@ -89,8 +99,11 @@ func _physics_process(_delta):
     #simple
     fat_level = calculate_fat_level()
     OH_level = calculate_OH_level()
+    cocaine_level = calculate_Coke_level()
+    HIV_level = calculate_HIV_level()
+    dechet_level = calculate_dechet_level()
 
-    stress_level = fat_level + 2*OH_level # + 2*cocaine_level + 4*cocaethylene_level + 5*virus_level
+    stress_level = fat_level + 2*OH_level + 2*cocaine_level + 5*HIV_level + dechet_level  # + 4*cocaethylene_level 
     
     text.text = ""
     var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzymes"]

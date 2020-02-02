@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Particule.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/Bad guys/HIV.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Ribosome.png" type="Texture" id=2]
 
 [node name="Objet" instance=ExtResource( 1 )]
-degradation_rate = 0.5
-damages = 300
-type = 4
+collision_layer = 16
+collision_mask = 16
+damages = 0
+type = 5
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 1.47221, 0.36805 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )

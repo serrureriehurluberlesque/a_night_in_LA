@@ -6,6 +6,7 @@ export var hp = 100.0
 export var enzym = false
 export var particule = false
 export var degradation_rate = 0.0
+export var chance_to_dechet = 0.2
 
 onready var base_degradation_rate = degradation_rate
 
@@ -64,6 +65,8 @@ func next_die():
     die_i += 1
 
 func finaldie():
+    if randf() < chance_to_dechet:
+        create_dechet()
     get_node("..").call_deferred("remove_child", self)
 
 func repair(f, g=0.0):
@@ -99,3 +102,6 @@ func damage_animate(emit, t):
         particle.set_global_position(get_global_position())
     elif not emit and particle.is_emitting():
         particle.set_emitting(false)
+
+func create_dechet():
+    

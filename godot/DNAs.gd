@@ -74,7 +74,7 @@ func set_prod(dict):
     get_node("../..").wall_repair_rate = dict_clean[2]
     get_node("../..").enzymes = dict_clean[1]
     
-    get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2]})
+    get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2], 2: dict_clean[3]})
 
 func set_continous_repair(a):
     continuous_repair = a

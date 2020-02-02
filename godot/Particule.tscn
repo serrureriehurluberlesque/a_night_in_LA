@@ -8,10 +8,9 @@ flags = 4
 load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 16.0
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 35.0
 
 [node name="Objet" instance=ExtResource( 1 )]
 collision_layer = 2

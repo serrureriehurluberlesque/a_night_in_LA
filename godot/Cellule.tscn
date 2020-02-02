@@ -164,8 +164,8 @@ texture = ExtResource( 21 )
 
 [node name="particulator" type="Area2D" parent="."]
 gravity = 0.0
-collision_layer = 2
-collision_mask = 2
+collision_layer = 18
+collision_mask = 18
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="particulator"]

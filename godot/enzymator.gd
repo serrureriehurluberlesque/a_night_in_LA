@@ -8,7 +8,7 @@ var enzimation = 0.3
 onready var packed_particule = {}
 var chance_to_particule = 0.0
 
-var prod_n = 2
+var prod_n = 3
 var prod_coef = {}
 
 func set_prod(dict):
