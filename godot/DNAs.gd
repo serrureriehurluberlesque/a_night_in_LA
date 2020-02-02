@@ -18,9 +18,7 @@ var value = {}
 
 func _ready():
     for i in range(n_adn):
-        value[i] = 0.0
-    
-    value[n_adn - 1] = 5.0 * n_adn
+        value[i] = 5.0
     
     var packed_dna = load("res://DNA.tscn")
     var da = 2 * PI / dna_number

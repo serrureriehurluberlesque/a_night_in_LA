@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/Le_Cercle.png" type="Texture" id=1]
 [ext_resource path="res://Cellule.gd" type="Script" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://sprites/Cellule_surface.png" type="Texture" id=21]
 [ext_resource path="res://sounds/input.wav" type="AudioStream" id=22]
 [ext_resource path="res://organelle.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Enzyme1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Enzyme2.tscn" type="PackedScene" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 400.0
@@ -108,9 +110,6 @@ rotation = 2.15897
 texture = ExtResource( 12 )
 
 [node name="organelle" parent="Organelles/mitochondrie_2" instance=ExtResource( 23 )]
-position = Vector2( 428.677, 417.805 )
-rotation = -1.52367
-hp = 200.0
 
 [node name="mitochondrie_3" type="Sprite" parent="Organelles"]
 position = Vector2( -302.573, -16.0266 )
@@ -181,6 +180,15 @@ cell_size = 420.0
 [node name="enzymator" type="Node2D" parent="."]
 position = Vector2( -8.59422, -186.616 )
 script = ExtResource( 6 )
+
+[node name="marx" parent="enzymator" instance=ExtResource( 24 )]
+position = Vector2( -76.6031, -27.0756 )
+
+[node name="builder" parent="enzymator" instance=ExtResource( 25 )]
+position = Vector2( 8.59422, 186.616 )
+
+[node name="marx2" parent="enzymator" instance=ExtResource( 24 )]
+position = Vector2( 157.914, 31.2834 )
 
 [node name="enzyme_goal" type="Sprite" parent="."]
 visible = false
