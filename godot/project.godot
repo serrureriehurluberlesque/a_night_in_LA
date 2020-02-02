@@ -30,11 +30,9 @@ config/name="a_night_in_LA"
 run/main_scene="res://Start.tscn"
 config/icon="res://icon.png"
 
-[display]
+[autoload]
 
-window/size/resizable=false
-window/size/fullscreen=true
-window/dpi/allow_hidpi=true
+config="*res://config.gd"
 
 [input]
 

@@ -33,7 +33,9 @@ onready var packed_particules = {'OH' : load("res://OH.tscn"),
 var time_since_beg = 0
 var actual_sprite
 
-var string_to_sprite = {'drink1':1, 'eat':2, 'drink2':3, 'nap':4, 'coke':5, 'pill':6, 'sex':7}
+var string_to_sprite = {'drink1':1, 'eat':2, 'drink2':3, 'nap':4,
+                        'coke':5, 'pill':6, 'sex':7, 'taxi':8,
+                        'kiss':9, 'sleep':10}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -113,6 +115,8 @@ func choose_sprite():
     if current_state == 2 :
         i = string_to_sprite['drink1']
     elif current_state == 3 :
+        i = string_to_sprite['taxi']
+    elif current_state == 3 :
         i = string_to_sprite['eat']
     elif current_state == 4 :
         i = string_to_sprite['drink2']
@@ -123,9 +127,13 @@ func choose_sprite():
     elif current_state == 7 :
         i = string_to_sprite['coke']
     elif current_state == 8 :
+        i = string_to_sprite['kiss']
+    elif current_state == 8 :
         i = string_to_sprite['sex']
     elif current_state == 9 :
         i = string_to_sprite['pill']
+    elif current_state == 10 :
+        i = string_to_sprite['sleep']
     
     return i
     
