@@ -116,23 +116,23 @@ func choose_sprite():
         i = string_to_sprite['drink1']
     elif current_state == 3 :
         i = string_to_sprite['taxi']
-    elif current_state == 3 :
-        i = string_to_sprite['eat']
     elif current_state == 4 :
-        i = string_to_sprite['drink2']
+        i = string_to_sprite['eat']
     elif current_state == 5 :
-        i = string_to_sprite['nap']
-    elif current_state == 6 :
         i = string_to_sprite['drink2']
+    elif current_state == 6 :
+        i = string_to_sprite['nap']
     elif current_state == 7 :
+        i = string_to_sprite['drink2']
+    elif current_state == 8 :
         i = string_to_sprite['coke']
-    elif current_state == 8 :
-        i = string_to_sprite['kiss']
-    elif current_state == 8 :
-        i = string_to_sprite['sex']
     elif current_state == 9 :
-        i = string_to_sprite['pill']
+        i = string_to_sprite['kiss']
     elif current_state == 10 :
+        i = string_to_sprite['sex']
+    elif current_state == 11 :
+        i = string_to_sprite['pill']
+    elif current_state == 12 :
         i = string_to_sprite['sleep']
     
     return i

@@ -19,8 +19,11 @@ func _ready():
     
     get_node("AudioStreamPlayer").play()
     
-    for i in range(8):
+    for i in range(10):
         j_sprites[i] = load("res://sprites/Story/Story_" + str(i) + ".png")
+        
+    j_sprites[10] = load("res://sprites/Story/Story_10.png")
+    j_sprites[11] = load("res://sprites/Story/Story_11.png")
         
     for i in range(13):
         loose_image[i] = load("res://sprites/Animations/Apostasie/0" + str((i+1)/10) + str((i+1)%10) + ".png")
