@@ -29,7 +29,7 @@ func get_level_power():
     var hp = 0
     var max_hp = 0.1
     for child in get_children():
-        if child.has_node("organelle"):
-            hp += child.get_node("organelle").hp
-            max_hp += child.get_node("organelle").max_hp
+        if child.has_node("PinJoint2D"):
+            hp += child.hp
+            max_hp += child.max_hp
     return (hp / max_hp)
