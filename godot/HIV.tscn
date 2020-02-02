@@ -5,8 +5,15 @@
 
 [node name="Objet" instance=ExtResource( 1 )]
 degradation_rate = 0.5
-damages = 300
+damages = 120
 type = 4
 
 [node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 0.843137, 0, 1 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.717957, 3.05132 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 0.448723, 3.14107 )
