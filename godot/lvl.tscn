@@ -204,7 +204,6 @@ tracks/2/keys = {
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
-actual_level = 9
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
@@ -214,8 +213,8 @@ z_index = -10
 texture = ExtResource( 15 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 41.07, -89.254 )
-scale = Vector2( 1.011, 1 )
+position = Vector2( 179.379, -71.7219 )
+scale = Vector2( 1.251, 1.2 )
 z_index = -10
 texture = ExtResource( 23 )
 
