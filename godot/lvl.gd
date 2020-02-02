@@ -24,7 +24,6 @@ func _ready():
     loose_image[13] = load("res://sprites/Game_over.png")
     packed_scene = load("res://Event" + str(actual_level) + ".tscn")
     next_level()
-    win()
     
 func next_level():
     if not loading:
