@@ -203,7 +203,6 @@ tracks/2/keys = {
 [node name="lvl" type="Node2D"]
 position = Vector2( -34, -14 )
 script = ExtResource( 2 )
-actual_level = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

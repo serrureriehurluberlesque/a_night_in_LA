@@ -23,7 +23,7 @@ func _ready():
         loose_image[i] = load("res://sprites/Animations/Apostasie/0" + str((i+1)/10) + str((i+1)%10) + ".png")
     loose_image[13] = load("res://sprites/Game_over.png")
     packed_scene = load("res://Event" + str(actual_level) + ".tscn")
-    next_level()
+    next_level()    
     
 func next_level():
     if not loading:

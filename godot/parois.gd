@@ -14,7 +14,7 @@ func _ready():
     for i in range(paroi_size):
         var paroi = packed_paroi.instance()
         var size = cell_size + variation * -(cos(da * i) *(cos(da * i)))
-        var a = da * i + rand_range(-variation, variation) / 1730.0  # a adapter selon la forme
+        var a = da * i + 0.2 * cos(2 * (da * i + PI / 4)) + rand_range(-variation, variation) / 1730.0 # a adapter selon la forme
         paroi.set_global_position(Vector2(0.0, size).rotated(da * i))
         paroi.set_global_rotation(a)
         paroi.name = str(i)
