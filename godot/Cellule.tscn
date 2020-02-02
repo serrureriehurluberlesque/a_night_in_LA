@@ -77,17 +77,14 @@ rotation = -0.507891
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="organelle" parent="Organelles/Golgi" instance=ExtResource( 23 )]
-hp = 500.0
-
-[node name="Vacuole" type="Sprite" parent="Organelles"]
+[node name="organelle2" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -274.372, 144.019 )
 rotation = 1.90415
-scale = Vector2( 1.32603, 1.32603 )
-texture = ExtResource( 11 )
-
-[node name="organelle" parent="Organelles/Vacuole" instance=ExtResource( 23 )]
 hp = 500.0
+
+[node name="Vacuole" type="Sprite" parent="Organelles/organelle2"]
+scale = Vector2( 1.326, 1.326 )
+texture = ExtResource( 11 )
 
 [node name="Lysosome" type="Sprite" parent="Organelles"]
 visible = false
@@ -96,45 +93,71 @@ rotation = 1.90415
 scale = Vector2( 1.32603, 1.32603 )
 texture = ExtResource( 14 )
 
-[node name="mitochondrie_1" type="Sprite" parent="Organelles"]
+[node name="organelle3" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -466.076, -144.367 )
 rotation = 0.6353
+hp = 500.0
+
+[node name="mitochondrie_1" type="Sprite" parent="Organelles/organelle3"]
 texture = ExtResource( 12 )
 
-[node name="organelle" parent="Organelles/mitochondrie_1" instance=ExtResource( 23 )]
-hp = 200.0
+[node name="organelle9" parent="Organelles" instance=ExtResource( 23 )]
+position = Vector2( 75.7533, -190.904 )
+rotation = 0.6353
+hp = 500.0
 
-[node name="mitochondrie_2" type="Sprite" parent="Organelles"]
-position = Vector2( 119.367, -269.191 )
+[node name="mitochondrie_1" type="Sprite" parent="Organelles/organelle9"]
+texture = ExtResource( 12 )
+
+[node name="organelle4" parent="Organelles" instance=ExtResource( 23 )]
+position = Vector2( -382.573, -252.57 )
 rotation = 2.15897
+hp = 500.0
+
+[node name="mitochondrie_2" type="Sprite" parent="Organelles/organelle4"]
 texture = ExtResource( 12 )
 
-[node name="organelle" parent="Organelles/mitochondrie_2" instance=ExtResource( 23 )]
+[node name="organelle8" parent="Organelles" instance=ExtResource( 23 )]
+position = Vector2( 148.176, -245.922 )
+rotation = 2.15897
+hp = 500.0
 
-[node name="mitochondrie_3" type="Sprite" parent="Organelles"]
+[node name="mitochondrie_2" type="Sprite" parent="Organelles/organelle8"]
+texture = ExtResource( 12 )
+
+[node name="organelle5" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -302.573, -16.0266 )
 rotation = -0.506145
+hp = 500.0
+
+[node name="mitochondrie_3" type="Sprite" parent="Organelles/organelle5"]
 texture = ExtResource( 13 )
 
-[node name="organelle" parent="Organelles/mitochondrie_3" instance=ExtResource( 23 )]
-hp = 200.0
+[node name="organelle10" parent="Organelles" instance=ExtResource( 23 )]
+position = Vector2( -502.019, -258.686 )
+rotation = -0.506145
+hp = 500.0
 
-[node name="mitochondrie_4" type="Sprite" parent="Organelles"]
+[node name="mitochondrie_3" type="Sprite" parent="Organelles/organelle10"]
+texture = ExtResource( 13 )
+
+[node name="organelle6" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -230.492, -425.661 )
 rotation = 0.762709
+scale = Vector2( 1, 1 )
+hp = 500.0
+
+[node name="mitochondrie_4" type="Sprite" parent="Organelles/organelle6"]
 texture = ExtResource( 13 )
 
-[node name="organelle" parent="Organelles/mitochondrie_4" instance=ExtResource( 23 )]
-hp = 200.0
-
-[node name="Peroxysome" type="Sprite" parent="Organelles"]
+[node name="organelle7" parent="Organelles" instance=ExtResource( 23 )]
 position = Vector2( -123.248, 172.089 )
 rotation = 0.762709
-scale = Vector2( 1.60859, 1.60859 )
-texture = ExtResource( 15 )
+hp = 500.0
 
-[node name="organelle" parent="Organelles/Peroxysome" instance=ExtResource( 23 )]
-hp = 300.0
+[node name="Peroxysome" type="Sprite" parent="Organelles/organelle7"]
+scale = Vector2( 1.609, 1.609 )
+texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

@@ -1,6 +1,6 @@
 extends Objet
 
-export var path_ref = "../../.."
+export var path_ref = "../.."
 
 onready var ref = get_node(path_ref)
 

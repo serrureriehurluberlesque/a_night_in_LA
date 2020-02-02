@@ -76,10 +76,11 @@ func finaldie():
 func repair(f, g=0.0):
     var t = f * factor_repair_general + g * factor_repair_paroi
     hp += t
-    hp *= 0.99
-    hp += min(max_hp, hp) / 100.0
+    if max_hp < hp:
+        t -= hp - max_hp
+    hp = min(max_hp, hp)
     
-    if not dead and t > 0.000001:
+    if not dead and t > 0.0001:
         update_modulate(true)
         delay_modulate()
         repair_animate(true, t)
@@ -100,7 +101,7 @@ func repair_animate(_B, _f):
 
 func damage_animate(emit, t):
     var particle = get_node("Node/Particles2D_moins")
-    if emit and not particle.is_emitting():
+    if emit and not particle.is_emitting() and t >= 2:
         particle.amount = t / 2
         particle.set_emitting(true)
         particle.set_global_position(get_global_position())
