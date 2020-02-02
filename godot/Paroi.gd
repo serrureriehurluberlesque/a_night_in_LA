@@ -43,3 +43,8 @@ func repair_animate(emit, t):
     elif not emit and particle.is_emitting():
         particle.set_emitting(false)
     
+
+
+func _on_Objet_body_entered(body):
+    if body.particule:
+        get_node("collision").play()

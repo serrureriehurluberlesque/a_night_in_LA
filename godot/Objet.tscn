@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objet.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Moins.png" type="Texture" id=2]
+[ext_resource path="res://sounds/death.wav" type="AudioStream" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.274074, 1 )
@@ -84,3 +85,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/death = SubResource( 4 )
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

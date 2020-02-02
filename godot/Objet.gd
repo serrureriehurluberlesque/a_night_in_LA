@@ -26,6 +26,8 @@ var die_image = {}
 
 var die_i = 0
 
+onready var packed_dechet = load("res://dechetdobjet.tscn")
+
 func _ready():
     for i in range(6):
         die_image[i] = load("res://sprites/Animations/Sparu/00" + str(i) + ".png")
@@ -59,6 +61,8 @@ func _physics_process(delta):
 
 func die():
     get_node("AnimationPlayer").play("death")
+    if not get_node("death").is_playing():
+        get_node("death").play()
 
 func next_die():
     get_node("Sprite").texture = die_image[die_i]
@@ -104,7 +108,10 @@ func damage_animate(emit, t):
         particle.set_emitting(false)
 
 func create_dechet():
-    pass
+    var dechet = packed_dechet.instance()
+    dechet.set_global_position(get_global_position())
+    dechet.cellpath = "../Cellule"
+    get_node("/root/lvl/").add_child(dechet)
     
     # faut s'inspirer des ces plusieurs bout pour créer une particle dechet à l'endroit get_global_position()
 #            packed_particule[i] = load("res://Enzyme" + str(i+1) + ".tscn")
