@@ -104,4 +104,15 @@ func damage_animate(emit, t):
         particle.set_emitting(false)
 
 func create_dechet():
+    pass
     
+    # faut s'inspirer des ces plusieurs bout pour créer une particle dechet à l'endroit get_global_position()
+#            packed_particule[i] = load("res://Enzyme" + str(i+1) + ".tscn")
+#        var particule = packed_particule[i].instance()
+#        if i == 0:
+#            variate_sprite(particule.get_node("Sprite"), "res://sprites/Enzyme_" + str(randi() % 2 + 1) + ".png")
+#
+#        particule.set_global_position(Vector2(0.0, x).rotated(rand_range(-PI, PI)))
+#        particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(rand_range(-PI, PI)))
+#        particule.set_global_rotation(rand_range(-PI, PI))
+#        add_child(particule)
