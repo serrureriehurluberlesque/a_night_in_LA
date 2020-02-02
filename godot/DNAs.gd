@@ -11,6 +11,8 @@ export var enzymes_cost = 1
 
 export var increment_value = 1.0
 
+var effiacity = 1.0
+
 var n_adn = 4
 var value = {}
 
@@ -69,13 +71,13 @@ func set_prod(dict):
     for i in range(n_adn):
         dict_clean[i] = max(0, dict[i]) / total
     
-    set_continous_repair(dict_clean[0] * 10.0)
+    set_continous_repair(dict_clean[0] * 10.0 * effiacity)
     
-    get_node("../..").dna_repair_rate = dict_clean[0]
-    get_node("../..").wall_repair_rate = dict_clean[2]
-    get_node("../..").enzymes = dict_clean[1]
+    get_node("../..").dna_repair_rate = dict_clean[0] * effiacity
+    get_node("../..").wall_repair_rate = dict_clean[2] * effiacity
+    get_node("../..").enzymes = dict_clean[1] * effiacity
     
-    get_node("../../enzymator").set_prod({0: dict_clean[1], 1: dict_clean[2], 2: dict_clean[3]})
+    get_node("../../enzymator").set_prod({0: dict_clean[1] * effiacity, 1: dict_clean[2] * effiacity, 2: dict_clean[3] * effiacity})
 
 func set_continous_repair(a):
     continuous_repair = a
@@ -87,6 +89,8 @@ func repair(f):
 func _physics_process(delta):
     if continuous_repair > 0.0:
         repair(delta * continuous_repair)
+    
+    set_prod(value)
     # action(delta, activated_dna)
     
 #

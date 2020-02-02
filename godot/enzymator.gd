@@ -18,7 +18,15 @@ func set_prod(dict):
 func _ready():
     for i in range (prod_n):
         packed_particule[i] = load("res://Enzyme" + str(i+1) + ".tscn")
-        prod_coef[i] = 0.1 / prod_n
+        prod_coef[i] = 0.15 / prod_n
+    emit_particule()
+    emit_particule()
+    emit_particule()
+    emit_particule()
+    emit_particule()
+    emit_particule()
+    emit_particule()
+    emit_particule()
 
 func _process(delta):
     chance_to_particule += delta * enzimation

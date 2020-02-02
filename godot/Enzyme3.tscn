@@ -17,8 +17,8 @@ scale = Vector2( 1, 1 )
 
 [node name="Area2D" parent="." index="2"]
 visible = false
-collision_layer = 21
-collision_mask = 21
+collision_layer = 85
+collision_mask = 85
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 visible = true

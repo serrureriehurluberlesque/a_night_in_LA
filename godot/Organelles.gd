@@ -22,3 +22,14 @@ func _process(delta):
         offset[child.name] += d
         oldd[child.name] = d
         child.set_global_position(child.get_global_position() + d)
+    
+    get_node("../Noyau/DNAs").effiacity = get_level_power()
+
+func get_level_power():
+    var hp = 0
+    var max_hp = 0.1
+    for child in get_children():
+        if child.has_node("organelle"):
+            hp += child.get_node("organelle").hp
+            max_hp += child.get_node("organelle").max_hp
+    return (hp / max_hp)
