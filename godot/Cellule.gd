@@ -85,11 +85,6 @@ func get_wall_damage() :
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 
-        #le peouze et tout ce qui va avec
-    #wall_repair_rate = getNode(DNApath).is_activated()
-    #DNA_repair_rate = getNode(DNApath).is_activated()
-    #translation_rate = getNode(DNApath).is_activated()
-
     apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2.5
 
     wall_damage = calculate_wall_damage()
@@ -109,13 +104,3 @@ func _physics_process(_delta):
     var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzymes"]
     for stat in stats:
         text.text += stat + ": " + str(get(stat)) + "\n"
-        
-    #later
-    #virus_level -= immune_defense
-    #immune_defense += 
-    
-    #more realistic
-    #fat_level -= lipid_breakdown_enzymes
-    #OH_level -= alcohol_DH
-    #cocaine_level -= BCHE
-    #cocaethylene_level -= Carboxylesterases

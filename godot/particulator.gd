@@ -22,3 +22,10 @@ func get_part_number(i):  # i = 0 -> all particule
             n += 1
             
     return n
+    
+func set_goal(global_position, r):
+    for child in get_children():
+        #if child is HIV
+            #set target as get_target_nucleus()
+            pass
+

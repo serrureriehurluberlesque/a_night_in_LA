@@ -83,7 +83,7 @@ func emit_particule(_particular_type, packed_particule):
         if "Cellule" in child.name:
             var particule = packed_particule.instance()
             particule.set_global_position(Vector2(0.0, x).rotated(a))
-            particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(a))
+            particule.apply_impulse(Vector2(), - Vector2(0.0, s).rotated(a+rand_range(-PI/16, PI/16)))
             particule.set_global_rotation(a)
             child.add_child(particule)
 

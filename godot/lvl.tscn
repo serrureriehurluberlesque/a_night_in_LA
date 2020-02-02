@@ -553,9 +553,7 @@ You cannot let her reach that point ! Come on, let's get rid of all that alcohol
 #
 Okay it seems like J*** headed for his room... he's laying on his bed right now, maybe he'll pass out... ?
 It doesn't matter, we have to keep on recovering... Rebuild that cell wall !
-~
-~
-~
+~~~
 Oh... I have bad news... J*** just woke up got his wallet and went out... 
 I mean, we're in Las Vegas right ? Of course we wouldn't go to bed at 10...
 He's hitting the casino and having a few drinks there, okay nothing we can't handle...
@@ -570,11 +568,11 @@ J*** ?
 #~
 You should know that cocaine passes through cell walls by passive diffusion, as it is rapidly converted into an apolar form...
 Also, I really hope you got rid of all that alcohol ?
+
 Because of the presence of carboxylesterases in the liver, cocaine might be converted into another molecule if alcohol is present at the same time... and this molecule is highly hepatotoxic...
 #
 behold... Cocaethylene !
-~
-~
+~~
 I'm sorry, I'm so high I'm having troubles keeping up with what's going on.
 I think J***'s still at the bar with the young lady...
 they kissed... and then they... yeah. Okay...
@@ -592,9 +590,7 @@ here comes HIV.
 Be very careful, viruses are experts at disguising themselves and passing through all lipid bilayers.
 Also, they usually try to inject themselves into the nucleus so you should probably - 
 oh whatever... I'm done, take care of Lucy for me.
-~
-~
-~
+~~~
 #
 [/b]"
 text = "
@@ -669,9 +665,7 @@ You cannot let her reach that point ! Come on, let's get rid of all that alcohol
 #
 Okay it seems like J*** headed for his room... he's laying on his bed right now, maybe he'll pass out... ?
 It doesn't matter, we have to keep on recovering... Rebuild that cell wall !
-~
-~
-~
+~~~
 Oh... I have bad news... J*** just woke up got his wallet and went out... 
 I mean, we're in Las Vegas right ? Of course we wouldn't go to bed at 10...
 He's hitting the casino and having a few drinks there, okay nothing we can't handle...
@@ -686,11 +680,11 @@ J*** ?
 #~
 You should know that cocaine passes through cell walls by passive diffusion, as it is rapidly converted into an apolar form...
 Also, I really hope you got rid of all that alcohol ?
+
 Because of the presence of carboxylesterases in the liver, cocaine might be converted into another molecule if alcohol is present at the same time... and this molecule is highly hepatotoxic...
 #
 behold... Cocaethylene !
-~
-~
+~~
 I'm sorry, I'm so high I'm having troubles keeping up with what's going on.
 I think J***'s still at the bar with the young lady...
 they kissed... and then they... yeah. Okay...
@@ -708,9 +702,7 @@ here comes HIV.
 Be very careful, viruses are experts at disguising themselves and passing through all lipid bilayers.
 Also, they usually try to inject themselves into the nucleus so you should probably - 
 oh whatever... I'm done, take care of Lucy for me.
-~
-~
-~
+~~~
 #
 "
 scroll_active = false

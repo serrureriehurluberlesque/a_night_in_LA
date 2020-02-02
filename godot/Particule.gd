@@ -3,8 +3,10 @@ extends Objet
 class_name Particule
 
 export var damages = 20
+onready var target = get_global_position()
 
 export var type = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +23,18 @@ func _on_Area2D_body_entered(body):
         body.damage(damages)
         if body.is_enzyme():
             die()
+            
+func get_target_nucleus():
+    pass
+    
+    #for body in area of the cell
+        #find nucleus
+    
+    #set target as nucleus
+
+
+#    for body in get_node("Area2D").get_overlapping_bodies():
+
+
+func go_to(global_position):
+    target = global_position
