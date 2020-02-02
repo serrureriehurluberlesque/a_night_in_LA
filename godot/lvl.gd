@@ -16,6 +16,9 @@ var loose_image = {}
 var loose_i = 0
 
 func _ready():
+    
+    get_node("AudioStreamPlayer").play()
+    
     for i in range(8):
         j_sprites[i] = load("res://sprites/Story/Story_" + str(i) + ".png")
         
