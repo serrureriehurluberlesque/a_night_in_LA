@@ -24,7 +24,7 @@ func _ready():
     loose_image[13] = load("res://sprites/Game_over.png")
     packed_scene = load("res://Event" + str(actual_level) + ".tscn")
     next_level()
-    loose()
+    win()
     
 func next_level():
     if not loading:
@@ -64,6 +64,9 @@ func j_sprite(i):
     
 func win():
     get_node("Win").show()
+    loose_image[13] = load("res://sprites/Victory_2.png")
+    get_node("Loose/Anim").play("Win")
+    get_node("Loose").texture = loose_image[0]
 
 func loose():
     get_node("Loose").show()
@@ -74,3 +77,6 @@ func loose():
 func set_loose():
     get_node("Loose").texture = loose_image[loose_i]
     loose_i += 1
+
+func set_win():
+    get_node("Win").texture = load("res://sprites/Background_new.png")
