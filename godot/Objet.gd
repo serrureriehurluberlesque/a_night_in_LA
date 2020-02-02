@@ -21,6 +21,14 @@ export var repair_c = Color(0.1, 1, 0.5, 1)
 
 onready var max_hp = hp
 
+var die_image = {}
+
+var die_i = 0
+
+func _ready():
+    for i in range(6):
+        die_image[i] = load("res://sprites/Animations/Sparu/00" + str(i) + ".png")
+        
 func damage(n):
     hp -= n
     if hp <= 0.1 and not dead:
@@ -49,6 +57,13 @@ func _physics_process(delta):
             repair_animate(false, 0.0)
 
 func die():
+    get_node("AnimationPlayer").play("death")
+
+func next_die():
+    get_node("Sprite").texture = die_image[die_i]
+    die_i += 1
+
+func finaldie():
     get_node("..").call_deferred("remove_child", self)
 
 func repair(f, g=0.0):

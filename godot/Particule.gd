@@ -20,4 +20,4 @@ func _on_Area2D_body_entered(body):
     if body != self:
         body.damage(damages)
         if body.is_enzyme():
-            get_node("..").call_deferred("remove_child", self)
+            die()

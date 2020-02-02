@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objet.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Moins.png" type="Texture" id=2]
@@ -24,6 +24,42 @@ orbit_velocity_random = 0.0
 scale_random = 0.2
 color_ramp = SubResource( 2 )
 
+[sub_resource type="Animation" id=4]
+resource_name = "death"
+length = 0.6
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "next_die"
+}, {
+"args": [  ],
+"method": "finaldie"
+} ]
+}
+
 [node name="Objet" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 5
@@ -45,3 +81,6 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 4 )
