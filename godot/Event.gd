@@ -2,12 +2,14 @@ extends Node2D
 
 export var Fat_level = 0
 export var OH_level = 0
-export var cocaine_level = 0
+export var Coke_level = 0
 export var cocaethylene_level = 0
-export var virus_level = 0
+export var HIV_level = 0
 
 var oh_rate
 var fat_rate
+var Coke_rate
+var HIV_rate
 
 export var time = 60.0
 export var time_chill = 0.0
@@ -18,6 +20,8 @@ export var particules_path = ".."
 onready var particules_node_base = get_node(particules_path)
 onready var packed_particules = {'OH' : load("res://OH.tscn"),
     'Particule' : load("res://Particule.tscn"),
+    'Coke' : load("res://Coke.tscn"),
+    'HIV' : load("res://HIV.tscn"),
     'Fat' : load("res://Fat.tscn")}
 
 var time_since_beg = 0
@@ -27,9 +31,13 @@ var actual_sprite
 func _ready():
     OH_level *= rand_range(0.8, 1.2)
     Fat_level *= rand_range(0.8, 1.2)
+    Coke_level *= rand_range(0.8, 1.2)
+    HIV_level *= rand_range(0.8, 1.2)
     
     oh_rate = OH_level / time #per sec
     fat_rate = Fat_level / time
+    Coke_rate = Coke_level / time #per sec
+    HIV_rate = HIV_level / time
     
     set_sprite(choose_sprite())
     
@@ -46,6 +54,14 @@ func _process(delta):
     if Fat_level > 0 and randf() < fat_rate * delta :
         emit_particule('Fat', packed_particules['Fat'])
         Fat_level -= 1
+        
+    if Coke_level > 0 and randf() < Coke_rate * delta :
+        emit_particule('Coke', packed_particules['Coke'])
+        Coke_level -= 1
+        
+    if HIV_level > 0 and randf() < HIV_rate * delta :
+        emit_particule('HIV', packed_particules['HIV'])
+        HIV_level -= 1
     
     if time_since_beg > time + time_chill:
         get_node("..").next_level()
