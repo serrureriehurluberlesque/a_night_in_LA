@@ -1,14 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sounds/drink1.wav" type="AudioStream" id=2]
 
 [node name="Event" instance=ExtResource( 1 )]
-OH_level = 50
-time = 40.0
-time_chill = 20.0
-time_absolu = 165.0
+OH_level = 40
+time = 20.0
+time_chill = 15.0
+time_absolu = 195.0
 text = "glouglouglou"
-
-[node name="AudioStreamPlayer" parent="." index="1"]
-stream = ExtResource( 2 )

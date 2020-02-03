@@ -105,6 +105,7 @@ func get_wall_damage() :
 func _physics_process(_delta):
 
     apoptosis = (2*DNA_damage + wall_damage + stress_level) / 2
+    #apoptosis = 0 #for testing
 
     wall_damage = calculate_wall_damage()
     

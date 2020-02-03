@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -25,7 +25,6 @@
 [ext_resource path="res://sprites/Background_new.png" type="Texture" id=23]
 [ext_resource path="res://sprites/Good guys/Enzyme_4.png" type="Texture" id=24]
 [ext_resource path="res://sounds/musique.wav" type="AudioStream" id=25]
-[ext_resource path="res://sprites/SWAD.png" type="Texture" id=26]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -40,7 +39,7 @@ bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
 bg_color = Color( 0.453125, 0.935913, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.847059, 0.694118, 0.192157, 1 )
+bg_color = Color( 0.231373, 0.0705882, 0.803922, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.819608, 0.835294, 0.356863, 1 )
@@ -480,10 +479,10 @@ scale = Vector2( 1.46664, 1.61089 )
 texture = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Histoire"]
-margin_left = 25.0
-margin_top = 48.0
-margin_right = 452.0
-margin_bottom = 555.0
+margin_left = 28.1011
+margin_top = 57.3953
+margin_right = 455.101
+margin_bottom = 564.395
 rect_scale = Vector2( 0.96, 1 )
 custom_fonts/bold_italics_font = SubResource( 10 )
 custom_fonts/italics_font = SubResource( 12 )
@@ -547,7 +546,8 @@ Try to produce more enzymes to eliminate alcohol and the products of its metabol
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
 
-Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
+Working so hard leads to a high levels of cellular stress, as the more molecules and organelles wander around freely, the more oxydation damage you accumulate.
+Also, don't forget to heal damage organelles otherwise your enzyme production might come down !
 [color=red][i]
 < Type W to produce more healing enzymes >
 < Type S to regenerate damaged DNA >
@@ -567,7 +567,10 @@ You're young indeed and do lots of sports, but that's no reason to go on binge l
 There's only so much we can take !
 ~
 #
-
+You might have realized that degrading toxic components leave molecular components behind, these accumulate and can damage organelles by oxidation. You should produce lysosomes that could help clean the cellular lumen.
+[color=red][i]
+< Type D to produce lysosomes >
+[/i][/color]
 Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
 J*** ?
 #
@@ -575,9 +578,9 @@ Where are you... oh, the bar...
 okay, having a bit of trouble digesting eh ?
 A double gin and tonic alright, here it comes...
 and a whiskey ?
-tequila ? Oh jeez...
 
-Maybe I should warn you, Lucy cannot take damage forever. [i][color=red]Passed a certain threshold, she will go into apoptosis [/color][/i] - which is cell death.
+Maybe I should warn you, Lucy cannot take damage forever.
+[i][color=red]Passed a certain threshold, she will go into apoptosis [/color][/i] - which is cell death.
 You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
 ~ ~
 #
@@ -600,19 +603,20 @@ You should know that cocaine passes through cell walls by passive diffusion, as 
 Also, I really hope you got rid of all that alcohol ?
 
 Because of the presence of carboxylesterases in the liver, cocaine might be converted into another molecule if alcohol is present at the same time... and this molecule is highly hepatotoxic...
-#
 behold... Cocaethylene !
+#
 ~~
 I'm sorry, I'm so high I'm having troubles keeping up with what's going on.
 I think J***'s still at the bar with the young lady...
 they kissed... and then they... yeah. Okay...
 ~
 They're going home...
+#
 ...
 J*** I beg you, stay safe... use a condom...
-I SAID USE A CON - 
 ...
 ~
+I SAID PLEASE PUT ON A CON - 
 too late...
 ...
 here comes HIV.
@@ -623,7 +627,8 @@ oh whatever... just try to keep Lucy alive.
 ~~~
 Good job ! I believe we're good for today unless J*** tries anything stupid again.
 #
-And here he goes again, I guess he has a headache so he took some painkillers before going to sleep.
+What is he doing ?
+Oh, I guess he has a headache so he took some painkillers before going to sleep.
 If only he knew that this is all job for Lucy again...
 Come on, you can do it !
 ~~~
@@ -665,7 +670,8 @@ Try to produce more enzymes to eliminate alcohol and the products of its metabol
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
 Okay, let's use this opportunity to recover a bit from alcohol's damage.
 
-Working so hard leads to a high levels of cellular stress, as the more molecules wander around freely, the more oxydation damage you accumulate.
+Working so hard leads to a high levels of cellular stress, as the more molecules and organelles wander around freely, the more oxydation damage you accumulate.
+Also, don't forget to heal damage organelles otherwise your enzyme production might come down !
 
 < Type W to produce more healing enzymes >
 < Type S to regenerate damaged DNA >
@@ -685,6 +691,9 @@ You're young indeed and do lots of sports, but that's no reason to go on binge l
 There's only so much we can take !
 ~
 #
+You might have realized that degrading toxic components leave molecular components behind, these accumulate and can damage organelles by oxidation. You should produce lysosomes that could help clean the cellular lumen.
+
+< Type D to produce lysosomes >
 
 Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
 J*** ?
@@ -693,9 +702,9 @@ Where are you... oh, the bar...
 okay, having a bit of trouble digesting eh ?
 A double gin and tonic alright, here it comes...
 and a whiskey ?
-tequila ? Oh jeez...
 
-Maybe I should warn you, Lucy cannot take damage forever. Passed a certain threshold, she will go into apoptosis  - which is cell death.
+Maybe I should warn you, Lucy cannot take damage forever.
+Passed a certain threshold, she will go into apoptosis  - which is cell death.
 You cannot let her reach that point ! Come on, let's get rid of all that alcohol !
 ~ ~
 #
@@ -718,19 +727,20 @@ You should know that cocaine passes through cell walls by passive diffusion, as 
 Also, I really hope you got rid of all that alcohol ?
 
 Because of the presence of carboxylesterases in the liver, cocaine might be converted into another molecule if alcohol is present at the same time... and this molecule is highly hepatotoxic...
-#
 behold... Cocaethylene !
+#
 ~~
 I'm sorry, I'm so high I'm having troubles keeping up with what's going on.
 I think J***'s still at the bar with the young lady...
 they kissed... and then they... yeah. Okay...
 ~
 They're going home...
+#
 ...
 J*** I beg you, stay safe... use a condom...
-I SAID USE A CON - 
 ...
 ~
+I SAID PLEASE PUT ON A CON - 
 too late...
 ...
 here comes HIV.
@@ -741,7 +751,8 @@ oh whatever... just try to keep Lucy alive.
 ~~~
 Good job ! I believe we're good for today unless J*** tries anything stupid again.
 #
-And here he goes again, I guess he has a headache so he took some painkillers before going to sleep.
+What is he doing ?
+Oh, I guess he has a headache so he took some painkillers before going to sleep.
 If only he knew that this is all job for Lucy again...
 Come on, you can do it !
 ~~~
@@ -847,7 +858,3 @@ texture = ExtResource( 20 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 767.184, 413.794 )
-texture = ExtResource( 26 )

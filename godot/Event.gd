@@ -6,14 +6,13 @@ export var Coke_level = 0
 export var cocaethylene_level = 0
 export var HIV_level = 0
 export var Paracetamol_level = 0
-export var CE_level = 0
 
 var oh_rate
 var fat_rate
 var Coke_rate
 var HIV_rate
 var Paracetamol_rate
-var CE_rate
+var cocaethylene_rate
 
 export var time = 60.0
 export var time_chill = 0.0
@@ -34,8 +33,8 @@ var time_since_beg = 0
 var actual_sprite
 
 var string_to_sprite = {'drink1':1, 'eat':2, 'drink2':3, 'nap':4,
-                        'coke':5, 'pill':6, 'sex':7, 'taxi':8,
-                        'kiss':9, 'sleep':10}
+                        'coke':5, 'pill':6, 'strip':7, 'taxi':8,
+                        'kiss':9, 'sex':11}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,19 +43,16 @@ func _ready():
     Coke_level *= rand_range(0.8, 1.2)
     HIV_level *= rand_range(0.8, 1.2)
     Paracetamol_level *= rand_range(0.8, 1.2)
-    CE_level *= rand_range(0.8, 1.2)
+    cocaethylene_level *= rand_range(0.8, 1.2)
     
     oh_rate = OH_level / time #per sec
     fat_rate = Fat_level / time
     Coke_rate = Coke_level / time #per sec
     HIV_rate = HIV_level / time
     Paracetamol_rate = Paracetamol_level / time
-    CE_rate = CE_level / time
+    cocaethylene_rate = cocaethylene_level / time
     
     set_sprite(choose_sprite())
-    
-    print("new event, state is ", get_node("..").current_state)
-    print(text)
     
     get_node("AudioStreamPlayer").play()
 
@@ -81,7 +77,7 @@ func _process(delta):
     if Paracetamol_level > 0 and randf() < Paracetamol_rate * delta :
         emit_particule('Paracetamol', packed_particules['Paracetamol'])
         
-    if CE_level > 0 and randf() < CE_rate * delta :
+    if cocaethylene_level > 0 and randf() < cocaethylene_rate * delta :
         emit_particule('Paracetamol', packed_particules['CE'])
     
     if time_since_beg > time + time_chill:
@@ -119,21 +115,25 @@ func choose_sprite():
     elif current_state == 4 :
         i = string_to_sprite['eat']
     elif current_state == 5 :
-        i = string_to_sprite['drink2']
+        i = string_to_sprite['taxi']
     elif current_state == 6 :
-        i = string_to_sprite['nap']
-    elif current_state == 7 :
         i = string_to_sprite['drink2']
+    elif current_state == 7 :
+        i = string_to_sprite['nap']
     elif current_state == 8 :
-        i = string_to_sprite['coke']
+        i = string_to_sprite['drink1']
     elif current_state == 9 :
-        i = string_to_sprite['kiss']
+        i = string_to_sprite['coke']
     elif current_state == 10 :
-        i = string_to_sprite['sex']
+        i = string_to_sprite['kiss']
     elif current_state == 11 :
-        i = string_to_sprite['pill']
+        i = string_to_sprite['strip']
     elif current_state == 12 :
-        i = string_to_sprite['sleep']
+        i = string_to_sprite['sex']
+    elif current_state == 13 :
+        i = string_to_sprite['pill']
+    elif current_state == 14 :
+        i = string_to_sprite['nap']
     
     return i
     

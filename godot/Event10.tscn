@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sounds/sexy.wav" type="AudioStream" id=2]
 
 [node name="Event" instance=ExtResource( 1 )]
-Paracetamol_level = 25
+OH_level = 5
+Coke_level = 1
+cocaethylene_level = 1
 time = 10.0
-time_chill = 15.0
-time_absolu = 335.0
+time_absolu = 300.0
 text = "glouglouglou"
+
+[node name="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource( 2 )

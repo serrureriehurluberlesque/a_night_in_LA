@@ -3,9 +3,10 @@
 [ext_resource path="res://Event.tscn" type="PackedScene" id=1]
 
 [node name="Event" instance=ExtResource( 1 )]
-OH_level = 10
-Coke_level = 3
-cocaethylene_level = 1
-time = 10.0
-time_absolu = 290.0
+OH_level = 20
+Coke_level = 20
+cocaethylene_level = 5
+time = 25.0
+time_chill = 15.0
+time_absolu = 250.0
 text = "glouglouglou"
