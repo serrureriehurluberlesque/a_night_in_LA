@@ -24,6 +24,7 @@ func _ready():
         
     j_sprites[10] = load("res://sprites/Story/Story_10.png")
     j_sprites[11] = load("res://sprites/Story/Story_11.png")
+    j_sprites[12] = load("res://sprites/Story/Story_12.png")
         
     for i in range(13):
         loose_image[i] = load("res://sprites/Animations/Apostasie/0" + str((i+1)/10) + str((i+1)%10) + ".png")

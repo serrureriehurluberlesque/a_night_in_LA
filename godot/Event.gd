@@ -34,7 +34,7 @@ var actual_sprite
 
 var string_to_sprite = {'drink1':1, 'eat':2, 'drink2':3, 'nap':4,
                         'coke':5, 'pill':6, 'strip':7, 'taxi':8,
-                        'kiss':9, 'sex':11}
+                        'kiss':9, 'drink3' : 10, 'sex':11, 'sleep':12}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -121,7 +121,7 @@ func choose_sprite():
     elif current_state == 7 :
         i = string_to_sprite['nap']
     elif current_state == 8 :
-        i = string_to_sprite['drink1']
+        i = string_to_sprite['drink3']
     elif current_state == 9 :
         i = string_to_sprite['coke']
     elif current_state == 10 :
@@ -133,7 +133,7 @@ func choose_sprite():
     elif current_state == 13 :
         i = string_to_sprite['pill']
     elif current_state == 14 :
-        i = string_to_sprite['nap']
+        i = string_to_sprite['sleep']
     
     return i
     
