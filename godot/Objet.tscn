@@ -89,3 +89,4 @@ anims/death = SubResource( 4 )
 
 [node name="death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
