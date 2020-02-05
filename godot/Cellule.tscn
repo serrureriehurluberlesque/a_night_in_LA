@@ -195,6 +195,7 @@ stream = ExtResource( 22 )
 volume_db = -2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 229.0
 margin_top = -242.0
 margin_right = 366.0

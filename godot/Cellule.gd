@@ -122,8 +122,8 @@ func _physics_process(_delta):
 
     stress_level = fat_level + 2*OH_level + 2*cocaine_level + 3*HIV_level + dechet_level + enzyme_level / 2.0  # + 4*cocaethylene_level 
     
-    text.text = ""
-    var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzyme_level"]
-    for stat in stats:
-        text.text += stat + ": " + str(get(stat)) + "\n"
-    text.text += "Total: " + str(stress_level) + "\n"
+#    text.text = ""
+#    var stats = ["fat_level", "OH_level", "cocaine_level", "stress_level", "wall_damage", "DNA_damage", "apoptosis", "enzyme_level"]
+#    for stat in stats:
+#        text.text += stat + ": " + str(get(stat)) + "\n"
+#    text.text += "Total: " + str(stress_level) + "\n"

@@ -19,7 +19,7 @@ func _ready():
     
     else :
         get_node("Loose").show()
-        get_node("Loose").texture = loose_image[13]
+        get_node("Loose/Anim").play("Loose")
 
 func _input(event):
     

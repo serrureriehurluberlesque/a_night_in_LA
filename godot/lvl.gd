@@ -69,22 +69,11 @@ func j_sprite(i):
     get_node("j").texture = j_sprites[i]
     
 func win():
-    
     config.loose = false
-    
-    Engine.time_scale = 0
-    get_node("Win").show()
-    loose_image[13] = load("res://sprites/Victory_2.png")
-    get_node("Loose/Anim").play("Win")
     get_tree().change_scene("res://End.tscn")
-    
-    #get_node("Loose").texture = loose_image[0]
 
 func loose():
-    get_node("Loose").show()
-    get_node("Cellule").hide()
-    get_node("Loose/Anim").play("Loose")
-    perdu = true
+    config.loose = true
     get_tree().change_scene("res://End.tscn")
 
 func set_loose():
