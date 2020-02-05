@@ -547,7 +547,7 @@ Alcohol is a very small hydrophilic molecule that can pass through the cell's li
 
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
-[i][color=red]< Type A to produce more metabolic enzymes >[/color][/i]
+[i][color=red]< Type D to produce more metabolic enzymes >[/color][/i]
 
 #~
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
@@ -556,8 +556,8 @@ Okay, let's use this opportunity to recover a bit from alcohol's damage.
 Working so hard leads to a high levels of cellular stress, as the more molecules and organelles wander around freely, the more oxydation damage you accumulate.
 Also, don't forget to heal damage organelles otherwise your enzyme production might come down !
 [color=red][i]
-< Type W to produce more healing enzymes >
-< Type S to regenerate damaged DNA >
+< Type S to produce more healing enzymes >
+< Type A to regenerate damaged DNA >
 [/i][/color]
 As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
 
@@ -576,7 +576,7 @@ There's only so much we can take !
 #
 You might have realized that degrading toxic components leave molecular components behind, these accumulate and can damage organelles by oxidation. You should produce lysosomes that could help clean the cellular lumen.
 [color=red][i]
-< Type D to produce lysosomes >
+< Type F to produce lysosomes >
 [/i][/color]
 Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
 J*** ?
@@ -671,7 +671,7 @@ Alcohol is a very small hydrophilic molecule that can pass through the cell's li
 
 Try to produce more enzymes to eliminate alcohol and the products of its metabolism as fast as possible !
 
-< Type A to produce more metabolic enzymes >
+< Type D to produce more metabolic enzymes >
 
 #~
 Oh, it seems like J*** is done with drinking for now, he's heading outside to get a taxi.
@@ -680,8 +680,8 @@ Okay, let's use this opportunity to recover a bit from alcohol's damage.
 Working so hard leads to a high levels of cellular stress, as the more molecules and organelles wander around freely, the more oxydation damage you accumulate.
 Also, don't forget to heal damage organelles otherwise your enzyme production might come down !
 
-< Type W to produce more healing enzymes >
-< Type S to regenerate damaged DNA >
+< Type S to produce more healing enzymes >
+< Type A to regenerate damaged DNA >
 
 As you see, you have limited amounts of energy. As you produce more metabolic enzymes, you have to give up on cell wall regeneration and DNA repair.
 
@@ -700,7 +700,7 @@ There's only so much we can take !
 #
 You might have realized that degrading toxic components leave molecular components behind, these accumulate and can damage organelles by oxidation. You should produce lysosomes that could help clean the cellular lumen.
 
-< Type D to produce lysosomes >
+< Type F to produce lysosomes >
 
 Okay, it seems like he got in a taxi again and reaches his hotel. He got his keys at the reception and... you're not going to your room ?
 J*** ?
@@ -926,3 +926,4 @@ region_rect = Rect2( 351, 19, 56, 52 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
+volume_db = -10.0

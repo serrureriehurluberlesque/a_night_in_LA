@@ -10,7 +10,7 @@ cocaethylene_level = 1
 HIV_level = 3
 Paracetamol_level = 30
 time = 20.0
-time_chill = 15.0
+time_chill = 45.0
 time_absolu = 365.0
 text = "glouglouglou"
 
