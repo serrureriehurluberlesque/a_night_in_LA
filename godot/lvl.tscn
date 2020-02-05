@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Cellule.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lvl.gd" type="Script" id=2]
@@ -25,6 +25,13 @@
 [ext_resource path="res://sprites/Background_new.png" type="Texture" id=23]
 [ext_resource path="res://sprites/Good guys/Enzyme_4.png" type="Texture" id=24]
 [ext_resource path="res://sounds/musique.wav" type="AudioStream" id=25]
+[ext_resource path="res://sprites/SWAD.png" type="Texture" id=26]
+[ext_resource path="res://sprites/F.png" type="Texture" id=27]
+[ext_resource path="res://sprites/ADN/ADN_fond.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Plus.png" type="Texture" id=29]
+[ext_resource path="res://sprites/Lysosome.png" type="Texture" id=30]
+[ext_resource path="res://sprites/Enzyme_1.png" type="Texture" id=31]
+[ext_resource path="res://sprites/Enzyme_3.png" type="Texture" id=32]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.231373, 0.243137, 0.898039, 1 )
@@ -855,6 +862,67 @@ anims/Win = SubResource( 19 )
 [node name="j" type="Sprite" parent="."]
 position = Vector2( -597.559, -370.571 )
 texture = ExtResource( 20 )
+
+[node name="WASD" type="Node2D" parent="."]
+position = Vector2( 34, 14 )
+
+[node name="F" type="Sprite" parent="WASD"]
+position = Vector2( 895.069, 417.631 )
+texture = ExtResource( 27 )
+region_rect = Rect2( 129, 23, 58, 45 )
+
+[node name="S" type="Sprite" parent="WASD"]
+position = Vector2( 665.23, 408.533 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 69, 69 )
+
+[node name="A" type="Sprite" parent="WASD"]
+position = Vector2( 557.034, 416.097 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 236, 12, 56, 62 )
+
+[node name="D" type="Sprite" parent="WASD"]
+position = Vector2( 776.582, 417.078 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 351, 19, 56, 52 )
+
+[node name="F2" type="Sprite" parent="WASD"]
+position = Vector2( 916.103, 179.092 )
+scale = Vector2( 0.75, 0.75 )
+z_index = -1
+texture = ExtResource( 30 )
+region_rect = Rect2( 129, 23, 58, 45 )
+
+[node name="S2" type="Sprite" parent="WASD"]
+position = Vector2( 690.622, 177.679 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -1
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 69, 69 )
+
+[node name="A2" type="Sprite" parent="WASD"]
+position = Vector2( 579.319, 179.208 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+texture = ExtResource( 28 )
+region_rect = Rect2( 236, 12, 56, 62 )
+
+[node name="A3" type="Sprite" parent="WASD"]
+position = Vector2( 573.745, 177.602 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+texture = ExtResource( 29 )
+region_rect = Rect2( 236, 12, 56, 62 )
+
+[node name="D2" type="Sprite" parent="WASD"]
+position = Vector2( 800.529, 182.951 )
+scale = Vector2( 0.3, 0.3 )
+z_index = -1
+texture = ExtResource( 31 )
+region_rect = Rect2( 351, 19, 56, 52 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )

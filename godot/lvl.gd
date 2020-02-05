@@ -85,6 +85,7 @@ func loose():
     get_node("Cellule").hide()
     get_node("Loose/Anim").play("Loose")
     perdu = true
+    get_tree().change_scene("res://End.tscn")
 
 func set_loose():
     get_node("Loose").texture = loose_image[loose_i]

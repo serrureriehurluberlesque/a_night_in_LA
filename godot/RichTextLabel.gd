@@ -26,7 +26,9 @@ func _physics_process(delta):
                 c += 1
             elif base_text[c] == "[":
                 while base_text[c] != "]":
+                    bbcode_text += base_text[c]
                     c += 1
+                bbcode_text += base_text[c]
                 c += 1
             else:
                 bbcode_text += base_text[c]

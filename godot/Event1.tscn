@@ -4,7 +4,7 @@
 [ext_resource path="res://sounds/drink1.wav" type="AudioStream" id=2]
 
 [node name="Event" instance=ExtResource( 1 )]
-OH_level = 25
+OH_level = 30
 time = 20.0
 time_chill = 10.0
 time_absolu = 40.0

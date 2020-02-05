@@ -82,7 +82,7 @@ func set_prod(dict):
                                           2: dict_clean[3]})
 
 func set_continous_repair(a):
-    continuous_repair = a
+    continuous_repair = a * 2.0
     
 func repair(f):
     for child in get_children():

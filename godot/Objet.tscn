@@ -65,6 +65,7 @@ tracks/0/keys = {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 1 )
+chance_to_dechet = 0.3
 
 [node name="Sprite" type="Sprite" parent="."]
 

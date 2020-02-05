@@ -16,9 +16,9 @@ func _ready():
 
 func _process(_delta):
     if get_linear_velocity().length() < 10.0 and get_position().length() > get_node(cellpath + "/parois").cell_size:
-        degradation_rate = 10.0
+        degradation_rate = base_degradation_rate * 2 + 5
     else:
-        degradation_rate = 2.0
+        degradation_rate = base_degradation_rate
         
 func _on_Area2D_body_entered(body):
     if body != self:

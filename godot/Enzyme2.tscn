@@ -8,6 +8,7 @@ hp = 50.0
 max_speed = 45.0
 paroi_repair = 1.0
 general_repair = 1.0
+repair_range = 50.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.247059, 0.815686, 0.564706, 1 )

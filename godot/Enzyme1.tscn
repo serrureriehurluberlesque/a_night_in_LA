@@ -13,7 +13,8 @@ height = 100.0
 
 [node name="marx" instance=ExtResource( 1 )]
 mass = 2.0
-hp = 250.0
+hp = 270.0
+chance_to_dechet = 0.6
 max_speed = 35.0
 
 [node name="Sprite" parent="." index="0"]

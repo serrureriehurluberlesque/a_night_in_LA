@@ -35,7 +35,7 @@ func _physics_process(delta):
         
     var stress_level = get_node("../../../Cellule").get_stress_level()
 
-    if stress_level > 0 :
+    if stress_level > 30 :
         degradation_rate = base_degradation_rate * stress_amplificator
         
             

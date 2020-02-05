@@ -4,8 +4,8 @@
 [ext_resource path="res://sounds/taxi.wav" type="AudioStream" id=2]
 
 [node name="Event" instance=ExtResource( 1 )]
-Fat_level = 5
-OH_level = 20
+Fat_level = 10
+OH_level = 25
 time = 20.0
 time_absolu = 145.0
 text = "then a freakin burger"

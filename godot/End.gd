@@ -19,20 +19,17 @@ func _ready():
     
     else :
         get_node("Loose").show()
-        get_node("Loose/Anim").play("Loose")
+        get_node("Loose").texture = loose_image[13]
 
 func _input(event):
     
-    if event.is_pressed():
+    if event.is_pressed() and loose_i >= 13:
         get_tree().quit()
-        
-func loose():
-    get_node("Loose").show()
-    get_node("Cellule").hide()
-    get_node("Loose/Anim").play("Loose")
+
 func set_loose():
     get_node("Loose").texture = loose_image[loose_i]
     loose_i += 1
 
 func set_win():
+    get_node("Loose").texture = loose_image[0]
     get_node("Win").texture = load("res://sprites/Background_new.png")

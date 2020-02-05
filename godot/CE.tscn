@@ -4,6 +4,7 @@
 [ext_resource path="res://Particule.tscn" type="PackedScene" id=2]
 
 [node name="Objet" instance=ExtResource( 2 )]
+chance_to_dechet = 0.8
 damages = 260
 type = 7
 

@@ -5,7 +5,8 @@
 [node name="Objet" instance=ExtResource( 1 )]
 collision_layer = 20
 collision_mask = 21
-hp = 120.0
+hp = 110.0
+chance_to_dechet = 0.15
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 0.968627, 1, 0.956863, 1 )
